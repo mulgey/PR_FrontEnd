@@ -46,17 +46,20 @@
       <!--Navbar-->
       <nav class="navbar navbar-expand-lg navbar-dark default-color fixed-top scrolling-navbar">
         <div class="container">
-          <a class="navbar-brand" href="#"><strong>PR</strong></a>
+          <a class="navbar-brand" href="index.html"><strong>PR</strong></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#">Ana Sayfa<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="index.html">Ana Sayfa<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Hesaplayıcı</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="data_table.html">Veri Tablosu</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Hakında</a>
@@ -84,10 +87,10 @@
               <!--Grid column-->
               <div class="col-md-12 mb-4 white-text text-center">
                 <h1 class="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown" data-wow-delay="0.3s"><strong>Prospecturk Renal</strong></h1>
-                <hr class="hr-light my-4 wow fadeInDown" data-wow-delay="0.4s">
+                <hr class="hr-light my-4 w-50 wow fadeInDown" data-wow-delay="0.4s">
                 <h5 class="text-uppercase mb-4 white-text wow fadeInDown" data-wow-delay="0.4s"><strong>Online Doz Hesaplama Aracı</strong></h5>
-                <a class="btn btn-outline-white wow fadeInDown" data-wow-delay="0.4s">Başla</a>
-                <!--<a class="btn btn-outline-white wow fadeInDown" data-wow-delay="0.4s">About me</a> -->
+                <a class="btn btn-outline-white w-25 wow fadeInDown slow" data-wow-delay="2s" href="#cards">Daha fazla bilgi</a>
+                <a class="btn btn-outline-white w-25 font-weight-bold wow fadeInDown slower" data-wow-delay="2s">Başla</a>
               </div>
               <!--Grid column-->
             </div>
@@ -101,7 +104,8 @@
     </header>
     <!-- Main navigation -->
 
-    <div class="card-deck m-4">
+    <!-- Card Deck -->
+    <div class="card-deck m-4" id="cards" data-spy="cards" data-target="#cards">
       <div class="card wow animated bounceIn slow">
         <img src="img/cards/card-01.jpg" class="card-img-top" alt="card-01">
         <div class="card-body">
@@ -124,10 +128,14 @@
         </div>
       </div>
     </div>
+    <!-- Card Deck -->
 
+    <!-- Start Button -->
     <div class="text-center mb-4">
     <button type="button" class="btn blue-gradient btn-huge wow animated flipInX delay-2s slower">Haydi Başlayalım!</button>
     </div>
+    <!-- Start Button -->
+    
   <!-- /Start your project here-->
 
   <!-- SCRIPTS -->
