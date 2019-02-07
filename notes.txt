@@ -1,0 +1,3 @@
+- Tablonun mobilde responsive olması engellenecek
+- Tablo sütunları hover lanacak
+- "Bu hesaplama yetişkinler içindir"

@@ -11782,7 +11782,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sZeroRecords": "No matching records found"
+			"sZeroRecords": "No matching records found*"
 		},
 	
 	
