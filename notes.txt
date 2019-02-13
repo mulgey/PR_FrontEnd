@@ -1,4 +1,12 @@
+Genel
+- Kodun düzeni (indent etc)
+
+Data_table.html
 - Tablonun mobilde responsive olması engellenecek
 - Tablo sütunları hover lanacak
 - "Bu hesaplama yetişkinler içindir"
-- Indent leme çalışmasını erken halletmek gerek
+- Veri tablosu sayfasında scroll-slide etkisi, search kutusunu gösterecek şekilde çalışsın
+
+Calculator.html
+- Etken madde seçimi tıklamayla değil hover ile açılsın (CSS Dropdown)
+- Dropdown a search ekleyelim

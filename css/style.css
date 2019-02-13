@@ -63,3 +63,14 @@ table.dataTable thead .sorting_desc_disabled:after,
 table.dataTable thead .sorting_desc_disabled:before {
   bottom: .5em;
 }
+
+/* Dropdown button on hover & focus */
+.dropdown-item:hover, .dropdown-item:focus {
+  background-color: #66a3ff;
+}
+
+.dropdown-primary {
+  height: auto;
+  max-height: 200px;
+  overflow-x: hidden;
+}
