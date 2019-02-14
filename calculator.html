@@ -38,11 +38,9 @@
   <meta name="msapplication-TileImage" content="img/favicons/favicon-144.png">	
   <meta name="msapplication-config" content="img/favicons/browserconfig.xml">
   <!-- faviconit.favicons -->
-
 </head>
 
 <body>
-
   <!-- Start your project here-->
   <header>
       <!--Navbar-->
@@ -109,34 +107,44 @@
         <!-- Mask & flexbox options-->
         <div class="mask rgba-stylish-light align-items-center flex-center">
           <!-- Content -->
-          <!--Dropdown primary-->
-          <div class="btn-group">          
-            <!--Dropdown primary-->
-            <div class="dropdown">          
-              <!--Trigger-->
-              <a class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">Etken Madde Seçimi</a>     
-              <!--Menu-->
-              <div class="dropdown-menu dropdown-primary">
-                <a class="dropdown-item">Ertapenem sodyum - <small>İnvanz</small></a>
-                <a class="dropdown-item">İmipenem - Silastatin sodyum - <small>Tienam</small></a>
-                <a class="dropdown-item">Meropenem trihidrat - <small>Meronem</small></a>
-                <a class="dropdown-item">Siprofloksasin laktat - <small>Ciproktan</small></a>
-                <a class="dropdown-item">Levofloksasin - <small>Tavanic</small></a>
-                <a class="dropdown-item">Daptomisin - <small>Cubicin</small></a>
-                <a class="dropdown-item">Teikoplanin - <small>Targocid</small></a>
-                <a class="dropdown-item">Vankomisin hidroklorür - <small>Vancotek</small></a>
-                <a class="dropdown-item">Piperasilin sodyum - Tazobaktam sodyum - <small>Tazocin EF</small></a>
-                <a class="dropdown-item">Flukonazol - <small>Lumen EF</small></a>
-                <a class="dropdown-item">Sefoperazon sodyum - Sulbaktam sodyum - <small>Sulperazon</small></a>
-                <a class="dropdown-item">Kolistimetat sodyum - <small>Colimycin</small></a>
-                <a class="dropdown-item">Tigesiklin - <small>Tygacil</small></a>
-                <a class="dropdown-item">Moksifloksasin hidroklorür - <small>Avelox</small></a>
-                <a class="dropdown-item">Linezolit - <small>Zyvoxid</small></a>
-                <a class="dropdown-item">Metronidazol - <small>Metronidazol</small></a>
+          <div class="container">
+            <div class="row">
+              <!--Dropdown primary-->
+              <div class="col w-25 btn-group text-center">          
+                <!--Dropdown primary-->            
+                <div class="dropdown">          
+                  <!--Trigger-->
+                  <a class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Etken Madde Seçimi</a>     
+                  <!--Menu-->
+                  <div class="dropdown-menu dropdown-primary" id="substanceList">
+                    <a class="dropdown-item">Ertapenem sodyum - <small>İnvanz</small></a>
+                    <a class="dropdown-item">İmipenem / Silastatin sodyum - <small>Tienam</small></a>
+                    <a class="dropdown-item">Meropenem trihidrat - <small>Meronem</small></a>
+                    <a class="dropdown-item">Siprofloksasin laktat - <small>Ciproktan</small></a>
+                    <a class="dropdown-item">Levofloksasin - <small>Tavanic</small></a>
+                    <a class="dropdown-item">Daptomisin - <small>Cubicin</small></a>
+                    <a class="dropdown-item">Teikoplanin - <small>Targocid</small></a>
+                    <a class="dropdown-item">Vankomisin hidroklorür - <small>Vancotek</small></a>
+                    <a class="dropdown-item">Piperasilin sodyum / Tazobaktam sodyum - <small>Tazocin EF</small></a>
+                    <a class="dropdown-item">Flukonazol - <small>Lumen EF</small></a>
+                    <a class="dropdown-item">Sefoperazon sodyum / Sulbaktam sodyum - <small>Sulperazon</small></a>
+                    <a class="dropdown-item">Kolistimetat sodyum - <small>Colimycin</small></a>
+                    <a class="dropdown-item">Tigesiklin - <small>Tygacil</small></a>
+                    <a class="dropdown-item">Moksifloksasin hidroklorür - <small>Avelox</small></a>
+                    <a class="dropdown-item">Linezolit - <small>Zyvoxid</small></a>
+                    <a class="dropdown-item">Metronidazol - <small>Metronidazol</small></a>
+                  </div>
+                </div>              
               </div>
+              <!--/Dropdown primary-->
+              <!-- Second Content -->
+              <div class="col w-25">
+                  <button type="button" class="col btn blue-gradient btn-lg">Large button</button>
+                  </div>
+              </div>
+              <!-- Second Content -->
             </div>
-            <!--/Dropdown primary-->
           </div>
           <!-- Content -->
         </div>
@@ -158,10 +166,18 @@
   <script type="text/javascript" src="js/mdb.js"></script>
   
   <script>
-  
+  $( ".dropdown-item" ).click(function() {
+    var string = $(this).text();
+    var index = string.indexOf('-');
+    var result = string.substring(0, (index-1));
+    var element = $('#dropdownMenu2').text();
+    $('#dropdownMenu2').text(result);
+  });
+  </script>
+
+  <script>
   // Animations init
   new WOW().init();
-
   </script>
   
 </body>
