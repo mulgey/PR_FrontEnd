@@ -1,6 +1,9 @@
 Genel
 - Kodun düzeni (indent etc)
 
+index.html
+- İki tuş mobil düzende bozuk bir hal alıyor
+
 Data_table.html
 - Tablonun mobilde responsive olması engellenecek
 - Tablo sütunları hover lanacak
