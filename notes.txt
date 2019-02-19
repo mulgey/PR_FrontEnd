@@ -3,6 +3,7 @@ Genel
 
 index.html
 - İki tuş mobil düzende bozuk bir hal alıyor
+- İki tuşun arasına biraz mesafe
 
 Data_table.html
 - Tablonun mobilde responsive olması engellenecek
@@ -12,4 +13,24 @@ Data_table.html
 
 Calculator.html
 - Etken madde seçimi tıklamayla değil hover ile açılsın (CSS Dropdown)
+- Etken madde seçimindeki devam tuşunun hover efektleri düzenlensin
 - Dropdown a search ekleyelim
+- Dropdown açılır menü genişliği tuş kadar olsun (şu an dar kalabiliyor)
+- notNeeded efekt seçeneklerini gözden geçir
+- notNeeded => disabled dropdown items
+
+eGFR
+- Cinsiyet (dropdown)
+- Yaş (input)
+- Serum kreatinini (input)
+- mg/umol (dropdown)
+- BUN (input)
+- Albumin (input)
+- Siyahi (checkbox)
+
+Crockfault - Gault
+- Cinsiyet (dropdown)
+- Yaş (input)
+- Kilo (input)
+- Serum kreatinini (input)
+- mg/umol (dropdown)
