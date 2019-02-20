@@ -17,20 +17,7 @@ Calculator.html
 - Dropdown a search ekleyelim
 - Dropdown açılır menü genişliği tuş kadar olsun (şu an dar kalabiliyor)
 - notNeeded efekt seçeneklerini gözden geçir
-- notNeeded => disabled dropdown items
+- notNeeded => disabled dropdown items and changed margins
 
-eGFR
-- Cinsiyet (dropdown)
-- Yaş (input)
-- Serum kreatinini (input)
-- mg/umol (dropdown)
-- BUN (input)
-- Albumin (input)
-- Siyahi (checkbox)
 
-Crockfault - Gault
-- Cinsiyet (dropdown)
-- Yaş (input)
-- Kilo (input)
-- Serum kreatinini (input)
-- mg/umol (dropdown)
+discount for mdbootstrap: modl20undecided99

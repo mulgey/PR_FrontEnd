@@ -120,3 +120,16 @@ table.dataTable thead .sorting_desc_disabled:before {
   pointer-events: none;
   background-color: transparent;
 }
+
+.md-form label, .md-form, .form-control {
+  color: #f8f9fa;
+  font-weight: bold;
+}
+
+label.active {
+  color: #4285f4; 
+}
+
+label.custom-control-label {
+  font-weight: bold;
+}
