@@ -133,3 +133,7 @@ label.active {
 label.custom-control-label {
   font-weight: bold;
 }
+
+.note-info {
+  text-align: center;
+} 
