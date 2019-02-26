@@ -150,7 +150,7 @@
           </div>
           <div class="row mt-3">
             <div class="col" style="display:none" id="notNeeded">
-              <p class="note note-info wow fadeIn"><strong>Sonuç:</strong>Gözünüz aydın! Bu etken madde için doz ayarlaması yapmanıza gerek yok</p>
+              <p class="note note-info wow fadeIn"><strong>Sonuç: </strong>Gözünüz aydın! Bu etken madde için doz ayarlaması yapmanıza gerek yok</p>
             </div>
           </div>
           <div class="row text-center align-items-center mt-3" id="cockgaulty">
@@ -243,9 +243,9 @@
     <!-- Presenting The Results -->
     <div class="view" id="presentResults" data-spy="presentResults" data-target="#presentResults" style="background-image: url('img/calculate_03.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
       <!-- Mask & flexbox options-->
-      <div class="mask rgba-stylish-light align-items-center flex-center">
+      <div class="mask rgba-stylish-light align-items-center flex-center text-center">
         <!-- Content -->
-        
+        <h1 id="resultText" style="color: white; font-weight: bold; letter-spacing: 6px;">Hesaplamanın işleminin başlatılması bekleniyor. <a href="#activeSubstance">Önceki</a> bölüme geçelim</h1>
         <!-- Content -->
         </div>
       </div>
@@ -324,13 +324,14 @@
   <script>
   $('#calcButton').click(() => {
     var method =  $('#dropdownMenu2').text();
-    if (method === "Cockcroft-Gault Denklemi") {
 
-      var gender1 = document.getElementById("gender1").value;
-      var age1 = parseFloat(document.getElementById("age1").value);
-      var weight1 = parseFloat(document.getElementById("weight1").value);
-      var srcr1 = parseFloat(document.getElementById("srcr1").value);
-      var crunit1 = document.getElementById("crunit1").value;
+    var gender1 = document.getElementById("gender1").value;
+    var age1 = parseFloat(document.getElementById("age1").value);
+    var weight1 = parseFloat(document.getElementById("weight1").value);
+    var srcr1 = parseFloat(document.getElementById("srcr1").value);
+    var crunit1 = document.getElementById("crunit1").value;    
+
+    if (method === "Cockcroft-Gault Denklemi") {
 
     if (age1 && weight1 && srcr1) {
       console.log("Hesaplama kısmına geçebilirsin");
@@ -345,7 +346,18 @@
     console.log(crunit1);
     
     }
-  })
+  });
+  </script>
+  
+  <script>
+  var resulty = document.getElementById('resultText').innerText;
+  
+  $( "#calcButton" ).click(() => {
+    
+    console.log(`${gender1.value}`);
+    console.log(resulty);
+
+  });
   </script>
   
 </body>
