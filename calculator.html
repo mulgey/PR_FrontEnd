@@ -231,7 +231,7 @@
           </div>
           <div class="row text-center align-items-center mt-3">
             <div class="col" id="calculate">
-              <button type="button" class="btn btn-cyan btn-lg" id="calcButton" onclick="window.location.href = '#presentResults';">Hesaplayalım</button>
+              <button type="button" class="btn btn-cyan btn-lg disabled" id="calcButton" onclick="window.location.href = '#presentResults';">Hesaplayalım</button>
             </div>
           </div>
         <!-- Content -->
@@ -245,7 +245,7 @@
       <!-- Mask & flexbox options-->
       <div class="mask rgba-stylish-light align-items-center flex-center text-center">
         <!-- Content -->
-        <h1 id="resultText" style="color: white; font-weight: bold; letter-spacing: 6px;">Hesaplamanın işleminin başlatılması bekleniyor. <a href="#activeSubstance">Önceki</a> bölüme geçelim</h1>
+        <h1 class="mx-3" id="resultText" style="color: white; font-weight: bold; letter-spacing: 6px;">Hesaplamanın işleminin başlatılması bekleniyor. <a href="#activeSubstance">Veri girişi</a> bölüme geçelim</h1>
         <!-- Content -->
         </div>
       </div>
@@ -282,6 +282,7 @@
     var disably = document.getElementById("willDisable");
     var disably2 = document.getElementById("willDisable2");
     var calculatey = document.getElementById("calculate");
+    var buttony = document.getElementById("calcButton");
 
     if (result === "Tigesiklin" || result === "Moksifloksasin hidroklorür" || result === "Linezolit" || result === "Metronidazol") {
       needy.style.display = "block";
@@ -299,6 +300,7 @@
       disably.className = "dropdown-item2";
       disably2.className = "dropdown-item2";
       calculatey.style.display = "block";
+      buttony.className = "btn btn-cyan btn-lg";
     }
 
   });
@@ -331,6 +333,10 @@
   var crunit1;
   var preresult1;
   var result1;
+  var resulty;
+  var resultText;
+  var actSubs;
+  var doseText;
 
   $('#calcButton').click(() => {
 
@@ -340,38 +346,35 @@
     var weight1 = parseFloat(document.getElementById("weight1").value);
     var srcr1 = parseFloat(document.getElementById("srcr1").value);
     var crunit1 = document.getElementById("crunit1").value;
-    var preresult1;
-    var result1;
+    var resulty = document.getElementById('resultText');
+    var actSubs = document.getElementById('dropdownMenu1').text;
+
+    if (crunit1 === "2") {
+      srcr1 = srcr1 / 88.4;
+    }
 
     if (method === "Cockcroft-Gault Denklemi") {
-    if (age1 && weight1 && srcr1) {
-      if (crunit1 === "mg/dL") {
-        preresult1 = (((140 - age1) * weight1) / (72 * srcr1)).toFixed(0);
+      preresult1 = (((140 - age1) * weight1) / (72 * srcr1)).toFixed(0);
+      if (age1 && weight1 && srcr1) {
         if (gender1 === "2") {
           result1 = (preresult1 * 0.85).toFixed(0);
-          console.log(`Sonuç ${result1} olacak bacım`);
-          return result1;
         } else {
           result1 = preresult1;
-          console.log(`Sonuç ${result1} olacak beyim`);
-          return result1;
         }
-      } else {
-        srcr1 = srcr1 / 88.4;
-        preresult1 = (((140 - age1) * weight1) / (72 * srcr1)).toFixed(0);
-        if (gender1 === "2") {
-          result1 = (preresult1 * 0.85).toFixed(0);
-          console.log(`Sonuç ${result1} olacak bacım`);
-          return result1;
-        } else {
-          result1 = preresult1;
-          console.log(`Sonuç ${result1} olacak beyim`);
-          return result1;
+        
+        if (actSubs === "Ertapenem sodyum") {
+          if (result1 > 30) {
+            doseText = "Doz ayarlaması gerekmemektedir (Standart günlük doz 1g)";
+          } else if (result1 <= 30) {
+            doseText = "Günde 500 mg"
+          }
         }
-      }   
+      
+      resulty.innerHTML = doseText;
+      console.log(`Kr.klirensi = ${result1}`);
       console.log("Hesaplama kısmını hallettik sanırım");
     } else {
-      console.log ("Bilgileri eksiksiz giriniz");
+      resulty.innerHTML = `Bilgileri eksiksiz girersek, hesaplamaya <a href="#activeSubstance">başlayabiliriz</a>`;
     }  
     
     console.log(gender1);
@@ -379,16 +382,8 @@
     console.log(weight1);
     console.log(srcr1);
     console.log(crunit1);
+
     }
-  });
-
-  var resulty = document.getElementById('resultText').innerText;
-  console.log(result1);
-  $( "#calcButton" ).click(() => {
-
-    var resultText = `Bu hasta için sonucumuz ${result1} derim ben`;
-    resulty.text(resultText);
-
   });
   </script>
   
