@@ -204,13 +204,13 @@
           </div>
           <div class="col">
             <div class="md-form">
-              <input type="number" id="form1" class="form-control" id="age2" step='1'>
+              <input type="number" id="age2" class="form-control" step='1'>
               <label for="form1">Yaş</label>
             </div>
           </div>
           <div class="col">
             <div class="md-form">
-              <input type="number" id="form1" class="form-control" id="srcr2" step='0.01'>
+              <input type="number" id="srcr2" class="form-control" step='0.01'>
               <label for="form1">Serum kreatinin</label>
             </div>
           </div>
@@ -222,13 +222,13 @@
           </div>
           <div class="col">
             <div class="md-form">
-              <input type="number" id="form1" class="form-control" id="nitrog" step='0.01'>
+              <input type="number" id="nitrog" class="form-control" step='0.01'>
               <label for="form1">BUN (mg/dL)</label>
             </div>
           </div>
           <div class="col">
             <div class="md-form">
-              <input type="number" id="form1" class="form-control"  id="albumin" step='0.01'>
+              <input type="number" id="albumin" class="form-control" step='0.01'>
               <label for="form1">Albumin</label>
             </div>
           </div>
@@ -365,6 +365,10 @@
     if (crunit1 === "2") {
       srcr1 = srcr1 / 88.4;
     }
+
+    if (crunit2 === "2") {
+      srcr2 = srcr2 / 88.4;
+    }
     
     if (($("#diyaliz1") || $("#diyaliz2")).is(':checked')) {
 
@@ -468,14 +472,47 @@
         resulty.innerHTML = `Bilgileri eksiksiz girersek, hesaplamaya <a href="#activeSubstance">başlayabiliriz</a>`;
         }
       } else if (method === "e-GFR Hesaplayıcısı") {
-        console.log("eGFR metodu henüz yazılmadı")
+        if (age2 && srcr2 && nitrog && albumin && gender2 != "Cinsiyet") {
+          result2 = (170 * (srcr2 ** -0.999) * (age2 ** -0.176) * (nitrog ** -0.170) * (albumin ** 0.318)).toFixed(0);
+          
+          if (gender2 === "2") {
+            result2 = (result2 * 0.762).toFixed(0);
+          }
+          if ($("#black").is(':checked')) {
+            result2 = (result2 * 1.180).toFixed(0);
+          }
+
+          doseText = `Kreatinin klirensinin ${result2} olduğunu bulsam da doz bilgisi için biraz daha çalışmam gerekiyor`
+        } else if (age2 && srcr2 && gender2 != "Cinsiyet") {
+          result2 = (186 * (srcr2 ** -1.154) * (age2 ** -0.203)).toFixed(0);
+
+          if (gender2 === "2") {
+            result2 = (result2 * 0.742).toFixed(0);
+          }
+          if ($("#black").is(':checked')) {
+            result2 = (result2 * 1.210).toFixed(0);
+          }
+
+          doseText = `Kreatinin klirensinin ${result2} olduğunu bulsam da doz bilgisi için biraz daha çalışmam gerekiyor`
+        } else {
+          doseText = "eGFR yöntemiyle hesaplama yapmak için en az; cinsiyet, yaş ve serum kreatinini değerlerini girmeniz gerekmektedir."
+        }
+        
+        console.log(`Kr.klirensi = ${result2}`);
+        console.log("Hesaplama kısmını yine hallettik sanırım");
+
+        resulty.style = "color: white; font-weight: bold; letter-spacing: 2px;"
+        resulty.innerHTML = doseText;  
+
       }
 
+    /*
     console.log(gender1);
     console.log(age1);
     console.log(weight1);
     console.log(srcr1);
     console.log(crunit1);
+    */
     
   });
   </script>
