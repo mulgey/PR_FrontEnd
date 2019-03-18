@@ -466,7 +466,7 @@
         console.log("Hesaplama kısmını hallettik sanırım");      
 
         resulty.style = "color: white; font-weight: bold; letter-spacing: 2px;"
-        resulty.innerHTML = doseText;       
+        resulty.innerHTML = doseText;        
 
         } else {
         resulty.innerHTML = `Bilgileri eksiksiz girersek, hesaplamaya <a href="#activeSubstance">başlayabiliriz</a>`;
@@ -475,25 +475,29 @@
         if (age2 && srcr2 && nitrog && albumin && gender2 != "Cinsiyet") {
           result2 = (170 * (srcr2 ** -0.999) * (age2 ** -0.176) * (nitrog ** -0.170) * (albumin ** 0.318)).toFixed(0);
           
-          if (gender2 === "2") {
-            result2 = (result2 * 0.762).toFixed(0);
-          }
-          if ($("#black").is(':checked')) {
-            result2 = (result2 * 1.180).toFixed(0);
+          if (($("#black").is(':checked')) && gender2 === "2") {
+            result2 = ((170 * (srcr2 ** -0.999) * (age2 ** -0.176) * (nitrog ** -0.170) * (albumin ** 0.318)) * 1.180 * 0.762).toFixed(0);
+          } else if (gender2 === "2") {
+            result2 = ((170 * (srcr2 ** -0.999) * (age2 ** -0.176) * (nitrog ** -0.170) * (albumin ** 0.318)) * 0.762).toFixed(0);
+          } else if ($("#black").is(':checked')) {
+            result2 = ((170 * (srcr2 ** -0.999) * (age2 ** -0.176) * (nitrog ** -0.170) * (albumin ** 0.318)) * 1.180).toFixed(0);
           }
 
-          doseText = `Kreatinin klirensinin ${result2} olduğunu bulsam da doz bilgisi için biraz daha çalışmam gerekiyor`
+          doseText = `Kreatinin klirensinin ${result2} olduğunu bulsam da doz bilgisi için biraz daha çalışmam gerekiyor`;
+
         } else if (age2 && srcr2 && gender2 != "Cinsiyet") {
           result2 = (186 * (srcr2 ** -1.154) * (age2 ** -0.203)).toFixed(0);
 
-          if (gender2 === "2") {
-            result2 = (result2 * 0.742).toFixed(0);
-          }
-          if ($("#black").is(':checked')) {
-            result2 = (result2 * 1.210).toFixed(0);
+          if (($("#black").is(':checked')) && gender2 === "2") {
+            result2 = ((186 * (srcr2 ** -1.154) * (age2 ** -0.203)) * 1.210 * 0.742).toFixed(0);
+          } else if (gender2 === "2") {
+            result2 = ((186 * (srcr2 ** -1.154) * (age2 ** -0.203)) * 0.742).toFixed(0);
+          } else if ($("#black").is(':checked')) {
+            result2 = ((186 * (srcr2 ** -1.154) * (age2 ** -0.203)) * 1.210).toFixed(0);
           }
 
-          doseText = `Kreatinin klirensinin ${result2} olduğunu bulsam da doz bilgisi için biraz daha çalışmam gerekiyor`
+          doseText = `Kreatinin klirensinin ${result2} olduğunu bulsam da doz bilgisi için biraz daha çalışmam gerekiyor`;
+          
         } else {
           doseText = "eGFR yöntemiyle hesaplama yapmak için en az; cinsiyet, yaş ve serum kreatinini değerlerini girmeniz gerekmektedir."
         }
