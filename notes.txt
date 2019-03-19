@@ -23,3 +23,21 @@ Calculator.html
 - Sonuç metninde hover ile detay bilgileri sunulacak
 
 discount for mdbootstrap: modl20undecided99
+
+Test Route
+- miligram / mikrogram OK
+- diyaliz 1 ve diyaliz 2 checkbox ları OK
+- Cockcroft-Gault düz hesaplama OK
+- Cockcroft-Gault kadın OK
+- Cockcroft-Gault eksik giriş OK
+- eGFR 5 değişken OK
+- eGFR 5 değişken kadın ve siyahi OK
+- eGFR 5 değişken kadın OK
+- eGFR 5 değişken siyahi OK
+- eGFR 3 değişken OK
+- eGFR 3 değişken kadın ve siyahi OK
+- eGFR 3 değişken kadın OK
+- eGFR 3 değişken siyahi OK
+- eGFR eksik giriş OK
+- Data olan etken maddeler
+- Data olmayan etken maddeler
