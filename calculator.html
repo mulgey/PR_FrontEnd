@@ -167,19 +167,19 @@
           </div>
           <div class="col">
             <div class="md-form">
-              <input type="number" id="age1" class="form-control" step='1' autocomplete="off">
+              <input type="number" id="age1" class="form-control" step='1' autocomplete="off" min="0">
               <label for="form1">Yaş</label>
             </div>
           </div>
           <div class="col">
             <div class="md-form">
-              <input type="number" id="weight" class="form-control" step='0.5' autocomplete="off">
+              <input type="number" id="weight" class="form-control" step='0.5' autocomplete="off" min="0">
               <label for="form1">Kilo</label>
             </div>
           </div>
           <div class="col">
             <div class="md-form">
-              <input type="number" id="srcr1" class="form-control" step='0.01' autocomplete="off">
+              <input type="number" id="srcr1" class="form-control" step='0.01' autocomplete="off" min="0">
               <label for="form1">Serum kreatinin</label>
             </div>
           </div>
@@ -204,13 +204,13 @@
           </div>
           <div class="col">
             <div class="md-form">
-              <input type="number" id="age2" class="form-control" step='1' autocomplete="off">
+              <input type="number" id="age2" class="form-control" step='1' autocomplete="off" min="0">
               <label for="form1">Yaş</label>
             </div>
           </div>
           <div class="col">
             <div class="md-form">
-              <input type="number" id="srcr2" class="form-control" step='0.01' autocomplete="off">
+              <input type="number" id="srcr2" class="form-control" step='0.01' autocomplete="off" min="0">
               <label for="form1">Serum kreatinin</label>
             </div>
           </div>
@@ -222,13 +222,13 @@
           </div>
           <div class="col">
             <div class="md-form">
-              <input type="number" id="nitrog" class="form-control" step='0.01' autocomplete="off">
+              <input type="number" id="nitrog" class="form-control" step='0.01' autocomplete="off" min="0">
               <label for="form1">BUN (mg/dL)</label>
             </div>
           </div>
           <div class="col">
             <div class="md-form">
-              <input type="number" id="albumin" class="form-control" step='0.01' autocomplete="off">
+              <input type="number" id="albumin" class="form-control" step='0.01' autocomplete="off" min="0">
               <label for="form1">Albumin</label>
             </div>
           </div>
@@ -256,6 +256,11 @@
       <div class="container">
         <div class="row">
           <div class="col">
+            <p class="note note-info wow fadeIn"><strong>Bu etken madde için doz hesaplaması, <u>hekimin endikasyon için belirlemiş olduğu</u> doz üzerinden yapılabilmektedir. Normal doz tablosuna <a href="img/tienam_kub.png" target="blank">buradan</a> ulaşabilirsiniz.</strong></p>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col">
             <label for="normalForCila" style="color: white; font-weight: bold">Hasta için Belirlenmiş Normal Günlük Doz</label>
             <select class="browser-default custom-select" id="normalForCila">
               <option selected value="1">1,0 g / gün</option>
@@ -267,11 +272,11 @@
           </div>  
           <div class="col">
             <label for="srcrForCila" style="color: white; font-weight: bold">Serum Kreatinin Değeri</label>
-            <input type="number" id="srcrForCila" class="form-control" style="color: black" step='0.01' autocomplete="off">
+            <input type="number" id="srcrForCila" class="form-control" style="color: black" step='0.01' autocomplete="off" min="0">
           </div>
           <div class="col">
             <label for="weightForCila" style="color: white; font-weight: bold">Kilo</label>
-            <input type="number" id="weightForCila" class="form-control" style="color: black" step='0.5' autocomplete="off">
+            <input type="number" id="weightForCila" class="form-control" style="color: black" step='0.5' autocomplete="off" min="0">
           </div>         
         </div>
         <div class="row text-center align-items-center mt-4">
@@ -533,7 +538,7 @@
             (document.getElementById('weightForCila').value) = weight;
           }
 
-          if (doseText === `Bilgileri eksiksiz girersek, hesaplamaya <a href="#activeSubstance">başlayabiliriz</a>`) {
+          if (doseText === `Bilgileri eksiksiz girersek, hesaplamaya <a href="#activeSubstance">başlayabiliriz</a>` || doseText === "eGFR yöntemiyle hesaplama yapmak için en az; cinsiyet, yaş ve serum kreatinini değerlerini girmeniz gerekmektedir.") {
             window.location.href='#presentResults'; 
           } else {
             document.getElementById("imipenem-cilastatin").style.display = "block";
