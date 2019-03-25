@@ -276,7 +276,7 @@
           </div>
           <div class="col">
             <label for="weightForCila" style="color: white; font-weight: bold">Kilo</label>
-            <input type="number" id="weightForCila" class="form-control" style="color: black" step='0.5' autocomplete="off" min="0">
+            <input type="text" id="weightForCila" class="form-control" style="color: black" autocomplete="off">
           </div>         
         </div>
         <div class="row text-center align-items-center mt-4">
@@ -531,6 +531,7 @@
       } else if (actSubs === "İmipenem / Silastatin sodyum") {
           document.getElementById('srcrForCila').value = result;
           document.getElementById('weightForCila').value = weight;
+
           if (isNaN(weight)) {
             (document.getElementById('weightForCila').value) = "";
             console.log(weight);
@@ -560,7 +561,273 @@
   <script>
   
   $('#calcForCila').click(() => {
+    
+    weight = document.getElementById('weightForCila').value;
+    let normal = document.getElementById("normalForCila").value;
+
     if (result && weight) {
+      if (normal === "1") {
+        if (weight >= 70) {
+          if (result >= 71) {
+            cilaText = "6 saatte bir 250 mg";
+          } else if (result >= 41 && result < 71) {
+            cilaText = "8 saatte bir 250 mg";
+          } else if (result >= 21 && result < 41) {
+            cilaText = "12 saatte bir 250 mg";
+          } else if (result >= 6 && result < 21) {
+            cilaText = "12 saatte bir 250 mg";
+          }
+        } else if (weight >= 60 && weight < 70) {
+          if (result >= 71) {
+            cilaText = "8 saatte bir 250 mg";
+          } else if (result >= 41 && result < 71) {
+            cilaText = "6 saatte bir 125 mg";
+          } else if (result >= 21 && result < 41) {
+            cilaText = "12 saatte bir 250 mg";
+          } else if (result >= 6 && result < 21) {
+            cilaText = "12 saatte bir 125 mg";
+          }
+        } else if (weight >= 50 && weight < 60) {
+          if (result >= 71) {
+            cilaText = "6 saatte bir 125 mg";
+          } else if (result >= 41 && result < 71) {
+            cilaText = "6 saatte bir 125 mg";
+          } else if (result >= 21 && result < 41) {
+            cilaText = "8 saatte bir 125 mg";
+          } else if (result >= 6 && result < 21) {
+            cilaText = "12 saatte bir 125 mg";
+          }
+        } else if (weight >= 40 && weight < 50) {
+          if (result >= 71) {
+            cilaText = "6 saatte bir 125 mg";
+          } else if (result >= 41 && result < 71) {
+            cilaText = "8 saatte bir 125 mg";
+          } else if (result >= 21 && result < 41) {
+            cilaText = "12 saatte bir 125 mg";
+          } else if (result >= 6 && result < 21) {
+            cilaText = "12 saatte bir 125 mg";
+          }
+        } else if (weight < 40) {
+          if (result >= 71) {
+            cilaText = "8 saatte bir 125 mg";
+          } else if (result >= 41 && result < 71) {
+            cilaText = "8 saatte bir 125 mg";
+          } else if (result >= 21 && result < 41) {
+            cilaText = "12 saatte bir 125 mg";
+          } else if (result >= 6 && result < 21) {
+            cilaText = "12 saatte bir 125 mg";
+          }
+        }
+      } else if (normal === "2") {
+        if (weight >= 70) {
+          if (result >= 71) {
+            cilaText = "8 saatte bir 500 mg";
+          } else if (result >= 41 && result < 71) {
+            cilaText = "6 saatte bir 250 mg";
+          } else if (result >= 21 && result < 41) {
+            cilaText = "8 saatte bir 250 mg";
+          } else if (result >= 6 && result < 21) {
+            cilaText = "12 saatte bir 250 mg";
+          }
+        } else if (weight >= 60 && weight < 70) {
+          if (result >= 71) {
+            cilaText = "6 saatte bir 250 mg";
+          } else if (result >= 41 && result < 71) {
+            cilaText = "8 saatte bir 250 mg";
+          } else if (result >= 21 && result < 41) {
+            cilaText = "8 saatte bir 250 mg";
+          } else if (result >= 6 && result < 21) {
+            cilaText = "12 saatte bir 250 mg";
+          }
+        } else if (weight >= 50 && weight < 60) {
+          if (result >= 71) {
+            cilaText = "6 saatte bir 250 mg";
+          } else if (result >= 41 && result < 71) {
+            cilaText = "8 saatte bir 250 mg";
+          } else if (result >= 21 && result < 41) {
+            cilaText = "12 saatte bir 250 mg";
+          } else if (result >= 6 && result < 21) {
+            cilaText = "12 saatte bir 250 mg";
+          }
+        } else if (weight >= 40 && weight < 50) {
+          if (result >= 71) {
+            cilaText = "8 saatte bir 250 mg";
+          } else if (result >= 41 && result < 71) {
+            cilaText = "6 saatte bir 125 mg";
+          } else if (result >= 21 && result < 41) {
+            cilaText = "8 saatte bir 125 mg";
+          } else if (result >= 6 && result < 21) {
+            cilaText = "12 saatte bir 125 mg";
+          }
+        } else if (weight < 40) {
+          if (result >= 71) {
+            cilaText = "6 saatte bir 125 mg";
+          } else if (result >= 41 && result < 71) {
+            cilaText = "8 saatte bir 125 mg";
+          } else if (result >= 21 && result < 41) {
+            cilaText = "8 saatte bir 125 mg";
+          } else if (result >= 6 && result < 21) {
+            cilaText = "12 saatte bir 125 mg";
+          }
+        }
+      } else if (normal === "3") {
+        if (weight >= 70) {
+          if (result >= 71) {
+            cilaText = "6 saatte bir 500 mg";
+          } else if (result >= 41 && result < 71) {
+            cilaText = "8 saatte bir 500 mg";
+          } else if (result >= 21 && result < 41) {
+            cilaText = "6 saatte bir 250 mg";
+          } else if (result >= 6 && result < 21) {
+            cilaText = "12 saatte bir 250 mg";
+          }
+        } else if (weight >= 60 && weight < 70) {
+          if (result >= 71) {
+            cilaText = "8 saatte bir 500 mg";
+          } else if (result >= 41 && result < 71) {
+            cilaText = "6 saatte bir 250 mg";
+          } else if (result >= 21 && result < 41) {
+            cilaText = "8 saatte bir 250 mg";
+          } else if (result >= 6 && result < 21) {
+            cilaText = "12 saatte bir 250 mg";
+          }
+        } else if (weight >= 50 && weight < 60) {
+          if (result >= 71) {
+            cilaText = "6 saatte bir 250 mg";
+          } else if (result >= 41 && result < 71) {
+            cilaText = "6 saatte bir 250 mg";
+          } else if (result >= 21 && result < 41) {
+            cilaText = "8 saatte bir 250 mg";
+          } else if (result >= 6 && result < 21) {
+            cilaText = "12 saatte bir 250 mg";
+          }
+        } else if (weight >= 40 && weight < 50) {
+          if (result >= 71) {
+            cilaText = "6 saatte bir 250 mg";
+          } else if (result >= 41 && result < 71) {
+            cilaText = "8 saatte bir 250 mg";
+          } else if (result >= 21 && result < 41) {
+            cilaText = "12 saatte bir 250 mg";
+          } else if (result >= 6 && result < 21) {
+            cilaText = "12 saatte bir 250 mg";
+          }
+        } else if (weight < 40) {
+          if (result >= 71) {
+            cilaText = "8 saatte bir 250 mg";
+          } else if (result >= 41 && result < 71) {
+            cilaText = "6 saatte bir 125 mg";
+          } else if (result >= 21 && result < 41) {
+            cilaText = "8 saatte bir 125 mg";
+          } else if (result >= 6 && result < 21) {
+            cilaText = "12 saatte bir 125 mg";
+          }
+        }
+      } else if (normal === "4") {
+        if (weight >= 70) {
+          if (result >= 71) {
+            cilaText = "8 saatte bir 1000 mg";
+          } else if (result >= 41 && result < 71) {
+            cilaText = "6 saatte bir 500 mg";
+          } else if (result >= 21 && result < 41) {
+            cilaText = "8 saatte bir 500 mg";
+          } else if (result >= 6 && result < 21) {
+            cilaText = "12 saatte bir 500 mg";
+          }
+        } else if (weight >= 60 && weight < 70) {
+          if (result >= 71) {
+            cilaText = "8 saatte bir 750 mg";
+          } else if (result >= 41 && result < 71) {
+            cilaText = "8 saatte bir 500 mg";
+          } else if (result >= 21 && result < 41) {
+            cilaText = "8 saatte bir 500 mg";
+          } else if (result >= 6 && result < 21) {
+            cilaText = "12 saatte bir 500 mg";
+          }
+        } else if (weight >= 50 && weight < 60) {
+          if (result >= 71) {
+            cilaText = "6 saatte bir 500 mg";
+          } else if (result >= 41 && result < 71) {
+            cilaText = "8 saatte bir 500 mg";
+          } else if (result >= 21 && result < 41) {
+            cilaText = "6 saatte bir 250 mg";
+          } else if (result >= 6 && result < 21) {
+            cilaText = "12 saatte bir 250 mg";
+          }
+        } else if (weight >= 40 && weight < 50) {
+          if (result >= 71) {
+            cilaText = "8 saatte bir 500 mg";
+          } else if (result >= 41 && result < 71) {
+            cilaText = "6 saatte bir 250 mg";
+          } else if (result >= 21 && result < 41) {
+            cilaText = "8 saatte bir 250 mg";
+          } else if (result >= 6 && result < 21) {
+            cilaText = "12 saatte bir 250 mg";
+          }
+        } else if (weight < 40) {
+          if (result >= 71) {
+            cilaText = "6 saatte bir 250 mg";
+          } else if (result >= 41 && result < 71) {
+            cilaText = "8 saatte bir 250 mg";
+          } else if (result >= 21 && result < 41) {
+            cilaText = "8 saatte bir 250 mg";
+          } else if (result >= 6 && result < 21) {
+            cilaText = "12 saatte bir 250 mg";
+          }
+        }
+      } else if (normal === "5") {
+        if (weight >= 70) {
+          if (result >= 71) {
+            cilaText = "6 saatte bir 1000 mg";
+          } else if (result >= 41 && result < 71) {
+            cilaText = "8 saatte bir 750 mg";
+          } else if (result >= 21 && result < 41) {
+            cilaText = "6 saatte bir 500 mg";
+          } else if (result >= 6 && result < 21) {
+            cilaText = "12 saatte bir 500 mg";
+          }
+        } else if (weight >= 60 && weight < 70) {
+          if (result >= 71) {
+            cilaText = "8 saatte bir 1000 mg";
+          } else if (result >= 41 && result < 71) {
+            cilaText = "8 saatte bir 750 mg";
+          } else if (result >= 21 && result < 41) {
+            cilaText = "8 saatte bir 500 mg";
+          } else if (result >= 6 && result < 21) {
+            cilaText = "12 saatte bir 500 mg";
+          }
+        } else if (weight >= 50 && weight < 60) {
+          if (result >= 71) {
+            cilaText = "8 saatte bir 750 mg";
+          } else if (result >= 41 && result < 71) {
+            cilaText = "6 saatte bir 500 mg";
+          } else if (result >= 21 && result < 41) {
+            cilaText = "8 saatte bir 500 mg";
+          } else if (result >= 6 && result < 21) {
+            cilaText = "12 saatte bir 500 mg";
+          }
+        } else if (weight >= 40 && weight < 50) {
+          if (result >= 71) {
+            cilaText = "6 saatte bir 500 mg";
+          } else if (result >= 41 && result < 71) {
+            cilaText = "8 saatte bir 500 mg";
+          } else if (result >= 21 && result < 41) {
+            cilaText = "6 saatte bir 250 mg";
+          } else if (result >= 6 && result < 21) {
+            cilaText = "12 saatte bir 250 mg";
+          }
+        } else if (weight < 40) {
+          if (result >= 71) {
+            cilaText = "8 saatte bir 500 mg";
+          } else if (result >= 41 && result < 71) {
+            cilaText = "6 saatte bir 250 mg";
+          } else if (result >= 21 && result < 41) {
+            cilaText = "8 saatte bir 250 mg";
+          } else if (result >= 6 && result < 21) {
+            cilaText = "12 saatte bir 250 mg";
+          }
+        }
+      }
+      console.log(weight);  
       console.log ('Hesaplayabiliriz!');
     } else {
       console.log ('Bir şeyler eksik!');
