@@ -249,7 +249,7 @@
   <!-- /Selecting The Active Substance -->
 
   <!-- Section for Imipenem - Cilastatin -->
-  <div class="view" id="imipenem-cilastatin" data-spy="imipenem-cilastatin" data-target="#imipenem-cilastatin" style="background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+  <div class="view" id="imipenem-cilastatin" data-spy="imipenem-cilastatin" data-target="#imipenem-cilastatin" style="display:none; background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
     <!-- Mask & flexbox options-->
     <div class="mask rgba-stylish-light flex-center text-center align-items-center">
       <!-- Content -->
@@ -263,9 +263,9 @@
           <div class="col">
             <label for="normalForCila" style="color: white; font-weight: bold">Hasta için Belirlenmiş Normal Günlük Doz</label>
             <select class="browser-default custom-select" id="normalForCila">
-              <option selected value="1">1,0 g / gün</option>
+              <option value="1">1,0 g / gün</option>
               <option value="2">1,5 g / gün</option>
-              <option value="3">2,0 g / gün</option>
+              <option selected value="3">2,0 g / gün</option>
               <option value="4">3,0 g / gün</option>
               <option value="5">4,0 g / gün</option>
             </select>
@@ -391,6 +391,8 @@
     let crunit2 = document.getElementById("crunit2").value;
     let nitrog = parseFloat(document.getElementById("nitrog").value);    
     let albumin = parseFloat(document.getElementById("albumin").value);
+
+    let imicilapy = document.getElementById("imipenem-cilastatin");
     
     if (crunit1 === "2") {
       srcr1 = srcr1 / 88.4;
@@ -545,6 +547,9 @@
             document.getElementById("imipenem-cilastatin").style.display = "block";
             window.location.href='#imipenem-cilastatin';
           }
+
+        imicilapy.style.display = "flex";    
+
       } else {
           doseText = "Bu isimdeki etken madde için herhangi bir yetmezlik dozu verisi sağlanmamıştır."
         }
@@ -564,6 +569,7 @@
     
     weight = document.getElementById('weightForCila').value;
     let normal = document.getElementById("normalForCila").value;
+    let resulty = document.getElementById('resultText');
 
     if (result && weight) {
       if (normal === "1") {
@@ -827,11 +833,16 @@
           }
         }
       }
-      console.log(weight);  
+      console.log(cilaText);  
       console.log ('Hesaplayabiliriz!');
     } else {
       console.log ('Bir şeyler eksik!');
     }
+
+    resulty.style = "color: white; font-weight: bold; letter-spacing: 2px;"
+    resulty.innerHTML = cilaText;
+    window.location.href='#presentResults';
+
   });
 
   </script>
