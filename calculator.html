@@ -534,24 +534,23 @@
           document.getElementById('srcrForCila').value = result;
           document.getElementById('weightForCila').value = weight;
 
+          if (result === undefined) {
+            window.location.href='#presentResults';
+          } else {
+            imicilapy.style.display = "flex";   
+            window.location.href='#imipenem-cilastatin';
+          }
+
           if (isNaN(weight)) {
             (document.getElementById('weightForCila').value) = "";
-            console.log(weight);
+            console.log(result);
           } else {
             (document.getElementById('weightForCila').value) = weight;
           }
 
-          if (doseText === `Bilgileri eksiksiz girersek, hesaplamaya <a href="#activeSubstance">başlayabiliriz</a>` || doseText === "eGFR yöntemiyle hesaplama yapmak için en az; cinsiyet, yaş ve serum kreatinini değerlerini girmeniz gerekmektedir.") {
-            window.location.href='#presentResults'; 
-          } else {
-            document.getElementById("imipenem-cilastatin").style.display = "block";
-            window.location.href='#imipenem-cilastatin';
-          }
-
-        imicilapy.style.display = "flex";    
-
       } else {
-          doseText = "Bu isimdeki etken madde için herhangi bir yetmezlik dozu verisi sağlanmamıştır."
+          doseText = "Bu isimdeki etken madde için herhangi bir yetmezlik dozu verisi sağlanmamıştır.";
+          window.location.href='#presentResults';
         }
     
 
