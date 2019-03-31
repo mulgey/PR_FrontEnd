@@ -137,3 +137,8 @@ label.custom-control-label {
 .note-info {
   text-align: center;
 }
+
+#leftNote {
+  text-align: left;
+  padding-left: 1em;
+}
