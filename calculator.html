@@ -339,7 +339,7 @@
   </div>
 
   <!-- Section for Levofloxacin -->
-  <div class="view" id="levofloxacin" data-spy="levofloxacin" data-target="#levofloxacin" style="background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+  <div class="view" id="levofloxacin" data-spy="levofloxacin" data-target="#levofloxacin" style="display:none; background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
     <!-- Mask & flexbox options-->
     <div class="mask rgba-stylish-light flex-center text-center align-items-center">
       <div class="container">
@@ -367,11 +367,7 @@
           <div class="col">
             <label for="srcrForLevo" style="color: white; font-weight: bold">Serum Kreatinin Değeri</label>
             <input type="number" id="srcrForLevo" class="form-control" style="color: black" step='0.01' autocomplete="off" min="0">
-          </div>
-          <div class="col">
-            <label for="weightForLevo" style="color: white; font-weight: bold">Kilo</label>
-            <input type="text" id="weightForLevo" class="form-control" style="color: black" autocomplete="off">
-          </div>                       
+          </div>                      
         </div>
         <div class="row text-center align-items-center mt-4">
           <div class="col" id="calculateForDapto">
@@ -381,6 +377,46 @@
       </div>
     </div>
   </div>  
+  
+  <!-- Section for Colistimethate
+  <div class="view" id="colistimethate" data-spy="colistimethate" data-target="#colistimethate" style="background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <div class="mask rgba-stylish-light flex-center text-center align-items-center">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <p class="note note-info wow fadeIn" id="leftNote"><strong>Bu etken madde için doz hesaplaması, <u>hekimin endikasyon için belirlemiş olduğu</u> doz üzerinden yapılabilmektedir. Normal doz tablosuna <a href="img/tavanic_kub.png" target="blank">buradan</a> ulaşabilirsiniz.</strong></p>
+          </div>
+        </div>        
+        <div class="row mt-5">
+          <div class="col">
+            <label for="diyaForColist" style="color: white; font-weight: bold">Hemodiyaliz Durumu</label>
+            <select class="browser-default custom-select" id="diyaForColist">
+              <option value="1">Evet</option>
+              <option selected value="2">Hayır</option>
+            </select>
+          </div>            
+          <div class="col">
+            <label for="normalForColist" style="color: white; font-weight: bold">Belirlenmiş Normal Günlük Doz</label>
+            <select class="browser-default custom-select" id="normalForColist">
+              <option value="1">250 mg / 24 saat</option>
+              <option value="2">500 mg / 24 saat</option>
+              <option selected value="3">500 mg / 12 saat</option>
+            </select>
+          </div> 
+          <div class="col">
+            <label for="srcrForColist" style="color: white; font-weight: bold">Serum Kreatinin Değeri</label>
+            <input type="number" id="srcrForColist" class="form-control" style="color: black" step='0.01' autocomplete="off" min="0">
+          </div>                      
+        </div>
+        <div class="row text-center align-items-center mt-4">
+          <div class="col" id="calculateForColist">
+            <button type="button" class="btn btn-cyan btn-lg" id="calculateForColist">Hesaplayalım</button>
+          </div>
+        </div>        
+      </div>
+    </div>
+  </div> 
+  -->
 
   <!-- Presenting The Results -->
   <div class="view" id="presentResults" data-spy="presentResults" data-target="#presentResults" style="background-image: url('img/calculate_03.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
@@ -495,6 +531,8 @@
 
     let imicilapy = document.getElementById("imipenem-cilastatin");
     let daptomcy = document.getElementById("daptomicina");
+    let levofloxy = document.getElementById("levofloxacin");
+    // let colistimethy = document.getElementById("colistimethate");
     
     if (crunit1 === "2") {
       srcr1 = srcr1 / 88.4;
@@ -513,7 +551,7 @@
       } else if (actSubs === "Flukonazol") {
         doseText = "Her hemodiyaliz seansından sonra hekimin endikasyona göre belirlemiş olduğu normal doz alınabilir"
       } else if (actSubs === "Kolistimetat sodyum") {
-        doseText = ("Hemodiyaliz yapılmayan günlerde günlük toplam 3.150.000 IU olarak 12 saatte bir uygulanır. Diyaliz günlerinde toplam 4.500.000 IU doz ikiye bölünür ve ilk yarısı hemodiyalizin son saatinde diğer yarısı da bundan 12 saat sonra uygulanır.");
+        doseText = ("Hemodiyaliz yapılmayan günlerde günlük toplam 105 mg olarak 12 saatte bir uygulanır. Diyaliz günlerinde toplam 4.500.000 IU (150 mg) doz ikiye bölünür ve ilk yarısı hemodiyalizin son saatinde diğer yarısı da bundan 12 saat sonra uygulanır.");
       } else if (actSubs === "Meropenem trihidrat") {
         doseText = "Hekimin belirlediği normal dozun hemodiyaliz tedavisinden sonra uygulanması önerilir"
       } else if (actSubs === "Piperasilin sodyum / Tazobaktam sodyum") {
@@ -609,6 +647,15 @@
             doseText = "12 saatte bir 4,5 g";
           }
           window.location.href='#presentResults';
+      } else if (actSubs === "Kolistimetat sodyum") {
+          if (result >= 70) {
+            doseText = "Doz ayarlamasına gerek yoktur. Günlük toplam doz 5 mg/kg/gün olacak şekilde hesaplanır. Toplam doz 2 veya 3'e bölünerek verilir.";
+          } else if (result < 70) {
+            minForColi = ((2.5 * [(1.5 * result) + 30]) / 2).toFixed(0);
+            maxForColi = ((3.5 * [(1.5 * result) + 30]) / 2).toFixed(0);
+            doseText = `12 saatte bir minimum ${minForColi} g, maksimum ${maxForColi} g`;           
+          }
+          window.location.href='#presentResults';
       } else if (actSubs === "Sefoperazon sodyum / Sulbaktam sodyum") {
           if (result >= 30) {
             doseText = "Hekimin belirlemiş olduğu normal doz (Endikasyona bağlı olarak 2 etken madde için toplam doz: 3 g - 12 g)";
@@ -663,13 +710,32 @@
           daptomcy.style.display = "flex";   
           window.location.href='#daptomicina';
         }        
-      } else if (actSubs === "Kolistimetat sodyum") {
-
       } else if (actSubs === "Levofloksasin") {
-        
+        document.getElementById('srcrForLevo').value = result;
+
+        if (result === undefined) {
+          window.location.href='#presentResults';
+        } else {
+          levofloxy.style.display = "flex";   
+          window.location.href='#levofloxacin';
+        }          
       } else if (actSubs === "Vankomisin hidroklorür") {
         
-      } else {
+      } 
+      
+      /* else if (actSubs === "Kolistimetat sodyum") {
+        document.getElementById('srcrForColist').value = result;
+
+        if (result === undefined) {
+          window.location.href='#presentResults';
+        } else {
+          colistimethy.style.display = "flex";   
+          window.location.href='#colistimethate';
+        }  
+      } 
+      */
+
+      else {
           doseText = "Bu isimdeki etken madde için herhangi bir yetmezlik dozu verisi sağlanmamıştır.";
           window.location.href='#presentResults';
         }
@@ -1064,38 +1130,98 @@
     $('#calculateForLevo').click(() => {
       let normal = document.getElementById("normalForLevo").value;
       let resulty = document.getElementById('resultText');
-      let weight = document.getElementById('weightForLevo').value;
       let diyaLevo = document.getElementById('diyaForLevo').value;
   
       let levoText;
-      let mgValue;
   
-      if (result && weight) {
+      if (result) {
         if (result > 50) {
-          levoText = `Doz ayarlamasına gerek yoktur. Böbrek fonksiyonları normal olan hastalar için hazırlanmış <a href="img/tavanic_kub.png" dozaj tablosu</a> kullanılabilir.`;
-        } else if (result < 30) {
+          levoText = `Doz ayarlamasına gerek yoktur. Böbrek fonksiyonları normal olan hastalar için hazırlanmış <a href="img/tavanic_kub.png"> dozaj tablosu</a> kullanılabilir.`;
+        } else if (result <= 50 && result > 19) {
           if (normal === "1") {
-            mgValue = (4 * weight);
-            daptoText = `48 saatte bir ${mgValue} mg`;
+            levoText = "İlk doz 250 mg. Sonrasında 125 mg / 24 saat";
           } else if (normal === "2") {
-            mgValue = (6 * weight);
-            daptoText = `24 saatte bir ${mgValue} mg`;
+            levoText = "İlk doz 500 mg. Sonrasında 250 mg / 24 saat";
+          } else if (normal === "3") {
+            levoText = "İlk doz 500 mg. Sonrasında 250 mg / 12 saat";
+          }
+        } else if (result < 20 && result >= 10) {
+          if (normal === "1") {
+            levoText = "İlk doz 250 mg. Sonrasında 125 mg / 48 saat";
+          } else if (normal === "2") {
+            levoText = "İlk doz 500 mg. Sonrasında 125 mg / 24 saat";
+          } else if (normal === "3") {
+            levoText = "İlk doz 500 mg. Sonrasında 125 mg / 12 saat";
+          }
+        } else if (result < 10) {
+          if (normal === "1") {
+            levoText = "İlk doz 250 mg. Sonrasında 125 mg / 48 saat";
+          } else if (normal === "2") {
+            levoText = "İlk doz 500 mg. Sonrasında 125 mg / 24 saat";
+          } else if (normal === "3") {
+            levoText = "İlk doz 500 mg. Sonrasında 125 mg / 24 saat";
           }
         }
       } else {
-        daptoText = `Bu etken madde ile hesap yapabilmemiz için serum kreatinin ve kilo değerlerinin sağlanmış olması gerekir. <a href="#daptomicina">Tekrar deneyelim</a>`;
+        levoText = `Bu etken madde ile hesap yapabilmemiz için serum kreatinin değerinin sağlanmış olması gerekir. <a href="#levofloxacin">Tekrar deneyelim</a>`;
       }
   
-      if (diyaDapt === "1") {
-        daptoText = `${daptoText}. Hemodiyaliz hastaları için de aynı sonuç geçerlidir.`
-      }
+      if (diyaLevo === "1") {
+        if (normal === "1") {
+            levoText = "İlk doz 250 mg. Sonrasında 125 mg / 48 saat";
+          } else if (normal === "2") {
+            levoText = "İlk doz 500 mg. Sonrasında 125 mg / 24 saat";
+          } else if (normal === "3") {
+            levoText = "İlk doz 500 mg. Sonrasında 125 mg / 24 saat";
+          }
+        }
   
       resulty.style = "color: white; font-weight: bold; letter-spacing: 2px;"
-      resulty.innerHTML = daptoText;
+      resulty.innerHTML = levoText;
       window.location.href='#presentResults';
           
     });
     </script>
-  
+
+<script>
+  /*
+  $('#calculateForColist').click(() => {
+    let normal = document.getElementById("normalForColist").value;
+    let resulty = document.getElementById('resultText');
+    let diyaLevo = document.getElementById('diyaForColist').value;
+
+    let colisText;
+    let mgMin;
+    let mgMax;
+
+    if (result) {
+      if (result > 70) {
+        levoText = "Doz ayarlamasına gerek yoktur. Günlük toplam doz 150.000 IU/kg/gün olacak şekilde hesaplanır. Toplam doz 2 veya 3'e bölünerek verilir.";
+      } else {
+        mgMin = 2.5 * [(1.5 * result) + 30];
+        mgMax = 3.5 * [(1.5 * result) + 30];
+      }
+    } else {
+      levoText = `Bu etken madde ile hesap yapabilmemiz için serum kreatinin değerinin sağlanmış olması gerekir. <a href="#levofloxacin">Tekrar deneyelim</a>`;
+    }
+
+    if (diyaLevo === "1") {
+      if (normal === "1") {
+          levoText = "İlk doz 250 mg. Sonrasında 125 mg / 48 saat";
+        } else if (normal === "2") {
+          levoText = "İlk doz 500 mg. Sonrasında 125 mg / 24 saat";
+        } else if (normal === "3") {
+          levoText = "İlk doz 500 mg. Sonrasında 125 mg / 24 saat";
+        }
+      }
+
+    resulty.style = "color: white; font-weight: bold; letter-spacing: 2px;"
+    resulty.innerHTML = levoText;
+    window.location.href='#presentResults';
+        
+  });
+  */
+  </script>
+
 </body>
 </html>
