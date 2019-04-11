@@ -83,7 +83,6 @@
               <hr class="hr-light my-4 w-75 wow fadeInDown slow">
               <h5 class="mb-4 white-text wow fadeInDown slow"><strong>Hasta için belirli klinik verilere sahipseniz, seçtiğiniz etken madde için doz hesaplamasına başlayabiliriz</strong></h5>
               <a class="btn btn-outline-white wow pulse smooth-scroll" data-wow-delay="2s" href="#activeSubstance">Hazırım, başlayalım</a>
-              <!--<a class="btn btn-outline-white wow fadeInDown" data-wow-delay="0.4s">About me</a> -->
             </div>
             <!-- /Grid column -->
           </div>
@@ -112,22 +111,22 @@
                 aria-haspopup="true" aria-expanded="false" style="display: block">Etken Madde Seçimi</a>     
               <!--Menu-->
               <div class="dropdown-menu dropdown-primary" id="substanceList">
-                <a class="dropdown-item">Ertapenem sodyum - <small>İnvanz</small></a>
-                <a class="dropdown-item">İmipenem / Silastatin sodyum - <small>Tienam</small></a>
-                <a class="dropdown-item">Meropenem trihidrat - <small>Meronem</small></a>
-                <a class="dropdown-item">Siprofloksasin laktat - <small>Ciproktan</small></a>
-                <a class="dropdown-item">Levofloksasin - <small>Tavanic</small></a>
                 <a class="dropdown-item">Daptomisin - <small>Cubicin</small></a>
-                <a class="dropdown-item">Teikoplanin - <small>Targocid</small></a>
-                <a class="dropdown-item">Vankomisin hidroklorür - <small>Vancotek</small></a>
-                <a class="dropdown-item">Piperasilin sodyum / Tazobaktam sodyum - <small>Tazocin EF</small></a>
+                <a class="dropdown-item">Ertapenem sodyum - <small>İnvanz</small></a>
                 <a class="dropdown-item">Flukonazol - <small>Lumen EF</small></a>
-                <a class="dropdown-item">Sefoperazon sodyum / Sulbaktam sodyum - <small>Sulperazon</small></a>
+                <a class="dropdown-item">İmipenem / Silastatin sodyum - <small>Tienam</small></a>
                 <a class="dropdown-item">Kolistimetat sodyum - <small>Colimycin</small></a>
-                <a class="dropdown-item">Tigesiklin - <small>Tygacil</small></a>
-                <a class="dropdown-item">Moksifloksasin hidroklorür - <small>Avelox</small></a>
+                <a class="dropdown-item">Levofloksasin - <small>Tavanic</small></a>
                 <a class="dropdown-item">Linezolit - <small>Zyvoxid</small></a>
+                <a class="dropdown-item">Meropenem trihidrat - <small>Meronem</small></a>
                 <a class="dropdown-item">Metronidazol - <small>Metronidazol</small></a>
+                <a class="dropdown-item">Moksifloksasin hidroklorür - <small>Avelox</small></a>
+                <a class="dropdown-item">Piperasilin sodyum / Tazobaktam sodyum - <small>Tazocin EF</small></a>
+                <a class="dropdown-item">Sefoperazon sodyum / Sulbaktam sodyum - <small>Sulperazon</small></a>
+                <a class="dropdown-item">Siprofloksasin laktat - <small>Ciproktan</small></a>
+                <a class="dropdown-item">Teikoplanin - <small>Targocid</small></a>
+                <a class="dropdown-item">Tigesiklin - <small>Tygacil</small></a>
+                <a class="dropdown-item">Vankomisin hidroklorür - <small>Vancotek</small></a>
               </div>
             </div>              
           </div>
@@ -209,7 +208,7 @@
             <input type="number" id="nitrog" class="form-control" placeholder="BUN" aria-label="BUN" aria-describedby="material-addon1" step='0.01' autocomplete="off" min="0">
           </div>
           <div class="col md-form input-group mb-3">
-            <input type="number" id="nitrog" class="form-control" placeholder="Albumin" aria-label="Albumin" aria-describedby="material-addon1" step='0.01' autocomplete="off" min="0">
+            <input type="number" id="albumin" class="form-control" placeholder="Albumin" aria-label="Albumin" aria-describedby="material-addon1" step='0.01' autocomplete="off" min="0">
           </div>
           <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="black">
@@ -356,45 +355,13 @@
       </div>
     </div>
   </div>  
-  
-  <!-- Section for Vancomicina
-  <div class="view" id="vancomicina" data-spy="vancomicina" data-target="#vancomicina" style="background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-    <div class="mask rgba-stylish-light flex-center text-center align-items-center">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <p class="note note-info wow fadeIn" id="leftNote"><strong>Bu etken madde için doz hesaplaması, <u>hekimin endikasyon için belirlemiş olduğu</u> doz üzerinden yapılabilmektedir. Normal doz tablosuna <a href="img/tavanic_kub.png" target="blank">buradan</a> ulaşabilirsiniz.</strong></p>
-          </div>
-        </div>        
-        <div class="row mt-5">
-          <div class="col">
-            <label for="diyaForVanco" style="color: white; font-weight: bold">Hemodiyaliz Durumu</label>
-            <select class="browser-default custom-select" id="diyaForVanco">
-              <option value="1">Evet</option>
-              <option selected value="2">Hayır</option>
-            </select>
-          </div>
-          <div class="col">
-            <label for="crclForVanco" style="color: white; font-weight: bold">Serum Kreatinin Değeri</label>
-            <input type="number" id="crclForVanco" class="form-control" style="color: black" step='0.01' autocomplete="off" min="0">
-          </div>                      
-        </div>
-        <div class="row text-center align-items-center mt-4">
-          <div class="col" id="calculateForVanco">
-            <button type="button" class="btn btn-cyan btn-lg" id="calculateForColist">Hesaplayalım</button>
-          </div>
-        </div>        
-      </div>
-    </div>
-  </div> 
-  -->
 
   <!-- Presenting The Results -->
   <div class="view" id="presentResults" data-spy="presentResults" data-target="#presentResults" style="background-image: url('img/calculate_03.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-    <!-- Mask & flexbox options-->
+    <!-- Mask & flexbox options--> 
     <div class="mask rgba-stylish-light align-items-center flex-center text-center">
       <!-- Content -->
-      <h1 class="mx-3" id="resultText" style="color: white; font-weight: bold; letter-spacing: 4px;">Hesaplamanın işleminin başlatılması bekleniyor. <a href="#activeSubstance">Veri girişi</a> bölüme geçelim</h1>
+      <h1 class="mx-3 mt-3" id="resultText" style="color: white; font-weight: bold; letter-spacing: 2px; line-height: 70px">Hesaplamanın işleminin başlatılması bekleniyor. <a href="#activeSubstance">Veri girişi</a> bölüme geçelim</h1>
       <!-- Content -->
     </div>
   </div>
@@ -517,11 +484,11 @@
       console.log(actSubs);
 
       if (actSubs === "Ertapenem sodyum") {
-        doseText = "Günde 500 mg. Hemodiyalizden önceki 6 saat içerisinde bu doz verilmişse, seans sonrası 150 mg ek doz önerilir. Verilmemişse ek doza gerek yoktur"
+        doseText = "Günde 500 mg. Hemodiyalizden önceki 6 saat içerisinde bu doz verilmişse, seans sonrası 150 mg ek doz önerilir. Verilmemişse ek doza gerek yoktur<a href='https://www.msd.com.tr/static/pdf/INVANZ_1g_IM-IV_Enjeksiyon_Icin_Liyofilize_Toz_Iceren_Flakon_KUB.pdf' target='_blank'>*</a>"
       } else if (actSubs === "Flukonazol") {
-        doseText = "Her hemodiyaliz seansından sonra hekimin endikasyona göre belirlemiş olduğu normal doz alınabilir"
+        doseText = "Her hemodiyaliz seansından sonra hekimin endikasyona göre belirlemiş olduğu normal doz alınabilir<a href='https://titck.gov.tr/storage/kubKtAttachments/Xb2snaSjTfhFC.pdf' target='_blank'>*</a>"
       } else if (actSubs === "Kolistimetat sodyum") {
-        doseText = ("Hemodiyaliz yapılmayan günlerde günlük toplam 105 mg olarak 12 saatte bir uygulanır. Diyaliz günlerinde toplam 4.500.000 IU (150 mg) doz ikiye bölünür ve ilk yarısı hemodiyalizin son saatinde diğer yarısı da bundan 12 saat sonra uygulanır.");
+        doseText = ("Hemodiyaliz yapılmayan günlerde günlük toplam 105 mg olarak 12 saatte bir uygulanır. Diyaliz günlerinde toplam 4.500.000 IU (150 mg) doz ikiye bölünür ve ilk yarısı hemodiyalizin son saatinde diğer yarısı da bundan 12 saat sonra uygulanır.<a href='http://kocakfarma.com/urun-aciklama.aspx?bolumSeo=kisabilgi&id=43&lang=tr' target='_blank'>*</a>");
       } else if (actSubs === "Meropenem trihidrat") {
         doseText = "Hekimin belirlediği normal dozun hemodiyaliz tedavisinden sonra uygulanması önerilir"
       } else if (actSubs === "Piperasilin sodyum / Tazobaktam sodyum") {
@@ -585,16 +552,16 @@
 
     if (actSubs === "Ertapenem sodyum") {
       if (result > 50) {
-        doseText = "Doz ayarlaması gerekmemektedir (Standart günlük doz 1g)";
+        doseText = "Doz ayarlaması gerekmemektedir (Standart günlük doz 1g)<a href='https://www.msd.com.tr/static/pdf/INVANZ_1g_IM-IV_Enjeksiyon_Icin_Liyofilize_Toz_Iceren_Flakon_KUB.pdf' target='_blank'>*</a>";
       } else if (result <= 30) {
-        doseText = "Günde 500 mg";
+        doseText = "Günde 500 mg<a href='https://www.msd.com.tr/static/pdf/INVANZ_1g_IM-IV_Enjeksiyon_Icin_Liyofilize_Toz_Iceren_Flakon_KUB.pdf' target='_blank'>*</a>";
       }
       window.location.href='#presentResults';
     } else if (actSubs === "Flukonazol") {
         if (result > 50) {
-          doseText = "Doz ayarlaması gerekmemektedir (Endikasyona bağlı olarak günde 50 mg - 400 mg)";
+          doseText = "Doz ayarlaması gerekmemektedir (Endikasyona bağlı olarak günde 50 mg - 400 mg)<a href='https://titck.gov.tr/storage/kubKtAttachments/Xb2snaSjTfhFC.pdf' target='_blank'>*</a>";
         } else if (result <= 50) {
-          doseText = "Normal dozun %50'si uygulanır. (Standart doz: Endikasyona bağlı olarak günde 50 mg - 400 mg)"
+          doseText = "Normal dozun %50'si uygulanır. (Standart doz: Endikasyona bağlı olarak günde 50 mg - 400 mg)<a href='https://titck.gov.tr/storage/kubKtAttachments/Xb2snaSjTfhFC.pdf' target='_blank'>*</a>"
         }
         window.location.href='#presentResults';
       } else if (actSubs === "Meropenem trihidrat") {
@@ -621,11 +588,11 @@
           window.location.href='#presentResults';
       } else if (actSubs === "Kolistimetat sodyum") {
           if (result >= 70) {
-            doseText = "Doz ayarlamasına gerek yoktur. Günlük toplam doz 5 mg/kg/gün olacak şekilde hesaplanır. Toplam doz 2 veya 3'e bölünerek verilir.";
+            doseText = "Doz ayarlamasına gerek yoktur. Günlük toplam doz 5 mg/kg/gün olacak şekilde hesaplanır. Toplam doz 2 veya 3'e bölünerek verilir.<a href='http://kocakfarma.com/urun-aciklama.aspx?bolumSeo=kisabilgi&id=43&lang=tr' target='_blank'>*</a>";
           } else if (result < 70) {
             minForColi = ((2.5 * [(1.5 * result) + 30]) / 2).toFixed(0);
             maxForColi = ((3.5 * [(1.5 * result) + 30]) / 2).toFixed(0);
-            doseText = `12 saatte bir minimum ${minForColi} g, maksimum ${maxForColi} g`;           
+            doseText = `12 saatte bir minimum ${minForColi} g, maksimum ${maxForColi} g<a href='http://kocakfarma.com/urun-aciklama.aspx?bolumSeo=kisabilgi&id=43&lang=tr' target='_blank'>*</a>`;           
           }
           window.location.href='#presentResults';
       } else if (actSubs === "Vankomisin hidroklorür") {
@@ -702,8 +669,11 @@
           doseText = "Bu isimdeki etken madde için herhangi bir yetmezlik dozu verisi sağlanmamıştır.";
           window.location.href='#presentResults';
       }
-
-    resulty.style = "color: white; font-weight: bold; letter-spacing: 2px;"
+    
+    if (result) {
+      doseText += `<br> <h4> (<b>Etken madde:</b> ${actSubs} // <b>Kreatinin klirensi:</b> ${result} mL/min)</h4>`;
+    }
+    
     resulty.innerHTML = doseText;
 
 
@@ -725,311 +695,311 @@
       if (normal === "1") {
         if (weight >= 70) {
           if (diyaList === "1") {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 71) {
-            cilaText = "6 saatte bir 250 mg";
+            cilaText = "6 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 41 && result < 71) {
-            cilaText = "8 saatte bir 250 mg";
+            cilaText = "8 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 21 && result < 41) {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 6 && result < 21) {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           }
         } else if (weight >= 60 && weight < 70) {
           if (diyaList === "1") {
-            cilaText = "12 saatte bir 125 mg";
+            cilaText = "12 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 71) {
-            cilaText = "8 saatte bir 250 mg";
+            cilaText = "8 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 41 && result < 71) {
-            cilaText = "6 saatte bir 125 mg";
+            cilaText = "6 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 21 && result < 41) {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 6 && result < 21) {
-            cilaText = "12 saatte bir 125 mg";
+            cilaText = "12 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           }
         } else if (weight >= 50 && weight < 60) {
           if (diyaList === "1") {
-            cilaText = "12 saatte bir 125 mg";
+            cilaText = "12 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 71) {
-            cilaText = "6 saatte bir 125 mg";
+            cilaText = "6 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 41 && result < 71) {
-            cilaText = "6 saatte bir 125 mg";
+            cilaText = "6 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 21 && result < 41) {
-            cilaText = "8 saatte bir 125 mg";
+            cilaText = "8 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 6 && result < 21) {
-            cilaText = "12 saatte bir 125 mg";
+            cilaText = "12 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           }
         } else if (weight >= 40 && weight < 50) {
           if (diyaList === "1") {
-            cilaText = "12 saatte bir 125 mg";
+            cilaText = "12 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 71) {
-            cilaText = "6 saatte bir 125 mg";
+            cilaText = "6 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 41 && result < 71) {
-            cilaText = "8 saatte bir 125 mg";
+            cilaText = "8 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 21 && result < 41) {
-            cilaText = "12 saatte bir 125 mg";
+            cilaText = "12 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 6 && result < 21) {
-            cilaText = "12 saatte bir 125 mg";
+            cilaText = "12 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           }
         } else if (weight < 40) {
           if (diyaList === "1") {
-            cilaText = "12 saatte bir 125 mg";
+            cilaText = "12 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 71) {
-            cilaText = "8 saatte bir 125 mg";
+            cilaText = "8 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 41 && result < 71) {
-            cilaText = "8 saatte bir 125 mg";
+            cilaText = "8 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 21 && result < 41) {
-            cilaText = "12 saatte bir 125 mg";
+            cilaText = "12 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 6 && result < 21) {
-            cilaText = "12 saatte bir 125 mg";
+            cilaText = "12 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           }
         }
       } else if (normal === "2") {
         if (weight >= 70) {
           if (diyaList === "1") {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 71) {
-            cilaText = "8 saatte bir 500 mg";
+            cilaText = "8 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 41 && result < 71) {
-            cilaText = "6 saatte bir 250 mg";
+            cilaText = "6 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 21 && result < 41) {
-            cilaText = "8 saatte bir 250 mg";
+            cilaText = "8 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 6 && result < 21) {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           }
         } else if (weight >= 60 && weight < 70) {
           if (diyaList === "1") {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 71) {
-            cilaText = "6 saatte bir 250 mg";
+            cilaText = "6 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 41 && result < 71) {
-            cilaText = "8 saatte bir 250 mg";
+            cilaText = "8 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 21 && result < 41) {
-            cilaText = "8 saatte bir 250 mg";
+            cilaText = "8 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 6 && result < 21) {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           }
         } else if (weight >= 50 && weight < 60) {
           if (diyaList === "1") {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 71) {
-            cilaText = "6 saatte bir 250 mg";
+            cilaText = "6 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 41 && result < 71) {
-            cilaText = "8 saatte bir 250 mg";
+            cilaText = "8 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 21 && result < 41) {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 6 && result < 21) {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           }
         } else if (weight >= 40 && weight < 50) {
           if (diyaList === "1") {
-            cilaText = "12 saatte bir 125 mg";
+            cilaText = "12 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 71) {
-            cilaText = "8 saatte bir 250 mg";
+            cilaText = "8 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 41 && result < 71) {
-            cilaText = "6 saatte bir 125 mg";
+            cilaText = "6 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 21 && result < 41) {
-            cilaText = "8 saatte bir 125 mg";
+            cilaText = "8 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 6 && result < 21) {
-            cilaText = "12 saatte bir 125 mg";
+            cilaText = "12 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           }
         } else if (weight < 40) {
           if (diyaList === "1") {
-            cilaText = "12 saatte bir 125 mg";
+            cilaText = "12 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 71) {
-            cilaText = "6 saatte bir 125 mg";
+            cilaText = "6 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 41 && result < 71) {
-            cilaText = "8 saatte bir 125 mg";
+            cilaText = "8 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 21 && result < 41) {
-            cilaText = "8 saatte bir 125 mg";
+            cilaText = "8 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 6 && result < 21) {
-            cilaText = "12 saatte bir 125 mg";
+            cilaText = "12 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           }
         }
       } else if (normal === "3") {
         if (weight >= 70) {
           if (diyaList === "1") {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 71) {
-            cilaText = "6 saatte bir 500 mg";
+            cilaText = "6 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 41 && result < 71) {
-            cilaText = "8 saatte bir 500 mg";
+            cilaText = "8 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 21 && result < 41) {
-            cilaText = "6 saatte bir 250 mg";
+            cilaText = "6 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 6 && result < 21) {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           }
         } else if (weight >= 60 && weight < 70) {
           if (diyaList === "1") {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 71) {
-            cilaText = "8 saatte bir 500 mg";
+            cilaText = "8 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 41 && result < 71) {
-            cilaText = "6 saatte bir 250 mg";
+            cilaText = "6 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 21 && result < 41) {
-            cilaText = "8 saatte bir 250 mg";
+            cilaText = "8 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 6 && result < 21) {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           }
         } else if (weight >= 50 && weight < 60) {
           if (diyaList === "1") {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 71) {
-            cilaText = "6 saatte bir 250 mg";
+            cilaText = "6 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 41 && result < 71) {
-            cilaText = "6 saatte bir 250 mg";
+            cilaText = "6 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 21 && result < 41) {
-            cilaText = "8 saatte bir 250 mg";
+            cilaText = "8 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 6 && result < 21) {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           }
         } else if (weight >= 40 && weight < 50) {
           if (diyaList === "1") {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 71) {
-            cilaText = "6 saatte bir 250 mg";
+            cilaText = "6 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 41 && result < 71) {
-            cilaText = "8 saatte bir 250 mg";
+            cilaText = "8 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 21 && result < 41) {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 6 && result < 21) {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           }
         } else if (weight < 40) {
           if (diyaList === "1") {
-            cilaText = "12 saatte bir 125 mg";
+            cilaText = "12 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 71) {
-            cilaText = "8 saatte bir 250 mg";
+            cilaText = "8 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 41 && result < 71) {
-            cilaText = "6 saatte bir 125 mg";
+            cilaText = "6 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 21 && result < 41) {
-            cilaText = "8 saatte bir 125 mg";
+            cilaText = "8 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 6 && result < 21) {
-            cilaText = "12 saatte bir 125 mg";
+            cilaText = "12 saatte bir 125 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           }
         }
       } else if (normal === "4") {
         if (weight >= 70) {
           if (diyaList === "1") {
-            cilaText = "12 saatte bir 500 mg";
+            cilaText = "12 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 71) {
-            cilaText = "8 saatte bir 1000 mg";
+            cilaText = "8 saatte bir 1000 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 41 && result < 71) {
-            cilaText = "6 saatte bir 500 mg";
+            cilaText = "6 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 21 && result < 41) {
-            cilaText = "8 saatte bir 500 mg";
+            cilaText = "8 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 6 && result < 21) {
-            cilaText = "12 saatte bir 500 mg";
+            cilaText = "12 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           }
         } else if (weight >= 60 && weight < 70) {
           if (diyaList === "1") {
-            cilaText = "12 saatte bir 500 mg";
+            cilaText = "12 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 71) {
-            cilaText = "8 saatte bir 750 mg";
+            cilaText = "8 saatte bir 750 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 41 && result < 71) {
-            cilaText = "8 saatte bir 500 mg";
+            cilaText = "8 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 21 && result < 41) {
-            cilaText = "8 saatte bir 500 mg";
+            cilaText = "8 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 6 && result < 21) {
-            cilaText = "12 saatte bir 500 mg";
+            cilaText = "12 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           }
         } else if (weight >= 50 && weight < 60) {
           if (diyaList === "1") {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 71) {
-            cilaText = "6 saatte bir 500 mg";
+            cilaText = "6 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 41 && result < 71) {
-            cilaText = "8 saatte bir 500 mg";
+            cilaText = "8 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 21 && result < 41) {
-            cilaText = "6 saatte bir 250 mg";
+            cilaText = "6 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 6 && result < 21) {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           }
         } else if (weight >= 40 && weight < 50) {
           if (diyaList === "1") {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 71) {
-            cilaText = "8 saatte bir 500 mg";
+            cilaText = "8 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 41 && result < 71) {
-            cilaText = "6 saatte bir 250 mg";
+            cilaText = "6 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 21 && result < 41) {
-            cilaText = "8 saatte bir 250 mg";
+            cilaText = "8 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 6 && result < 21) {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           }
         } else if (weight < 40) {
           if (diyaList === "1") {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 71) {
-            cilaText = "6 saatte bir 250 mg";
+            cilaText = "6 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 41 && result < 71) {
-            cilaText = "8 saatte bir 250 mg";
+            cilaText = "8 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 21 && result < 41) {
-            cilaText = "8 saatte bir 250 mg";
+            cilaText = "8 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 6 && result < 21) {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           }
         }
       } else if (normal === "5") {
         if (weight >= 70) {
           if (diyaList === "1") {
-            cilaText = "12 saatte bir 500 mg";
+            cilaText = "12 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 71) {
-            cilaText = "6 saatte bir 1000 mg";
+            cilaText = "6 saatte bir 1000 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 41 && result < 71) {
-            cilaText = "8 saatte bir 750 mg";
+            cilaText = "8 saatte bir 750 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 21 && result < 41) {
-            cilaText = "6 saatte bir 500 mg";
+            cilaText = "6 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 6 && result < 21) {
-            cilaText = "12 saatte bir 500 mg";
+            cilaText = "12 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           }
         } else if (weight >= 60 && weight < 70) {
           if (diyaList === "1") {
-            cilaText = "12 saatte bir 500 mg";
+            cilaText = "12 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 71) {
-            cilaText = "8 saatte bir 1000 mg";
+            cilaText = "8 saatte bir 1000 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 41 && result < 71) {
-            cilaText = "8 saatte bir 750 mg";
+            cilaText = "8 saatte bir 750 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 21 && result < 41) {
-            cilaText = "8 saatte bir 500 mg";
+            cilaText = "8 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 6 && result < 21) {
-            cilaText = "12 saatte bir 500 mg";
+            cilaText = "12 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           }
         } else if (weight >= 50 && weight < 60) {
           if (diyaList === "1") {
-            cilaText = "12 saatte bir 500 mg";
+            cilaText = "12 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 71) {
-            cilaText = "8 saatte bir 750 mg";
+            cilaText = "8 saatte bir 750 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 41 && result < 71) {
-            cilaText = "6 saatte bir 500 mg";
+            cilaText = "6 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 21 && result < 41) {
-            cilaText = "8 saatte bir 500 mg";
+            cilaText = "8 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 6 && result < 21) {
-            cilaText = "12 saatte bir 500 mg";
+            cilaText = "12 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           }
         } else if (weight >= 40 && weight < 50) {
           if (diyaList === "1") {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 71) {
-            cilaText = "6 saatte bir 500 mg";
+            cilaText = "6 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 41 && result < 71) {
-            cilaText = "8 saatte bir 500 mg";
+            cilaText = "8 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 21 && result < 41) {
-            cilaText = "6 saatte bir 250 mg";
+            cilaText = "6 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 6 && result < 21) {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           }
         } else if (weight < 40) {
           if (diyaList === "1") {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 71) {
-            cilaText = "8 saatte bir 500 mg";
+            cilaText = "8 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 41 && result < 71) {
-            cilaText = "6 saatte bir 250 mg";
+            cilaText = "6 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 21 && result < 41) {
-            cilaText = "8 saatte bir 250 mg";
+            cilaText = "8 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           } else if (result >= 6 && result < 21) {
-            cilaText = "12 saatte bir 250 mg";
+            cilaText = "12 saatte bir 250 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
           }
         }
       }
@@ -1059,18 +1029,18 @@
       if (result >= 30) {
         if (normal === "1") {
           mgValue = (4 * weight);
-          daptoText = `24 saatte bir ${mgValue} mg`;
+          daptoText = `24 saatte bir ${mgValue} mg<a href='https://www.msd.com.tr/static/pdf/Cubicin%20500mg_KUB.pdf' target='_blank'>*</a>`;
         } else if (normal === "2") {
           mgValue = (6 * weight);
-          daptoText = `24 saatte bir ${mgValue} mg`;
+          daptoText = `24 saatte bir ${mgValue} mg<a href='https://www.msd.com.tr/static/pdf/Cubicin%20500mg_KUB.pdf' target='_blank'>*</a>`;
         }
       } else if (result < 30) {
         if (normal === "1") {
           mgValue = (4 * weight);
-          daptoText = `48 saatte bir ${mgValue} mg`;
+          daptoText = `48 saatte bir ${mgValue} mg<a href='https://www.msd.com.tr/static/pdf/Cubicin%20500mg_KUB.pdf' target='_blank'>*</a>`;
         } else if (normal === "2") {
           mgValue = (6 * weight);
-          daptoText = `24 saatte bir ${mgValue} mg`;
+          daptoText = `24 saatte bir ${mgValue} mg<a href='https://www.msd.com.tr/static/pdf/Cubicin%20500mg_KUB.pdf' target='_blank'>*</a>`;
         }
       }
     } else {
@@ -1078,13 +1048,16 @@
     }
 
     if (diyaDapt === "1") {
-      daptoText = `${daptoText}. Hemodiyaliz hastaları için de aynı sonuç geçerlidir.`
+      daptoText += ` Hemodiyaliz hastaları için de aynı sonuç geçerlidir.`
     }
 
-    resulty.style = "color: white; font-weight: bold; letter-spacing: 2px;"
+    if (result) {
+      daptoText += `<br> <h4> (<b>Etken madde:</b> Daptomisin // <b>Kreatinin klirensi:</b> ${result} mL/min)</h4>` 
+    }
+
     resulty.innerHTML = daptoText;
     window.location.href='#presentResults';
-        
+
   });
   </script>
   
@@ -1098,30 +1071,30 @@
 
     if (result) {
       if (result > 50) {
-        levoText = `Doz ayarlamasına gerek yoktur. Böbrek fonksiyonları normal olan hastalar için hazırlanmış <a href="img/tavanic_kub.png"> dozaj tablosu</a> kullanılabilir.`;
+        levoText = `Doz ayarlamasına gerek yoktur. Böbrek fonksiyonları normal olan hastalar için hazırlanmış <a href="img/tavanic_kub.png"> dozaj tablosu</a> kullanılabilir.<a href='https://titck.gov.tr/storage/Archive/2019/kubKtAttachments/ec6b333e-e68b-4a96-8ae4-5ea400798a1d.pdf' target='_blank'>*</a>`;
       } else if (result <= 50 && result > 19) {
         if (normal === "1") {
-          levoText = "İlk doz 250 mg. Sonrasında 125 mg / 24 saat";
+          levoText = "İlk doz 250 mg. Sonrasında 125 mg / 24 saat<a href='https://titck.gov.tr/storage/Archive/2019/kubKtAttachments/ec6b333e-e68b-4a96-8ae4-5ea400798a1d.pdf' target='_blank'>*</a>";
         } else if (normal === "2") {
-          levoText = "İlk doz 500 mg. Sonrasında 250 mg / 24 saat";
+          levoText = "İlk doz 500 mg. Sonrasında 250 mg / 24 saat<a href='https://titck.gov.tr/storage/Archive/2019/kubKtAttachments/ec6b333e-e68b-4a96-8ae4-5ea400798a1d.pdf' target='_blank'>*</a>";
         } else if (normal === "3") {
-          levoText = "İlk doz 500 mg. Sonrasında 250 mg / 12 saat";
+          levoText = "İlk doz 500 mg. Sonrasında 250 mg / 12 saat<a href='https://titck.gov.tr/storage/Archive/2019/kubKtAttachments/ec6b333e-e68b-4a96-8ae4-5ea400798a1d.pdf' target='_blank'>*</a>";
         }
       } else if (result < 20 && result >= 10) {
         if (normal === "1") {
-          levoText = "İlk doz 250 mg. Sonrasında 125 mg / 48 saat";
+          levoText = "İlk doz 250 mg. Sonrasında 125 mg / 48 saat<a href='https://titck.gov.tr/storage/Archive/2019/kubKtAttachments/ec6b333e-e68b-4a96-8ae4-5ea400798a1d.pdf' target='_blank'>*</a>";
         } else if (normal === "2") {
-          levoText = "İlk doz 500 mg. Sonrasında 125 mg / 24 saat";
+          levoText = "İlk doz 500 mg. Sonrasında 125 mg / 24 saat<a href='https://titck.gov.tr/storage/Archive/2019/kubKtAttachments/ec6b333e-e68b-4a96-8ae4-5ea400798a1d.pdf' target='_blank'>*</a>";
         } else if (normal === "3") {
-          levoText = "İlk doz 500 mg. Sonrasında 125 mg / 12 saat";
+          levoText = "İlk doz 500 mg. Sonrasında 125 mg / 12 saat<a href='https://titck.gov.tr/storage/Archive/2019/kubKtAttachments/ec6b333e-e68b-4a96-8ae4-5ea400798a1d.pdf' target='_blank'>*</a>";
         }
       } else if (result < 10) {
         if (normal === "1") {
-          levoText = "İlk doz 250 mg. Sonrasında 125 mg / 48 saat";
+          levoText = "İlk doz 250 mg. Sonrasında 125 mg / 48 saat<a href='https://titck.gov.tr/storage/Archive/2019/kubKtAttachments/ec6b333e-e68b-4a96-8ae4-5ea400798a1d.pdf' target='_blank'>*</a>";
         } else if (normal === "2") {
-          levoText = "İlk doz 500 mg. Sonrasında 125 mg / 24 saat";
+          levoText = "İlk doz 500 mg. Sonrasında 125 mg / 24 saat<a href='https://titck.gov.tr/storage/Archive/2019/kubKtAttachments/ec6b333e-e68b-4a96-8ae4-5ea400798a1d.pdf' target='_blank'>*</a>";
         } else if (normal === "3") {
-          levoText = "İlk doz 500 mg. Sonrasında 125 mg / 24 saat";
+          levoText = "İlk doz 500 mg. Sonrasında 125 mg / 24 saat<a href='https://titck.gov.tr/storage/Archive/2019/kubKtAttachments/ec6b333e-e68b-4a96-8ae4-5ea400798a1d.pdf' target='_blank'>*</a>";
         }
       }
     } else {
@@ -1130,11 +1103,11 @@
 
     if (diyaLevo === "1") {
       if (normal === "1") {
-          levoText = "İlk doz 250 mg. Sonrasında 125 mg / 48 saat";
+          levoText = "İlk doz 250 mg. Sonrasında 125 mg / 48 saat<a href='https://titck.gov.tr/storage/Archive/2019/kubKtAttachments/ec6b333e-e68b-4a96-8ae4-5ea400798a1d.pdf' target='_blank'>*</a>";
         } else if (normal === "2") {
-          levoText = "İlk doz 500 mg. Sonrasında 125 mg / 24 saat";
+          levoText = "İlk doz 500 mg. Sonrasında 125 mg / 24 saat<a href='https://titck.gov.tr/storage/Archive/2019/kubKtAttachments/ec6b333e-e68b-4a96-8ae4-5ea400798a1d.pdf' target='_blank'>*</a>";
         } else if (normal === "3") {
-          levoText = "İlk doz 500 mg. Sonrasında 125 mg / 24 saat";
+          levoText = "İlk doz 500 mg. Sonrasında 125 mg / 24 saat<a href='https://titck.gov.tr/storage/Archive/2019/kubKtAttachments/ec6b333e-e68b-4a96-8ae4-5ea400798a1d.pdf' target='_blank'>*</a>";
         }
       }
 
