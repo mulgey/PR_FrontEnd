@@ -149,7 +149,7 @@
         </div>
         <div class="row mt-3">
           <div class="col" style="display:none" id="notNeeded">
-            <p class="note note-info wow fadeIn"><strong>Sonuç: </strong>Gözünüz aydın! Bu etken madde için doz ayarlaması yapmanıza gerek yok</p>
+            <p class="note note-info wow fadeIn" id="nonDiyaText"><strong>Sonuç: </strong>Bu etken madde için böbrek yetmezliği durumunda doz ayarlaması gerekmemektedir.</p>
           </div>
         </div>
         <div class="row text-center align-items-center" id="cockgaulty">
@@ -401,7 +401,9 @@
     let buttony = document.getElementById("calcButton");
     let diya1 = document.getElementById("diya1");
     let diya2 = document.getElementById("diya2");
+    let notNeedy = document.getElementById("nonDiyaText");
 
+    /*
     if (textResult === "Tigesiklin" || textResult === "Moksifloksasin hidroklorür" || textResult === "Linezolit" || textResult === "Metronidazol") {
       needy.style.display = "block";
       egfry.style.display = "none";
@@ -409,9 +411,50 @@
       disably.className = "dropdown-item2 disabled";
       disably2.className = "dropdown-item2 disabled";
       calculatey.style.display = "none";
+    */
+
+    if (textResult === "Tigesiklin") {
+      notNeedy.innerHTML += "<a href='https://titck.gov.tr/storage/kubKtAttachments/ccPKR9mKrPaa4.pdf' target='_blank'>*</a>";
+      needy.style.display = "block";
+      egfry.style.display = "none";
+      cockgaulty.style.display = "none";
+      disably.className = "dropdown-item2 disabled";
+      disably2.className = "dropdown-item2 disabled";
+      calculatey.style.display = "none";
+    } else if (textResult === "Moksifloksasin hidroklorür") {
+      notNeedy.innerHTML += "<a href='https://titck.gov.tr/storage/kubKtAttachments/LHoY4QJlVyoQp.pdf' target='_blank'>*</a>";
+      needy.style.display = "block";
+      egfry.style.display = "none";
+      cockgaulty.style.display = "none";
+      disably.className = "dropdown-item2 disabled";
+      disably2.className = "dropdown-item2 disabled";
+      calculatey.style.display = "none";      
+    } else if (textResult === "Linezolit") {
+      notNeedy.innerHTML += "<a href='https://titck.gov.tr/storage/kubKtAttachments/466583b522937.pdf' target='_blank'>*</a>";
+      needy.style.display = "block";
+      egfry.style.display = "none";
+      cockgaulty.style.display = "none";
+      disably.className = "dropdown-item2 disabled";
+      disably2.className = "dropdown-item2 disabled";
+      calculatey.style.display = "none";      
+    } else if (textResult === "Metronidazol") {
+      notNeedy.innerHTML += "<a href='https://titck.gov.tr/storage/kubKtAttachments/38219d3492102.pdf' target='_blank'>*</a>";
+      needy.style.display = "block";
+      egfry.style.display = "none";
+      cockgaulty.style.display = "none";
+      disably.className = "dropdown-item2 disabled";
+      disably2.className = "dropdown-item2 disabled";
+      calculatey.style.display = "none";      
     } else if (textResult === "İmipenem / Silastatin sodyum" || textResult === "Daptomisin" || textResult === "Levofloksasin") {
       diya1.style.display = "none";
       diya2.style.display = "none";
+      needy.style.display = "none";
+      egfry.style.display = "none";
+      cockgaulty.style.display = "flex";
+      neighbour.text('Cockcroft-Gault Denklemi');
+      disably.className = "dropdown-item2";
+      disably2.className = "dropdown-item2";
+      calculatey.style.display = "block";
       buttony.className = "btn btn-cyan btn-lg";
     } else {
       needy.style.display = "none";
