@@ -65,9 +65,6 @@
               <a class="nav-link" href="about.html">Hakında</a>
             </li>
           </ul>
-          <ul class="navbar-nav">
-            <button class="btn btn-rounded btn-indigo px-4 py-3 rounded-pill" onclick="window.location.href = 'calculator.html#activeSubstance';">Hızlı Başla! <i class="fas fa-fast-forward pl-1"></i></button>
-          </ul>
         </div>
       </div>
     </nav>
@@ -362,9 +359,25 @@
   <!-- Presenting The Results -->
   <div class="view" id="presentResults" data-spy="presentResults" data-target="#presentResults" style="background-image: url('img/calculate_03.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
     <!-- Mask & flexbox options--> 
-    <div class="mask rgba-stylish-light align-items-center flex-center text-center">
+    <div class="mask rgba-stylish-light flex-center align-items-center text-center">
       <!-- Content -->
-      <h1 class="mx-3 mt-3" id="resultText" style="color: white; font-weight: bold; letter-spacing: 2px; line-height: 70px">Hesaplamanın işleminin başlatılması bekleniyor. <a href="#activeSubstance">Veri girişi</a> bölüme geçelim</h1>
+      
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h1 class="mx-3 mt-3" id="resultText" style="color: white; font-weight: bold; letter-spacing: 2px; line-height: 70px">Hesaplamanın işleminin başlatılması bekleniyor. <a href="#activeSubstance">Veri girişi</a> bölüme geçelim</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button class="btn-cyan btn-lg rounded-pill mt-2" style="display: none;" id="reload"><i class="fas fa-redo"></i></button>
+          </div>
+        </div>
+      </div>
+      
+      <!--
+      <h1 class="mx-3 mt-3" id="resultText" style="color: white; font-weight: bold; letter-spacing: 2px; line-height: 70px">Hesaplamanın işleminin başlatılması bekleniyor. <a href="#activeSubstance">Veri girişi</a> bölüme geçelim</h1><br><button class=" btn-floating btn-cyan btn-lg"><i class="fas fa-redo"></i></button></br>
+      -->
       <!-- Content -->
     </div>
   </div>
@@ -516,6 +529,8 @@
     let imicilapy = document.getElementById("imipenem-cilastatin");
     let daptomcy = document.getElementById("daptomicina");
     let levofloxy = document.getElementById("levofloxacin");
+
+    let reload = document.getElementById("reload");
     
     if (crunit1 === "2") {
       srcr1 = srcr1 / 88.4;
@@ -552,6 +567,7 @@
       }            
 
       window.location.href='#presentResults';
+      reload.style.display = "inline-block";
 
     } else if (method === "Cockcroft-Gault Denklemi") {
         if (age1 && weight && srcr1 && gender1 != "Cinsiyet") {
@@ -602,6 +618,7 @@
       } else if (result <= 30) {
         doseText = "Günde 500 mg<a href='https://www.msd.com.tr/static/pdf/INVANZ_1g_IM-IV_Enjeksiyon_Icin_Liyofilize_Toz_Iceren_Flakon_KUB.pdf' target='_blank'>*</a>";
       }
+      reload.style.display = "inline-block";
       window.location.href='#presentResults';
     } else if (actSubs === "Flukonazol") {
         if (result > 50) {
@@ -609,6 +626,7 @@
         } else if (result <= 50) {
           doseText = "Normal dozun %50'si uygulanır. (Standart doz: Endikasyona bağlı olarak günde 50 mg - 400 mg)<a href='https://titck.gov.tr/storage/kubKtAttachments/Xb2snaSjTfhFC.pdf' target='_blank'>*</a>"
         }
+        reload.style.display = "inline-block";
         window.location.href='#presentResults';
       } else if (actSubs === "Meropenem trihidrat") {
           if (result >= 90) {
@@ -622,6 +640,7 @@
           } else if (result < 10) {
             doseText = "24 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/w6Yt8152JtyzB.pdf' target='_blank'>*</a>";
           }
+          reload.style.display = "inline-block";
           window.location.href='#presentResults';
       } else if (actSubs === "Piperasilin sodyum / Tazobaktam sodyum") {
           if (result > 80) {
@@ -631,6 +650,7 @@
           } else if (result < 20) {
             doseText = "12 saatte bir 4,5 g<a href='https://titck.gov.tr/storage/Archive/2019/kubKtAttachments/a9679f69-af3d-4d0b-bb20-49b8be5adf96.pdf' target='_blank'>*</a>";
           }
+          reload.style.display = "inline-block";
           window.location.href='#presentResults';
       } else if (actSubs === "Kolistimetat sodyum") {
           if (result >= 70) {
@@ -640,14 +660,15 @@
             maxForColi = ((3.5 * [(1.5 * result) + 30]) / 2).toFixed(0);
             doseText = `12 saatte bir minimum ${minForColi} g, maksimum ${maxForColi} g<a href='http://kocakfarma.com/urun-aciklama.aspx?bolumSeo=kisabilgi&id=43&lang=tr' target='_blank'>*</a>`;           
           }
+          reload.style.display = "inline-block";
           window.location.href='#presentResults';
       } else if (actSubs === "Vankomisin hidroklorür") {
           if (result < 90) {
             vancoDose = (result * 15.45).toFixed(0);
-            doseText = `15 mg / kg yükleme dozunu takiben 24 saatte ${vancoDose} mg<a href='https://titck.gov.tr/storage/kubKtAttachments/b2b033b065298.pdf' target='_blank'>*</a>`;
-
-            window.location.href='#presentResults';
+            doseText = `15 mg / kg yükleme dozunu takiben 24 saatte ${vancoDose} mg<a href='https://titck.gov.tr/storage/kubKtAttachments/b2b033b065298.pdf' target='_blank'>*</a>`; 
           }
+          reload.style.display = "inline-block";
+          window.location.href='#presentResults';
       } else if (actSubs === "Sefoperazon sodyum / Sulbaktam sodyum") {
           if (result >= 30) {
             doseText = "Hekimin belirlemiş olduğu normal doz (Endikasyona bağlı olarak 2 etken madde için toplam doz: 3 g - 12 g)<a href='https://titck.gov.tr/storage/kubKtAttachments/24e1b21e40213.pdf' target='_blank'>*</a>";
@@ -656,6 +677,7 @@
           } else if (result < 15) {
             doseText = "12 saatte bir 1,5 g (2 etken madde için toplam doz)<a href='https://titck.gov.tr/storage/kubKtAttachments/24e1b21e40213.pdf' target='_blank'>*</a>";
           }
+          reload.style.display = "inline-block";
           window.location.href='#presentResults';
       } else if (actSubs === "Siprofloksasin laktat") {
           if (result >= 60) {
@@ -665,6 +687,7 @@
           } else if (result < 30) {
             doseText = "Günde maksimum 400 mg olacak şekilde düzenlenir<a href='https://titck.gov.tr/storage/kubKtAttachments/0003cad130634.pdf' target='_blank'>*</a>";
           }
+          reload.style.display = "inline-block";
           window.location.href='#presentResults';
       } else if (actSubs === "Teikoplanin") {
           if (result >= 60) {
@@ -674,6 +697,7 @@
           } else if (result < 40) {
             doseText = "Normal dozun 1/3'ünü uygulayın veya normal dozu 3 günde bir uygulayın. Tedavinin ilk 4 günü doz ayarlamasına gerek yoktur<a href='https://titck.gov.tr/storage/kubKtAttachments/affb19d273538.pdf' target='_blank'>*</a>";
           }
+          reload.style.display = "inline-block";
           window.location.href='#presentResults';
       } else if (actSubs === "İmipenem / Silastatin sodyum") {
           document.getElementById('srcrForCila').value = result;
@@ -695,13 +719,22 @@
 
       } else if (actSubs === "Daptomisin") {
         document.getElementById('srcrForDapto').value = result;
+        document.getElementById('weightForDapto').value = weight;
 
         if (result === undefined) {
           window.location.href='#presentResults';
         } else {
           daptomcy.style.display = "flex";   
           window.location.href='#daptomicina';
-        }        
+        }
+
+        if (isNaN(weight)) {
+            (document.getElementById('weightForDapto').value) = "";
+            console.log(result);
+          } else {
+            (document.getElementById('weightForDapto').value) = weight;
+          }
+
       } else if (actSubs === "Levofloksasin") {
         document.getElementById('srcrForLevo').value = result;
 
@@ -722,7 +755,6 @@
     
     resulty.innerHTML = doseText;
 
-
   });
   
   </script>
@@ -738,6 +770,7 @@
     let cilaText;
 
     if (result && weight) {
+      reload.style.display = "inline-block";
       if (normal === "1") {
         if (weight >= 70) {
           if (diyaList === "1") {
@@ -1072,6 +1105,7 @@
     let mgValue;
 
     if (result && weight) {
+      reload.style.display = "inline-block";
       if (result >= 30) {
         if (normal === "1") {
           mgValue = (4 * weight);
@@ -1093,7 +1127,7 @@
       daptoText = `Bu etken madde ile hesap yapabilmemiz için serum kreatinin ve kilo değerlerinin sağlanmış olması gerekir. <a href="#daptomicina">Tekrar deneyelim</a>`;
     }
 
-    if (diyaDapt === "1") {
+    if (diyaDapt === "1" && result && weight) {
       daptoText += ` Hemodiyaliz hastaları için de aynı sonuç geçerlidir.`;
     }
 
@@ -1116,6 +1150,7 @@
     let levoText;
 
     if (result) {
+      reload.style.display = "inline-block";
       if (result > 50) {
         levoText = `Doz ayarlamasına gerek yoktur. Böbrek fonksiyonları normal olan hastalar için hazırlanmış <a href="img/tavanic_kub.png"> dozaj tablosu</a> kullanılabilir.<a href='https://titck.gov.tr/storage/Archive/2019/kubKtAttachments/ec6b333e-e68b-4a96-8ae4-5ea400798a1d.pdf' target='_blank'>*</a>`;
       } else if (result <= 50 && result > 19) {
@@ -1161,6 +1196,15 @@
     resulty.innerHTML = levoText;
     window.location.href='#presentResults';
         
+  });
+  </script>
+
+  <script>
+  $('#reload').click(() => {
+    location.assign('calculator.html#activeSubstance');
+    setTimeout(() => {
+      location.reload();
+    }, 900);
   });
   </script>
 
