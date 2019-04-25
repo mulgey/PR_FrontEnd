@@ -101,25 +101,6 @@
     <div class="mask rgba-stylish-light align-items-center flex-center">
       <!-- Content -->
       <div class="container">
-        <div class="row">
-          <div class="col">
-            <div class="toast" role="alert" aria-live="assertive" data-autohide="false" aria-atomic="true">
-              <div class="toast-header">
-                <svg class=" rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
-                  focusable="false" role="img">
-                  <rect fill="#007aff" width="100%" height="100%" /></svg>
-                <strong class="mr-auto">Bootstrap</strong>
-                <small class="text-muted">11 mins ago</small>
-                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="toast-body">
-                Hello, world! This is a toast message.
-              </div>
-            </div>
-          </div>
-        </div>
         <div class="row mt-3">
           <!--Dropdown primary-->
           <div class="col">         
@@ -232,6 +213,11 @@
           <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="black">
             <label class="custom-control-label" for="black">Siyahi</label>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col" id="infoDiv">
+            <p class="note note-info wow fadeIn" id="infoText"><strong>Cockcroft-Gault Denklemi </strong>ile hesaplama yaparken cinsiyet, yaş, kilo ve serum kreatinini değerlerini girmeniz gerekir.</p>
           </div>
         </div>
         <div class="row text-center align-items-center mt-3">
@@ -388,7 +374,7 @@
         </div>
         <div class="row">
           <div class="col">
-            <button class="btn btn-cyan rounded-pill mt-2" style="padding: 1rem 2rem; display: none;" id="reload">Yeni Hesaplama<i class="fas fa-redo pl-1"></i></button>
+            <button class="btn btn-cyan rounded-pill mt-3" style="padding: 1rem 2rem; display: none;" id="reload">Yeni Hesaplama<i class="fas fa-redo pl-1"></i></button>
           </div>
         </div>
       </div>
@@ -439,6 +425,7 @@
     let diya1 = document.getElementById("diya1");
     let diya2 = document.getElementById("diya2");
     let notNeedy = document.getElementById("nonDiyaText");
+    let infoDiv = document.getElementById("infoDiv");
 
     /*
     if (textResult === "Tigesiklin" || textResult === "Moksifloksasin hidroklorür" || textResult === "Linezolit" || textResult === "Metronidazol") {
@@ -451,37 +438,41 @@
     */
 
     if (textResult === "Tigesiklin") {
-      notNeedy.innerHTML += "<a href='https://titck.gov.tr/storage/kubKtAttachments/ccPKR9mKrPaa4.pdf' target='_blank'>*</a>";
+      notNeedy.innerHTML = "<strong>Sonuç: </strong>Bu etken madde için böbrek yetmezliği durumunda doz ayarlaması gerekmemektedir.<a href='https://titck.gov.tr/storage/kubKtAttachments/ccPKR9mKrPaa4.pdf' target='_blank'>*</a>";
       needy.style.display = "block";
       egfry.style.display = "none";
       cockgaulty.style.display = "none";
       disably.className = "dropdown-item2 disabled";
       disably2.className = "dropdown-item2 disabled";
       calculatey.style.display = "none";
+      infoDiv.style.display = "none";
     } else if (textResult === "Moksifloksasin hidroklorür") {
-      notNeedy.innerHTML += "<a href='https://titck.gov.tr/storage/kubKtAttachments/LHoY4QJlVyoQp.pdf' target='_blank'>*</a>";
+      notNeedy.innerHTML = "<strong>Sonuç: </strong>Bu etken madde için böbrek yetmezliği durumunda doz ayarlaması gerekmemektedir.<a href='https://titck.gov.tr/storage/kubKtAttachments/LHoY4QJlVyoQp.pdf' target='_blank'>*</a>";
       needy.style.display = "block";
       egfry.style.display = "none";
       cockgaulty.style.display = "none";
       disably.className = "dropdown-item2 disabled";
       disably2.className = "dropdown-item2 disabled";
-      calculatey.style.display = "none";      
+      calculatey.style.display = "none";
+      infoDiv.style.display = "none";      
     } else if (textResult === "Linezolit") {
-      notNeedy.innerHTML += "<a href='https://titck.gov.tr/storage/kubKtAttachments/466583b522937.pdf' target='_blank'>*</a>";
+      notNeedy.innerHTML = "<strong>Sonuç: </strong>Bu etken madde için böbrek yetmezliği durumunda doz ayarlaması gerekmemektedir.<a href='https://titck.gov.tr/storage/kubKtAttachments/466583b522937.pdf' target='_blank'>*</a>";
       needy.style.display = "block";
       egfry.style.display = "none";
       cockgaulty.style.display = "none";
       disably.className = "dropdown-item2 disabled";
       disably2.className = "dropdown-item2 disabled";
-      calculatey.style.display = "none";      
+      calculatey.style.display = "none";
+      infoDiv.style.display = "none";      
     } else if (textResult === "Metronidazol") {
-      notNeedy.innerHTML += "<a href='https://titck.gov.tr/storage/kubKtAttachments/38219d3492102.pdf' target='_blank'>*</a>";
+      notNeedy.innerHTML = "<strong>Sonuç: </strong>Bu etken madde için böbrek yetmezliği durumunda doz ayarlaması gerekmemektedir.<a href='https://titck.gov.tr/storage/kubKtAttachments/38219d3492102.pdf' target='_blank'>*</a>";
       needy.style.display = "block";
       egfry.style.display = "none";
       cockgaulty.style.display = "none";
       disably.className = "dropdown-item2 disabled";
       disably2.className = "dropdown-item2 disabled";
-      calculatey.style.display = "none";      
+      calculatey.style.display = "none";
+      infoDiv.style.display = "none";      
     } else if (textResult === "İmipenem / Silastatin sodyum" || textResult === "Daptomisin" || textResult === "Levofloksasin") {
       diya1.style.display = "none";
       diya2.style.display = "none";
@@ -493,6 +484,7 @@
       disably2.className = "dropdown-item2";
       calculatey.style.display = "block";
       buttony.className = "btn btn-cyan btn-lg";
+      infoDiv.style.display = "inline-block";
     } else {
       needy.style.display = "none";
       egfry.style.display = "none";
@@ -504,6 +496,7 @@
       buttony.className = "btn btn-cyan btn-lg";
       diya1.style.display = "block";
       diya2.style.display = "block";
+      infoDiv.style.display = "inline-block";
     }
   });
 
@@ -634,7 +627,7 @@
     
 
     if (actSubs === "Ertapenem sodyum") {
-      if (result > 50) {
+      if (result > 30) {
         doseText = "Doz ayarlaması gerekmemektedir (Standart günlük doz 1g)<a href='https://www.msd.com.tr/static/pdf/INVANZ_1g_IM-IV_Enjeksiyon_Icin_Liyofilize_Toz_Iceren_Flakon_KUB.pdf' target='_blank'>*</a>";
       } else if (result <= 30) {
         doseText = "Günde 500 mg<a href='https://www.msd.com.tr/static/pdf/INVANZ_1g_IM-IV_Enjeksiyon_Icin_Liyofilize_Toz_Iceren_Flakon_KUB.pdf' target='_blank'>*</a>";
