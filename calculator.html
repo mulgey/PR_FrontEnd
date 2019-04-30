@@ -168,14 +168,14 @@
             <input type="number" id="age1" class="form-control" placeholder="Yaş" aria-label="Yaş" aria-describedby="material-addon1" step='1' autocomplete="off" min="0">
           </div>
           <div class="col md-form input-group mb-3">
-            <input type="number" id="weight" class="form-control" placeholder="Kilo" aria-label="Kilo" aria-describedby="material-addon1" step='0.5' autocomplete="off" min="0">
+            <input type="number" id="weight" class="form-control" placeholder="Ağırlık" aria-label="Ağırlık" aria-describedby="material-addon1" step='0.5' autocomplete="off" min="0">
           </div>
           <div class="col md-form input-group mb-3">
             <input type="number" id="srcr1" class="form-control" placeholder="Serum kreatinini" aria-label="Serum kreatinini" aria-describedby="material-addon1" step='0.01' autocomplete="off" min="0">
           </div>
           <div class="col">
             <select class="browser-default custom-select" id="crunit1">
-              <option selected>mg/dL</option>
+              <option selected value="1">mg/dL</option>
               <option value="2">‎µg/dL</option>
             </select>
           </div>
@@ -217,7 +217,7 @@
         </div>
         <div class="row mt-3">
           <div class="col" id="infoDiv">
-            <p class="note note-info wow fadeIn" id="infoText"><strong>Cockcroft-Gault Denklemi </strong>ile hesaplama yaparken cinsiyet, yaş, kilo ve serum kreatinini değerlerini girmeniz gerekir.</p>
+            <p class="note note-info wow fadeIn" id="infoText"><strong>Cockcroft-Gault Denklemi </strong>ile hesaplama yaparken cinsiyet, yaş, ağırlık ve serum kreatinini değerlerini girmeniz gerekir.</p>
           </div>
         </div>
         <div class="row text-center align-items-center mt-3">
@@ -265,7 +265,7 @@
             <input type="number" id="srcrForCila" class="form-control" style="color: black" step='0.01' autocomplete="off" min="0">
           </div>
           <div class="col">
-            <label for="weightForCila" style="color: white; font-weight: bold">Kilo</label>
+            <label for="weightForCila" style="color: white; font-weight: bold">Ağırlık</label>
             <input type="text" id="weightForCila" class="form-control" style="color: black" autocomplete="off">
           </div>         
         </div>
@@ -308,7 +308,7 @@
             <input type="number" id="srcrForDapto" class="form-control" style="color: black" step='0.01' autocomplete="off" min="0">
           </div>
           <div class="col">
-            <label for="weightForDapto" style="color: white; font-weight: bold">Kilo</label>
+            <label for="weightForDapto" style="color: white; font-weight: bold">Ağırlık</label>
             <input type="text" id="weightForDapto" class="form-control" style="color: black" autocomplete="off">
           </div>                       
         </div>
@@ -408,11 +408,15 @@
   </script>
 
   <script>
+  let infoDiv = document.getElementById("infoDiv");
+  let infoText = document.getElementById("infoText");
+
   $( ".dropdown-item" ).click(function() {
     let string = $(this).text();
     let index = string.indexOf('-');
     let textResult = string.substring(0, (index-1));
     $('#dropdownMenu1').text(textResult);
+    infoText.innerHTML = "<strong>Cockcroft-Gault Denklemi </strong>ile hesaplama yaparken cinsiyet, yaş, ağırlık ve serum kreatinini değerlerini girmeniz gerekir.";
     
     let needy = document.getElementById("notNeeded");
     let egfry = document.getElementById("egfry");
@@ -425,7 +429,6 @@
     let diya1 = document.getElementById("diya1");
     let diya2 = document.getElementById("diya2");
     let notNeedy = document.getElementById("nonDiyaText");
-    let infoDiv = document.getElementById("infoDiv");
 
     /*
     if (textResult === "Tigesiklin" || textResult === "Moksifloksasin hidroklorür" || textResult === "Linezolit" || textResult === "Metronidazol") {
@@ -485,6 +488,7 @@
       calculatey.style.display = "block";
       buttony.className = "btn btn-cyan btn-lg";
       infoDiv.style.display = "inline-block";
+
     } else {
       needy.style.display = "none";
       egfry.style.display = "none";
@@ -511,9 +515,11 @@
     if (texty === "e-GFR Hesaplayıcısı") {
       egfry.style.display = "flex";
       cockgaulty.style.display = "none";
+      infoText.innerHTML = "<strong>e-GFR yöntemi </strong>ile hesaplama yaparken en az cinsiyet, yaş ve serum kreatinini değerlerini girmeniz gerekir."
     } else if (texty === "Cockcroft-Gault Denklemi") {
       egfry.style.display = "none";
       cockgaulty.style.display = "flex";
+      infoText.innerHTML = "<strong>Cockcroft-Gault Denklemi </strong>ile hesaplama yaparken cinsiyet, yaş, ağırlık ve serum kreatinini değerlerini girmeniz gerekir."
     }
   });
   </script>
@@ -555,8 +561,6 @@
     }
     
     if ($("#diyaliz1").is(':checked') || $("#diyaliz2").is(':checked')) {
-      
-      console.log(actSubs);
 
       if (actSubs === "Ertapenem sodyum") {
         doseText = "Günde 500 mg. Hemodiyalizden önceki 6 saat içerisinde bu doz verilmişse, seans sonrası 150 mg ek doz önerilir. Verilmemişse ek doza gerek yoktur<a href='https://www.msd.com.tr/static/pdf/INVANZ_1g_IM-IV_Enjeksiyon_Icin_Liyofilize_Toz_Iceren_Flakon_KUB.pdf' target='_blank'>*</a>"
@@ -1097,7 +1101,7 @@
         }
       }
     } else {
-      cilaText = `Bu etken madde ile hesap yapabilmemiz için serum kreatinin ve kilo değerlerinin sağlanmış olması gerekir. <a href="#imipenem-cilastatin">Tekrar deneyelim</a>`;
+      cilaText = `Bu etken madde ile hesap yapabilmemiz için serum kreatinin ve ağırlık değerlerinin sağlanmış olması gerekir. <a href="#imipenem-cilastatin">Tekrar deneyelim</a>`;
     }
 
     resulty.style = "color: white; font-weight: bold; letter-spacing: 2px;"
@@ -1138,7 +1142,7 @@
         }
       }
     } else {
-      daptoText = `Bu etken madde ile hesap yapabilmemiz için serum kreatinin ve kilo değerlerinin sağlanmış olması gerekir. <a href="#daptomicina">Tekrar deneyelim</a>`;
+      daptoText = `Bu etken madde ile hesap yapabilmemiz için serum kreatinin ve ağırlık değerlerinin sağlanmış olması gerekir. <a href="#daptomicina">Tekrar deneyelim</a>`;
     }
 
     if (diyaDapt === "1" && result && weight) {
@@ -1221,6 +1225,64 @@
     }, 900);
   });
   </script>
+
+  <script>
+  const text1 = "<strong>Cockcroft-Gault Denklemi </strong>ile hesaplama yaparken cinsiyet, yaş, ağırlık ve serum kreatinini değerlerini girmeniz gerekir.";
+  const text2 = "<strong>e-GFR yöntemi </strong>ile hesaplama yaparken en az cinsiyet, yaş ve serum kreatinini değerlerini girmeniz gerekir."
+  
+  $( '#weight' ).focus(() => {
+    infoText.innerHTML = "<strong>Kilo </strong>değerini kg cinsinden giriniz.";
+    $(infoDiv).fadeIn(1000);
+  });
+
+  $( "#weight" ).blur(() => {
+    infoText.innerHTML = text1;
+    $(infoDiv).fadeIn(1000);
+  });
+
+  $( '#srcr1' ).focus(() => {
+    infoText.innerHTML = "<strong>Serum kreatinini </strong>mg/dL veya µg/dL cinsinden giriniz. ";
+    $(infoDiv).fadeIn(1000);
+  });
+
+  $( "#srcr1" ).blur(() => {
+    infoText.innerHTML = text1;
+    $(infoDiv).fadeIn(1000);
+  });
+
+  $( '#srcr2' ).focus(() => {
+    infoText.innerHTML = "<strong>Serum kreatinini </strong>mg/dL veya µg/dL cinsinden giriniz.";
+    $(infoDiv).fadeIn(1000);
+  });
+
+  $( "#srcr2" ).blur(() => {
+    infoText.innerHTML = text2;
+    $(infoDiv).fadeIn(1000);
+  });
+
+  $( '#nitrog' ).focus(() => {
+    infoText.innerHTML = "<strong>Kan üre azotu (BUN) </strong>değerini mg/dL cinsinden giriniz.";
+    $(infoDiv).fadeIn(1000);
+  });
+
+  $( "#nitrog" ).blur(() => {
+    infoText.innerHTML = text2;
+    $(infoDiv).fadeIn(1000);
+  });
+
+  $( '#albumin' ).focus(() => {
+    infoText.innerHTML = "<strong>Albümin </strong>değerini g/dL cinsinden giriniz.";
+    $(infoDiv).fadeIn(1000);
+  });
+
+  $( "#albumin" ).blur(() => {
+    infoText.innerHTML = text2;
+    $(infoDiv).fadeIn(1000);
+  });
+
+  </script>
+
+
 
 </body>
 </html>
