@@ -176,7 +176,7 @@
           <div class="col">
             <select class="browser-default custom-select" id="crunit1">
               <option selected value="1">mg/dL</option>
-              <option value="2">‎µg/dL</option>
+              <option value="2">‎µmol/L</option>
             </select>
           </div>
         </div>
@@ -201,7 +201,7 @@
           <div class="col">
             <select class="browser-default custom-select"  id="crunit2">
               <option selected>mg/dL</option>
-              <option value="2">‎µg/dL</option>
+              <option value="2">‎µmol/L</option>
             </select>
           </div>
           <div class="col md-form input-group mb-3">
@@ -1235,54 +1235,52 @@
     $(infoDiv).fadeIn(1000);
   });
 
-  $( "#weight" ).blur(() => {
+  $("#weight").blur(() => {
     infoText.innerHTML = text1;
     $(infoDiv).fadeIn(1000);
   });
 
-  $( '#srcr1' ).focus(() => {
-    infoText.innerHTML = "<strong>Serum kreatinini </strong>mg/dL veya µg/dL cinsinden giriniz. ";
+  $('#srcr1').focus(() => {
+    infoText.innerHTML = "<strong>Serum kreatinini </strong>mg/dL veya µmol/L cinsinden giriniz. Normal değerler: < 1,5 mg/dL (<133 µmol/L)";
     $(infoDiv).fadeIn(1000);
   });
 
-  $( "#srcr1" ).blur(() => {
+  $("#srcr1").blur(() => {
     infoText.innerHTML = text1;
     $(infoDiv).fadeIn(1000);
   });
 
-  $( '#srcr2' ).focus(() => {
-    infoText.innerHTML = "<strong>Serum kreatinini </strong>mg/dL veya µg/dL cinsinden giriniz.";
+  $('#srcr2').focus(() => {
+    infoText.innerHTML = "<strong>Serum kreatinini </strong>mg/dL veya µmol/L cinsinden giriniz. Normal değerler: < 1,5 mg/dL (<133 µmol/L)";
     $(infoDiv).fadeIn(1000);
   });
 
-  $( "#srcr2" ).blur(() => {
+  $("#srcr2").blur(() => {
     infoText.innerHTML = text2;
     $(infoDiv).fadeIn(1000);
   });
 
-  $( '#nitrog' ).focus(() => {
-    infoText.innerHTML = "<strong>Kan üre azotu (BUN) </strong>değerini mg/dL cinsinden giriniz.";
+  $('#nitrog').focus(() => {
+    infoText.innerHTML = "<strong>Kan üre azotu (BUN) </strong>değerini mg/dL cinsinden giriniz. Normal değerler aralığı: 10-20 mg/dL. Bu hesaplama türü için girilmesi zorunlu değildir.";
     $(infoDiv).fadeIn(1000);
   });
 
-  $( "#nitrog" ).blur(() => {
+  $("#nitrog").blur(() => {
     infoText.innerHTML = text2;
     $(infoDiv).fadeIn(1000);
   });
 
-  $( '#albumin' ).focus(() => {
-    infoText.innerHTML = "<strong>Albümin </strong>değerini g/dL cinsinden giriniz.";
+  $('#albumin').focus(() => {
+    infoText.innerHTML = "<strong>Albümin </strong>değerini g/dL cinsinden giriniz. Normal değer aralığı: 3,5 - 5,5 g/dL. Bu hesaplama türü için girilmesi zorunlu değildir.";
     $(infoDiv).fadeIn(1000);
   });
 
-  $( "#albumin" ).blur(() => {
+  $("#albumin").blur(() => {
     infoText.innerHTML = text2;
     $(infoDiv).fadeIn(1000);
   });
 
   </script>
-
-
 
 </body>
 </html>
