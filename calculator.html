@@ -1104,7 +1104,10 @@
       cilaText = `Bu etken madde ile hesap yapabilmemiz için serum kreatinin ve ağırlık değerlerinin sağlanmış olması gerekir. <a href="#imipenem-cilastatin">Tekrar deneyelim</a>`;
     }
 
-    resulty.style = "color: white; font-weight: bold; letter-spacing: 2px;"
+    if (result) {
+      cilaText += `<br> <h4> (<b>Etken madde:</b> İmipenem / Silastatin sodyum // <b>Kreatinin klirensi:</b> ${result} mL/min)</h4>`;
+    }
+
     resulty.innerHTML = cilaText;
     window.location.href='#presentResults';
 
@@ -1209,8 +1212,11 @@
           levoText = "İlk doz 500 mg. Sonrasında 125 mg / 24 saat<a href='https://titck.gov.tr/storage/Archive/2019/kubKtAttachments/ec6b333e-e68b-4a96-8ae4-5ea400798a1d.pdf' target='_blank'>*</a>";
         }
       }
-    
-    resulty.style = "color: white; font-weight: bold; letter-spacing: 2px;"
+
+    if (result) {
+      levoText += `<br> <h4> (<b>Etken madde:</b> Levofloksasin // <b>Kreatinin klirensi:</b> ${result} mL/min)</h4>`;
+    }
+
     resulty.innerHTML = levoText;
     window.location.href='#presentResults';
         
@@ -1228,7 +1234,8 @@
 
   <script>
   const text1 = "<strong>Cockcroft-Gault Denklemi </strong>ile hesaplama yaparken cinsiyet, yaş, ağırlık ve serum kreatinini değerlerini girmeniz gerekir.";
-  const text2 = "<strong>e-GFR yöntemi </strong>ile hesaplama yaparken en az cinsiyet, yaş ve serum kreatinini değerlerini girmeniz gerekir."
+  const text2 = "<strong>e-GFR yöntemi </strong>ile hesaplama yaparken en az cinsiyet, yaş ve serum kreatinini değerlerini girmeniz gerekir.";
+  let weight = document.getElementById('weight');
   
   $( '#weight' ).focus(() => {
     infoText.innerHTML = "<strong>Kilo </strong>değerini kg cinsinden giriniz.";
@@ -1279,6 +1286,23 @@
     infoText.innerHTML = text2;
     $(infoDiv).fadeIn(1000);
   });
+
+  let timer = null;
+  $('#weight').keydown(() => {
+    clearTimeout(timer); 
+    timer = setTimeout(weightReact, 1000)
+  });
+
+  function weightReact() {
+    console.log("test");
+    if (weight.value > 150) {
+      infoText.innerHTML = "Hastanın kilo değeri beklenen değer aralığının <strong>üstündedir</strong>, lütfen kontrol ediniz.";
+    } else if (weight.value === "") {
+      infoText.innerHTML = "<strong>Kilo </strong>değerini kg cinsinden giriniz.";
+    } else if (weight.value < 40) {
+      infoText.innerHTML = "Hastanın kilo değeri beklenen değer aralığının <strong>altındadır</strong>, lütfen kontrol ediniz.";
+    }
+  }
 
   </script>
 
