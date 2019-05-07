@@ -1294,7 +1294,6 @@
   });
 
   function weightReact() {
-    console.log("test");
     if (weight.value > 150) {
       infoText.innerHTML = "Hastanın kilo değeri beklenen değer aralığının <strong>üstündedir</strong>, lütfen kontrol ediniz.";
     } else if (weight.value === "") {
@@ -1303,6 +1302,20 @@
       infoText.innerHTML = "Hastanın kilo değeri beklenen değer aralığının <strong>altındadır</strong>, lütfen kontrol ediniz.";
     }
   }
+
+  /*
+  $('#weight').hover(() => {
+    if (weight.value > 150) {
+      infoText.innerHTML = "Hastanın kilo değeri beklenen değer aralığının <strong>üstündedir</strong>, lütfen kontrol ediniz.";
+    } else if (weight.value === "") {
+      infoText.innerHTML = "<strong>Kilo </strong>değerini kg cinsinden giriniz.";
+    } else if (weight.value < 40) {
+      infoText.innerHTML = "Hastanın kilo değeri beklenen değer aralığının <strong>altındadır</strong>, lütfen kontrol ediniz.";
+    }
+  }, () => {
+    infoText.innerHTML = "<strong>Kilo </strong>değerini kg cinsinden giriniz.";
+  });
+  */
 
   </script>
 

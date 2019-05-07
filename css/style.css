@@ -152,11 +152,11 @@ label.custom-control-label {
 }
 
 .form-control {
-  color: #FAFAFA;
+  color: #1F618D;
 }
 
 .form-control:focus {
-  color: #FAFAFA;
+  color: #1F618D;
 }
 
 .form-control::-webkit-input-placeholder { color:#FAFAFA; }  /* WebKit, Blink, Edge */
