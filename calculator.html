@@ -410,6 +410,7 @@
   <script>
   let infoDiv = document.getElementById("infoDiv");
   let infoText = document.getElementById("infoText");
+  let calculatey = document.getElementById("calculate");
 
   $( ".dropdown-item" ).click(function() {
     let string = $(this).text();
@@ -424,7 +425,6 @@
     let neighbour = $('#dropdownMenu2');
     let disably = document.getElementById("willDisable");
     let disably2 = document.getElementById("willDisable2");
-    let calculatey = document.getElementById("calculate");
     let buttony = document.getElementById("calcButton");
     let diya1 = document.getElementById("diya1");
     let diya2 = document.getElementById("diya2");
@@ -748,7 +748,6 @@
 
         if (isNaN(weight)) {
             (document.getElementById('weightForDapto').value) = "";
-            console.log(result);
           } else {
             (document.getElementById('weightForDapto').value) = weight;
           }
@@ -1235,7 +1234,6 @@
   <script>
   const text1 = "<strong>Cockcroft-Gault Denklemi </strong>ile hesaplama yaparken cinsiyet, yaş, ağırlık ve serum kreatinini değerlerini girmeniz gerekir.";
   const text2 = "<strong>e-GFR yöntemi </strong>ile hesaplama yaparken en az cinsiyet, yaş ve serum kreatinini değerlerini girmeniz gerekir.";
-  let weight = document.getElementById('weight');
   
   $( '#weight' ).focus(() => {
     infoText.innerHTML = "<strong>Kilo </strong>değerini kg cinsinden giriniz.";
@@ -1287,11 +1285,15 @@
     $(infoDiv).fadeIn(1000);
   });
 
+  // weight stuff
+
   let timer = null;
   $('#weight').keydown(() => {
     clearTimeout(timer); 
     timer = setTimeout(weightReact, 1000)
   });
+
+  let weight = document.getElementById('weight');
 
   function weightReact() {
     if (weight.value > 150) {
@@ -1300,6 +1302,49 @@
       infoText.innerHTML = "<strong>Kilo </strong>değerini kg cinsinden giriniz.";
     } else if (weight.value < 40) {
       infoText.innerHTML = "Hastanın kilo değeri beklenen değer aralığının <strong>altındadır</strong>, lütfen kontrol ediniz.";
+    }
+  }
+
+  // age stuff
+
+  let actSubs = document.getElementById('dropdownMenu1');
+  
+  $('#age1').keydown(() => {
+    clearTimeout(timer); 
+    timer = setTimeout(age1React, 1000)
+  });
+
+  let age1 = document.getElementById("age1");
+
+  function age1React() {
+    if (actSubs.text === "Daptomisin") {
+      if (age1.value != 0 && age1.value < 18) {
+        infoText.innerHTML = "<strong>Daptomisinin</strong> 18 yaş altı hastalardaki güvenliliği ve etkililiği saptanmamıştır. Kullanımı tavsiye edilmez.";
+        $('#calculate').fadeOut();
+      } else {
+        infoText.innerHTML = text1;
+        $('#calculate').fadeIn();
+      }
+    }
+  }
+
+  $('#age2').keydown(() => {
+    clearTimeout(timer); 
+    timer = setTimeout(age2React, 1000)
+  });
+
+  let age2 = document.getElementById("age2");
+
+  function age2React() {
+    if (actSubs.text === "Daptomisin") {
+      if (age2.value != 0 && age2.value < 18) {
+        infoText.innerHTML = "<strong>Daptomisinin</strong> 18 yaş altı hastalardaki güvenliliği ve etkililiği saptanmamıştır. Kullanımı tavsiye edilmez.";
+        $('#calculate').fadeOut();
+      } else {
+        infoText.innerHTML = text2;
+        $('#calculate').fadeIn();
+        // calculatey.style.display = "block";
+      }
     }
   }
 
