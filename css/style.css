@@ -146,7 +146,7 @@ label.custom-control-label {
   text-align: center;
 }
 
-#leftNote {
+#leftNote1, #leftNote {
   text-align: left;
   padding-left: 1em;
 }

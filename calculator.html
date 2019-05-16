@@ -200,7 +200,7 @@
           </div>
           <div class="col">
             <select class="browser-default custom-select"  id="crunit2">
-              <option selected>mg/dL</option>
+              <option selected value="1">mg/dL</option>
               <option value="2">‎µmol/L</option>
             </select>
           </div>
@@ -239,7 +239,7 @@
       <div class="container">
         <div class="row">
           <div class="col">
-            <p class="note note-info wow fadeIn" id="leftNote"><strong>Bu etken madde için doz hesaplaması, <u>hekimin endikasyon için belirlemiş olduğu</u> doz üzerinden yapılabilmektedir. Normal doz tablosuna <a href="img/tienam_kub.png" target="blank">buradan</a> ulaşabilirsiniz.</strong></p>
+            <p class="note note-info wow fadeIn" id="leftNote1"><strong>Bu etken madde için doz hesaplaması, <u>hekimin endikasyon için belirlemiş olduğu</u> doz üzerinden yapılabilmektedir. Normal doz tablosuna <a href="img/tienam_kub.png" target="blank">buradan</a> ulaşabilirsiniz.</strong></p>
           </div>
         </div>
         <div class="row mt-5">
@@ -783,9 +783,18 @@
     let normal = document.getElementById("normalForCila").value;
     let diyaList = document.getElementById("diyaForCila").value;
     let resulty = document.getElementById('resultText');
+    let cilaInfo = document.getElementById('leftNote1');
 
     let cilaText;
-
+    
+    console.log(result);
+    console.log(weight);
+    console.log(cilaInfo.innerHTML);
+    
+    if (weight < 30 && result < 71) {
+      return cilaInfo.innerHTML = "<strong>İmipenem / Silastatin sodyum</strong> etken maddesi için yeterli veri bulunmadığından, böbrek fonksiyon bozukluğu olan 30 kg'ın altındaki pediyatrik hastalarda önerilmez.<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
+    } 
+    
     if (result && weight) {
       reload.style.display = "inline-block";
       if (normal === "1") {
@@ -1235,9 +1244,11 @@
   const text1 = "<strong>Cockcroft-Gault Denklemi </strong>ile hesaplama yaparken cinsiyet, yaş, ağırlık ve serum kreatinini değerlerini girmeniz gerekir.";
   const text2 = "<strong>e-GFR yöntemi </strong>ile hesaplama yaparken en az cinsiyet, yaş ve serum kreatinini değerlerini girmeniz gerekir.";
   
-  $( '#weight' ).focus(() => {
+  // basic expectations
+
+  $('#weight').focus(() => {
     infoText.innerHTML = "<strong>Kilo </strong>değerini kg cinsinden giriniz.";
-    $(infoDiv).fadeIn(1000);
+    $(infoDiv).fadeIn(1000); // fadeIn lere gerek var mı, işe yarıyor mu?
   });
 
   $("#weight").blur(() => {
@@ -1246,7 +1257,7 @@
   });
 
   $('#srcr1').focus(() => {
-    infoText.innerHTML = "<strong>Serum kreatinini </strong>mg/dL veya µmol/L cinsinden giriniz. Normal değerler: < 1,5 mg/dL (<133 µmol/L)";
+    return infoText.innerHTML = "<strong>Serum kreatinini </strong>mg/dL veya µmol/L cinsinden giriniz. Normal değerler: < 1,5 mg/dL (<133 µmol/L)";
     $(infoDiv).fadeIn(1000);
   });
 
@@ -1266,7 +1277,7 @@
   });
 
   $('#nitrog').focus(() => {
-    infoText.innerHTML = "<strong>Kan üre azotu (BUN) </strong>değerini mg/dL cinsinden giriniz. Normal değerler aralığı: 10-20 mg/dL. Bu hesaplama türü için girilmesi zorunlu değildir.";
+    infoText.innerHTML = "<strong>Kan üre azotu (BUN) </strong>değerini mg/dL cinsinden giriniz. Normal değerler aralığı: 10-20 mg/dL.";
     $(infoDiv).fadeIn(1000);
   });
 
@@ -1276,7 +1287,7 @@
   });
 
   $('#albumin').focus(() => {
-    infoText.innerHTML = "<strong>Albümin </strong>değerini g/dL cinsinden giriniz. Normal değer aralığı: 3,5 - 5,5 g/dL. Bu hesaplama türü için girilmesi zorunlu değildir.";
+    infoText.innerHTML = "<strong>Albümin </strong>değerini g/dL cinsinden giriniz. Normal değer aralığı: 3,5 - 5,5 g/dL.";
     $(infoDiv).fadeIn(1000);
   });
 
@@ -1296,12 +1307,21 @@
   let weight = document.getElementById('weight');
 
   function weightReact() {
-    if (weight.value > 150) {
-      infoText.innerHTML = "Hastanın kilo değeri beklenen değer aralığının <strong>üstündedir</strong>, lütfen kontrol ediniz.";
-    } else if (weight.value === "") {
-      infoText.innerHTML = "<strong>Kilo </strong>değerini kg cinsinden giriniz.";
-    } else if (weight.value < 40) {
-      infoText.innerHTML = "Hastanın kilo değeri beklenen değer aralığının <strong>altındadır</strong>, lütfen kontrol ediniz.";
+    if (document.activeElement.id === "weight") {
+      if (weight.value > 150) {
+        infoText.innerHTML = "Hastanın kilo değeri beklenen değer aralığının <strong>üstündedir</strong>, lütfen kontrol ediniz.";
+        $('#calculate').fadeTo('fast', 100);
+      } else if (weight.value < 40 && weight.value > 0) {
+        // düzenlenmeye ihtiyacı yok mu
+        infoText.innerHTML = "Hastanın kilo değeri beklenen değer aralığının <strong>altındadır</strong>, lütfen kontrol ediniz.";
+        $('#calculate').fadeTo('fast', 100);
+      } else if (weight.value < 0) {
+        infoText.innerHTML = "Kilo değeri sıfırdan küçük olamaz. Lütfen girdiğiniz bilgileri kontrol ediniz.";
+        $('#calculate').fadeTo('medium', 0);
+      } else {
+        infoText.innerHTML = "<strong>Kilo </strong>değerini kg cinsinden giriniz.";
+        $('#calculate').fadeTo('fast', 100);
+      }
     }
   }
 
@@ -1317,15 +1337,118 @@
   let age1 = document.getElementById("age1");
 
   function age1React() {
-    if (actSubs.text === "Daptomisin") {
-      if (age1.value != 0 && age1.value < 18) {
-        infoText.innerHTML = "<strong>Daptomisinin</strong> 18 yaş altı hastalardaki güvenliliği ve etkililiği saptanmamıştır. Kullanımı tavsiye edilmez.";
-        $('#calculate').fadeOut();
-      } else {
-        infoText.innerHTML = text1;
-        $('#calculate').fadeIn();
+    if (document.activeElement.id === "age1") {
+      if (actSubs.text === "Etken Madde Seçimi") {
+        if (age1.value > 100) {
+          infoText.innerHTML = "Hastanın yaş bilgisi beklenen değer aralığının <strong>üstündedir</strong>, lütfen kontrol ediniz.";
+          $('#calculate').fadeTo('fast', 100);
+        } else if (age1.value < 0) {
+          infoText.innerHTML = "Yaş değeri sıfırdan küçük olamaz. Lütfen girdiğiniz bilgileri kontrol ediniz.";
+          $('#calculate').fadeTo('medium', 0);
+        } else {
+          infoText.innerHTML = text1;
+          $('#calculate').fadeTo('fast', 100);
+        }
+      } else if (actSubs.text === "Daptomisin") {
+        if (age1.value > 100) {
+          infoText.innerHTML = "Hastanın yaş bilgisi beklenen değer aralığının <strong>üstündedir</strong>, lütfen kontrol ediniz.";
+          $('#calculate').fadeTo('fast', 100);
+        } else if (age1.value != 0 && age1.value > 0 && age1.value < 18) {
+          infoText.innerHTML = "<strong>Daptomisinin</strong> 18 yaş altı hastalardaki güvenliliği ve etkililiği saptanmamıştır. Kullanımı tavsiye edilmez.<a href='https://www.msd.com.tr/static/pdf/Cubicin%20500mg_KUB.pdf' target='_blank'>*</a>";
+          $('#calculate').fadeTo('medium', 0);
+        } else if (age1.value < 0) {
+          infoText.innerHTML = "Yaş değeri sıfırdan küçük olamaz. Lütfen girdiğiniz bilgileri kontrol ediniz.";
+          $('#calculate').fadeTo('medium', 0);
+        } else {
+          infoText.innerHTML = text1;
+          $('#calculate').fadeTo('medium', 100);
+        }
+      } else if (actSubs.text === "Ertapenem sodyum") {
+        if (age1.value > 100) {
+          infoText.innerHTML = "Hastanın yaş bilgisi beklenen değer aralığının <strong>üstündedir</strong>, lütfen kontrol ediniz.";
+          $('#calculate').fadeTo('fast', 100);
+        } else if (age1.value != 0 && age1.value > 0 && age1.value < 13) {
+          infoText.innerHTML = "<strong>Ertapenem sodyum</strong> için böbrek yetmezliği olan pediyatrik hastalarla ilgili veri yoktur.<a href='https://www.msd.com.tr/static/pdf/INVANZ_1g_IM-IV_Enjeksiyon_Icin_Liyofilize_Toz_Iceren_Flakon_KUB.pdf' target='_blank'>*</a>";
+          $('#calculate').fadeTo('medium', 0);
+        } else if (age1.value < 0) {
+          infoText.innerHTML = "Yaş değeri sıfırdan küçük olamaz. Lütfen girdiğiniz bilgileri kontrol ediniz.";
+          $('#calculate').fadeTo('medium', 0);
+        } else {
+          infoText.innerHTML = text1;
+          $('#calculate').fadeTo('medium', 100);
+        }      
+      } else if (actSubs.text === "Levofloksasin") {
+        if (age1.value > 100) {
+          infoText.innerHTML = "Hastanın yaş bilgisi beklenen değer aralığının <strong>üstündedir</strong>, lütfen kontrol ediniz.";
+          $('#calculate').fadeTo('fast', 100);
+        } else if (age1.value != 0 && age1.value > 0 && age1.value < 18) {
+          infoText.innerHTML = "<strong>Levofloksasin</strong> çocuklarda ve büyümesi devam eden ergenlerde kontrendikedir.<a href='https://titck.gov.tr/storage/Archive/2019/kubKtAttachments/ec6b333e-e68b-4a96-8ae4-5ea400798a1d.pdf' target='_blank'>*</a>";
+          $('#calculate').fadeTo('medium', 0);
+        } else if (age1.value < 0) {
+          infoText.innerHTML = "Yaş değeri sıfırdan küçük olamaz. Lütfen girdiğiniz bilgileri kontrol ediniz.";
+          $('#calculate').fadeTo('medium', 0);
+        } else {
+          infoText.innerHTML = text1;
+          $('#calculate').fadeTo('medium', 100);
+        }
+      } else if (actSubs.text === "Meropenem trihidrat") {
+        if (age1.value > 100) {
+          infoText.innerHTML = "Hastanın yaş bilgisi beklenen değer aralığının <strong>üstündedir</strong>, lütfen kontrol ediniz.";
+          $('#calculate').fadeTo('fast', 100);
+        } else if (age1.value != 0 && age1.value > 0 && age1.value < 18) {
+          infoText.innerHTML = "<strong>Meropeneme</strong> ilişkin, böbrek fonksiyonu bozuk olan çocuklarla ilgili deneyim yoktur.<a href='https://titck.gov.tr/storage/kubKtAttachments/w6Yt8152JtyzB.pdf' target='_blank'>*</a>";
+          $('#calculate').fadeTo('medium', 0);
+        } else if (age1.value < 0) {
+          infoText.innerHTML = "Yaş değeri sıfırdan küçük olamaz. Lütfen girdiğiniz bilgileri kontrol ediniz.";
+          $('#calculate').fadeTo('medium', 0);
+        } else {
+          infoText.innerHTML = text1;
+          $('#calculate').fadeTo('medium', 100);
+        }
+      } else if (actSubs.text === "Piperasilin sodyum / Tazobaktam sodyum") {
+        if (age1.value > 100) {
+          infoText.innerHTML = "Hastanın yaş bilgisi beklenen değer aralığının <strong>üstündedir</strong>, lütfen kontrol ediniz.";
+          $('#calculate').fadeTo('fast', 100);
+        } else if (age1.value != 0 && age1.value > 0 && age1.value < 13) {
+          infoText.innerHTML = "<strong>Piperasilin sodyum / Tazobaktam sodyum</strong> kullanımında 13 yaşından küçük çocuklar için ayrı bir hesaplama yöntemi mevcuttur<a href='https://titck.gov.tr/storage/Archive/2019/kubKtAttachments/a9679f69-af3d-4d0b-bb20-49b8be5adf96.pdf' target='_blank'>*</a>";
+          $('#calculate').fadeTo('medium', 0);
+        } else if (age1.value < 0) {
+          infoText.innerHTML = "Yaş değeri sıfırdan küçük olamaz. Lütfen girdiğiniz bilgileri kontrol ediniz.";
+          $('#calculate').fadeTo('medium', 0);
+        } else {
+          infoText.innerHTML = text1;
+          $('#calculate').fadeTo('medium', 100);
+        }
+      } else if (actSubs.text === "Siprofloksasin laktat") {
+        if (age1.value > 100) {
+          infoText.innerHTML = "Hastanın yaş bilgisi beklenen değer aralığının <strong>üstündedir</strong>, lütfen kontrol ediniz.";
+          $('#calculate').fadeTo('fast', 100);
+        } else if (age1.value != 0 && age1.value > 0 && age1.value < 18) {
+          infoText.innerHTML = "<strong>Siprofloksasin laktat</strong> için, renal ve/veya hepatik bozukluğu olan çocuklarda doz çalışması yapılmamıştır.<a href='https://titck.gov.tr/storage/kubKtAttachments/0003cad130634.pdf' target='_blank'>*</a>";
+          $('#calculate').fadeTo('medium', 0);
+        } else if (age1.value < 0) {
+          infoText.innerHTML = "Yaş değeri sıfırdan küçük olamaz. Lütfen girdiğiniz bilgileri kontrol ediniz.";
+          $('#calculate').fadeTo('medium', 0);
+        } else {
+          infoText.innerHTML = text1;
+          $('#calculate').fadeTo('medium', 100);
+        }
+      } else if (actSubs.text === "Vankomisin hidroklorür") {
+        if (age1.value > 100) {
+          infoText.innerHTML = "Hastanın yaş bilgisi beklenen değer aralığının <strong>üstündedir</strong>, lütfen kontrol ediniz.";
+          $('#calculate').fadeTo('fast', 100);
+        } else if (age1.value != 0 && age1.value > 0 && age1.value < 18) {
+          infoText.innerHTML = "<strong>Vankomisin hidroklorür</strong> için, renal ve/veya hepatik bozukluğu olan çocuklardaki dozlamasıyla ilgili herhangi bir prospektüs bilgisi verilmemiştir.<a href='https://titck.gov.tr/storage/kubKtAttachments/b2b033b065298.pdf' target='_blank'>*</a>";
+          $('#calculate').fadeTo('medium', 0);
+        } else if (age1.value < 0) {
+          infoText.innerHTML = "Yaş değeri sıfırdan küçük olamaz. Lütfen girdiğiniz bilgileri kontrol ediniz.";
+          $('#calculate').fadeTo('medium', 0);
+        } else {
+          infoText.innerHTML = text1;
+          $('#calculate').fadeTo('medium', 100);
+        }
       }
-    }
+    }  
   }
 
   $('#age2').keydown(() => {
@@ -1336,14 +1459,221 @@
   let age2 = document.getElementById("age2");
 
   function age2React() {
-    if (actSubs.text === "Daptomisin") {
-      if (age2.value != 0 && age2.value < 18) {
-        infoText.innerHTML = "<strong>Daptomisinin</strong> 18 yaş altı hastalardaki güvenliliği ve etkililiği saptanmamıştır. Kullanımı tavsiye edilmez.";
-        $('#calculate').fadeOut();
+    if (document.activeElement.id === "age2") {
+      if (actSubs.text === "Etken Madde Seçimi") {
+        if (age2.value > 100) {
+          infoText.innerHTML = "Hastanın yaş bilgisi beklenen değer aralığının <strong>üstündedir</strong>, lütfen kontrol ediniz.";
+          $('#calculate').fadeTo('fast', 100);
+        } else if (age2.value < 0) {
+          infoText.innerHTML = "Yaş değeri sıfırdan küçük olamaz. Lütfen girdiğiniz bilgileri kontrol ediniz.";
+          $('#calculate').fadeTo('medium', 0);
+        } else {
+          infoText.innerHTML = text2;
+          $('#calculate').fadeTo('fast', 100);
+        }
+      } else if (actSubs.text === "Daptomisin") {
+        if (age2.value != 0 && age2.value > 0 && age2.value < 18) {
+          infoText.innerHTML = "<strong>Daptomisinin</strong> 18 yaş altı hastalardaki güvenliliği ve etkililiği saptanmamıştır. Kullanımı tavsiye edilmez.<a href='https://www.msd.com.tr/static/pdf/Cubicin%20500mg_KUB.pdf' target='_blank'>*</a>";
+          $('#calculate').fadeTo('medium', 0);
+        } else if (age2.value < 0) {
+          infoText.innerHTML = "Yaş değeri sıfırdan küçük olamaz. Lütfen girdiğiniz bilgileri kontrol ediniz.";
+          $('#calculate').fadeTo('medium', 0);
+        } else {
+          infoText.innerHTML = text2;
+          $('#calculate').fadeTo('medium', 100);
+        }
+      } else if (actSubs.text === "Ertapenem sodyum") {
+        if (age2.value != 0 && age2.value > 0 && age2.value < 13) {
+          infoText.innerHTML = "<strong>Ertapenem sodyum</strong> için böbrek yetmezliği olan pediyatrik hastalarla ilgili veri yoktur.<a href='https://www.msd.com.tr/static/pdf/INVANZ_1g_IM-IV_Enjeksiyon_Icin_Liyofilize_Toz_Iceren_Flakon_KUB.pdf' target='_blank'>*</a>";
+          $('#calculate').fadeTo('medium', 0);
+        } else if (age2.value < 0) {
+          infoText.innerHTML = "Yaş değeri sıfırdan küçük olamaz. Lütfen girdiğiniz bilgileri kontrol ediniz.";
+          $('#calculate').fadeTo('medium', 0);
+        } else {
+          infoText.innerHTML = text2;
+          $('#calculate').fadeTo('medium', 100);
+        }      
+      } else if (actSubs.text === "Levofloksasin") {
+        if (age2.value != 0 && age2.value > 0 && age2.value < 18) {
+          infoText.innerHTML = "<strong>Levofloksasin</strong> çocuklarda ve büyümesi devam eden ergenlerde kontrendikedir.<a href='https://titck.gov.tr/storage/Archive/2019/kubKtAttachments/ec6b333e-e68b-4a96-8ae4-5ea400798a1d.pdf' target='_blank'>*</a>";
+          $('#calculate').fadeTo('medium', 0);
+        } else if (age2.value < 0) {
+          infoText.innerHTML = "Yaş değeri sıfırdan küçük olamaz. Lütfen girdiğiniz bilgileri kontrol ediniz.";
+          $('#calculate').fadeTo('medium', 0);
+        } else {
+          infoText.innerHTML = text2;
+          $('#calculate').fadeTo('medium', 100);
+        }
+      } else if (actSubs.text === "Meropenem trihidrat") {
+        if (age2.value != 0 && age2.value > 0 && age2.value < 18) {
+          infoText.innerHTML = "<strong>Meropeneme</strong> ilişkin, böbrek fonksiyonu bozuk olan çocuklarla ilgili deneyim yoktur.<a href='https://titck.gov.tr/storage/kubKtAttachments/w6Yt8152JtyzB.pdf' target='_blank'>*</a>";
+          $('#calculate').fadeTo('medium', 0);
+        } else if (age2.value < 0) {
+          infoText.innerHTML = "Yaş değeri sıfırdan küçük olamaz. Lütfen girdiğiniz bilgileri kontrol ediniz.";
+          $('#calculate').fadeTo('medium', 0);
+        } else {
+          infoText.innerHTML = text2;
+          $('#calculate').fadeTo('medium', 100);
+        }
+      } else if (actSubs.text === "Piperasilin sodyum / Tazobaktam sodyum") {
+        if (age2.value != 0 && age2.value > 0 && age2.value < 13) {
+          infoText.innerHTML = "<strong>Piperasilin sodyum / Tazobaktam sodyum</strong> kullanımında 13 yaşından küçük çocuklar için ayrı bir hesaplama yöntemi mevcuttur<a href='https://titck.gov.tr/storage/Archive/2019/kubKtAttachments/a9679f69-af3d-4d0b-bb20-49b8be5adf96.pdf' target='_blank'>*</a>";
+          $('#calculate').fadeTo('medium', 0);
+        } else if (age2.value < 0) {
+          infoText.innerHTML = "Yaş değeri sıfırdan küçük olamaz. Lütfen girdiğiniz bilgileri kontrol ediniz.";
+          $('#calculate').fadeTo('medium', 0);
+        } else {
+          infoText.innerHTML = text2;
+          $('#calculate').fadeTo('medium', 100);
+        }
+      } else if (actSubs.text === "Siprofloksasin laktat") {
+        if (age2.value != 0 && age2.value > 0 && age2.value < 18) {
+          infoText.innerHTML = "<strong>Siprofloksasin laktat</strong> için, renal ve/veya hepatik bozukluğu olan çocuklarda doz çalışması yapılmamıştır.<a href='https://titck.gov.tr/storage/kubKtAttachments/0003cad130634.pdf' target='_blank'>*</a>";
+          $('#calculate').fadeTo('medium', 0);
+        } else if (age2.value < 0) {
+          infoText.innerHTML = "Yaş değeri sıfırdan küçük olamaz. Lütfen girdiğiniz bilgileri kontrol ediniz.";
+          $('#calculate').fadeTo('medium', 0);
+        } else {
+          infoText.innerHTML = text2;
+          $('#calculate').fadeTo('medium', 100);
+        }
+      } else if (actSubs.text === "Vankomisin hidroklorür") {
+        if (age2.value != 0 && age2.value > 0 && age2.value < 18) {
+          infoText.innerHTML = "<strong>Vankomisin hidroklorür</strong> için, renal ve/veya hepatik bozukluğu olan çocuklardaki dozlamasıyla ilgili herhangi bir prospektüs bilgisi verilmemiştir.<a href='https://titck.gov.tr/storage/kubKtAttachments/b2b033b065298.pdf' target='_blank'>*</a>";
+          $('#calculate').fadeTo('medium', 0);
+        } else if (age2.value < 0) {
+          infoText.innerHTML = "Yaş değeri sıfırdan küçük olamaz. Lütfen girdiğiniz bilgileri kontrol ediniz.";
+          $('#calculate').fadeTo('medium', 0);
+        } else {
+          infoText.innerHTML = text2;
+          $('#calculate').fadeTo('medium', 100);
+        }
+      }
+    }  
+  }
+
+  // srcr stuff
+
+  $('#srcr1').keydown(() => {
+    clearTimeout(timer); 
+    timer = setTimeout(srcr1React, 1000)
+  });
+
+  let srcr1 = document.getElementById("srcr1");
+
+  function srcr1React() {
+    if (document.activeElement.id === "srcr1") {
+      if (crunit1.value === "1") {
+        if (srcr1.value > 10) {
+          infoText.innerHTML = "Hastanın serum kreatinin değeri (mg/dL) beklenen aralığının <strong>üstündedir</strong>, lütfen kontrol ediniz.";
+          $('#calculate').fadeTo('medium', 0);
+        } else if (srcr1.value < 0) {
+          infoText.innerHTML = "Hastanın serum kreatinin değeri (mg/dL) sıfırdan küçük olamaz, lütfen kontrol ediniz.";
+          $('#calculate').fadeTo('medium', 0);
+        } else {
+          infoText.innerHTML = "<strong>Serum kreatinini </strong>mg/dL veya µmol/L cinsinden giriniz. Normal değerler: < 1,5 mg/dL (<133 µmol/L)";
+          $('#calculate').fadeTo('medium', 100);
+        }
+      } else if (crunit1.value === "2") {
+        if (srcr1.value > 884) {
+          infoText.innerHTML = "Hastanın serum kreatinin değeri (µmol/L) beklenen aralığının <strong>üstündedir</strong>, lütfen kontrol ediniz.";
+          $('#calculate').fadeTo('medium', 0);
+        } else if (srcr1.value < 88) {
+          infoText.innerHTML = "Hastanın serum kreatinin değeri (µmol/L) beklenen aralığının <strong>altındadır</strong>, lütfen kontrol ediniz.";
+          $('#calculate').fadeTo('medium', 0);
+        } else if (srcr1.value < 0) {
+          infoText.innerHTML = "Hastanın serum kreatinin değeri (µmol/L) sıfırdan küçük olamaz, lütfen kontrol ediniz.";
+          $('#calculate').fadeTo('medium', 0);
+        } else {
+          infoText.innerHTML = "<strong>Serum kreatinini </strong>mg/dL veya µmol/L cinsinden giriniz. Normal değerler: < 1,5 mg/dL (<133 µmol/L)";
+          $('#calculate').fadeTo('medium', 100);
+        }
+      }
+    }
+  }
+
+  $('#srcr2').keydown(() => {
+    clearTimeout(timer); 
+    timer = setTimeout(srcr2React, 1000)
+  });
+
+  let srcr2 = document.getElementById("srcr2");
+
+  function srcr2React() {
+    if (document.activeElement.id === "srcr2") {
+      if (crunit2.value === "1") {
+        if (srcr2.value > 10) {
+          infoText.innerHTML = "Hastanın serum kreatinin değeri (mg/dL) beklenen aralığının <strong>üstündedir</strong>, lütfen kontrol ediniz.";
+          $('#calculate').fadeTo('medium', 0);
+        } else if (srcr2.value < 0) {
+          infoText.innerHTML = "Hastanın serum kreatinin değeri (mg/dL) sıfırdan küçük olamaz, lütfen kontrol ediniz.";
+          $('#calculate').fadeTo('medium', 0);
+        } else {
+          infoText.innerHTML = "<strong>Serum kreatinini </strong>mg/dL veya µmol/L cinsinden giriniz. Normal değerler: < 1,5 mg/dL (<133 µmol/L)";
+          $('#calculate').fadeTo('medium', 100);
+        }
+      } else if (crunit2.value === "2") {
+        if (srcr2.value > 884) {
+          infoText.innerHTML = "Hastanın serum kreatinin değeri (µmol/L) beklenen aralığının <strong>üstündedir</strong>, lütfen kontrol ediniz.";
+          $('#calculate').fadeTo('medium', 0);
+        } else if (srcr2.value < 88 && srcr2.value > 0) {
+          infoText.innerHTML = "Hastanın serum kreatinin değeri (µmol/L) beklenen aralığının <strong>altındadır</strong>, lütfen kontrol ediniz.";
+          $('#calculate').fadeTo('medium', 0);
+        } else if (srcr2.value < 0) {
+          infoText.innerHTML = "Hastanın serum kreatinin değeri (µmol/L) sıfırdan küçük olamaz, lütfen kontrol ediniz.";
+          $('#calculate').fadeTo('medium', 0);
+        } else {
+          infoText.innerHTML = "<strong>Serum kreatinini </strong>mg/dL veya µmol/L cinsinden giriniz. Normal değerler: < 1,5 mg/dL (<133 µmol/L)";
+          $('#calculate').fadeTo('medium', 100);
+        }
+      }
+    }
+  }
+
+  // BUN stuff
+
+  $('#nitrog').keydown(() => {
+    clearTimeout(timer); 
+    timer = setTimeout(bunReact, 1000)
+  });
+
+  let nitrog = document.getElementById("nitrog");
+
+  function bunReact() {
+    if (document.activeElement.id === "nitrog") {
+      if (nitrog.value > 50) {
+        infoText.innerHTML = "Hastanın kan üre azotu değeri (mg/dL) beklenen aralığının <strong>üstündedir</strong>, lütfen kontrol ediniz.";
+        $('#calculate').fadeTo('medium', 0);
+      } else if (nitrog.value < 0) {
+        infoText.innerHTML = "Hastanın kan üre azotu değeri (mg/dL) sıfırdan küçük olamaz, lütfen kontrol ediniz.";
+        $('#calculate').fadeTo('medium', 0);
       } else {
-        infoText.innerHTML = text2;
-        $('#calculate').fadeIn();
-        // calculatey.style.display = "block";
+        infoText.innerHTML = "<strong>Kan üre azotu (BUN) </strong>değerini mg/dL cinsinden giriniz. Normal değerler aralığı: 10-20 mg/dL.";
+        $('#calculate').fadeTo('medium', 100);
+      }
+    }
+  }
+
+  // albumin stuff
+
+  $('#albumin').keydown(() => {
+    clearTimeout(timer); 
+    timer = setTimeout(albuminReact, 1000)
+  });
+
+  let albumin = document.getElementById("albumin");
+
+  function albuminReact() {
+    if (document.activeElement.id === "albumin") {
+      if (albumin.value > 7) {
+        infoText.innerHTML = "Albumin değeri (g/dL) beklenen aralığının <strong>üstündedir</strong>, lütfen kontrol ediniz.";
+        $('#calculate').fadeTo('medium', 0);
+      } else if (albumin.value < 0) {
+        infoText.innerHTML = "Albumin değeri (g/dL) sıfırdan küçük olamaz, lütfen kontrol ediniz.";
+        $('#calculate').fadeTo('medium', 0);
+      } else {
+        infoText.innerHTML = "<strong>Albümin </strong>değerini g/dL cinsinden giriniz. Normal değer aralığı: 3,5 - 5,5 g/dL.";
+        $('#calculate').fadeTo('medium', 100);
       }
     }
   }
