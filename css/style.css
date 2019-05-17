@@ -164,3 +164,14 @@ label.custom-control-label {
 .form-control::-moz-placeholder {color:#FAFAFA; }  /* Mozilla Firefox 19+ */
 .form-control:-ms-input-placeholder {color:#FAFAFA; }  /* Internet Explorer 10-11 */
 .form-control::-ms-input-placeholder {color:#FAFAFA; }  /* Microsoft Edge */
+
+@media (max-width:480px) {
+  .dropdown-menu {
+    width:99%;
+ }
+
+  .dropdown-menu > li > a {
+    white-space: normal;
+ }
+
+}

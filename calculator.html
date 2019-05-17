@@ -103,7 +103,7 @@
       <div class="container">
         <div class="row mt-3">
           <!--Dropdown primary-->
-          <div class="col">         
+          <div class="col mt-2">         
             <!--Dropdown primary-->            
             <div class="dropdown">          
               <!--Trigger-->
@@ -132,7 +132,7 @@
           </div>
           <!--/Dropdown primary-->
           <!--Dropdown primary-->
-          <div class="col">          
+          <div class="col mt-2">          
             <!--Dropdown primary-->            
             <div class="dropdown">          
               <!--Trigger-->
@@ -153,66 +153,66 @@
           </div>
         </div>
         <div class="row text-center align-items-center" id="cockgaulty">
-          <div class="custom-control custom-checkbox mt-3" id="diya1">
-            <input type="checkbox" class="custom-control-input" id="diyaliz1">
-            <label class="custom-control-label" for="diyaliz1">Hemodiyaliz Alıyor<br><small>(Veri girişi gerekmemektedir)</small></label>
-          </div>
-          <div class="col">
+          <div class="col-6 col-lg-2">
             <select class="browser-default custom-select" id="gender1">
               <option selected>Cinsiyet</option>
               <option value="1">Erkek</option>
               <option value="2">Kadın</option>
             </select>
           </div>
-          <div class="col md-form input-group mb-3">
+          <div class="col-6 col-lg-2 md-form input-group mb-3">
             <input type="number" id="age1" class="form-control" placeholder="Yaş" aria-label="Yaş" aria-describedby="material-addon1" step='1' autocomplete="off" min="0">
           </div>
-          <div class="col md-form input-group mb-3">
-            <input type="number" id="weight" class="form-control" placeholder="Ağırlık" aria-label="Ağırlık" aria-describedby="material-addon1" step='0.5' autocomplete="off" min="0">
-          </div>
-          <div class="col md-form input-group mb-3">
+          <div class="col-6 col-lg-2 md-form input-group mb-3">
             <input type="number" id="srcr1" class="form-control" placeholder="Serum kreatinini" aria-label="Serum kreatinini" aria-describedby="material-addon1" step='0.01' autocomplete="off" min="0">
           </div>
-          <div class="col">
+          <div class="col-6 col-lg-2">
             <select class="browser-default custom-select" id="crunit1">
               <option selected value="1">mg/dL</option>
               <option value="2">‎µmol/L</option>
             </select>
           </div>
+          <div class="col-6 col-lg-2 md-form input-group mb-3">
+            <input type="number" id="weight" class="form-control" placeholder="Ağırlık" aria-label="Ağırlık" aria-describedby="material-addon1" step='0.5' autocomplete="off" min="0">
+          </div>
+          <div class="col-6 col-lg-2 custom-control custom-checkbox mt-3" id="diya1" style="padding-left: 2.5rem;">
+            <input type="checkbox" class="custom-control-input" id="diyaliz1">
+            <label class="custom-control-label" id="dia1" for="diyaliz1">Hemodiyaliz Alıyor</label>
+          </div>
         </div>
         <div class="row text-center align-items-center" style="display:none" id="egfry">
-          <div class="custom-control custom-checkbox mt-3" id="diya2">
-            <input type="checkbox" class="custom-control-input" id="diyaliz2">
-            <label class="custom-control-label" for="diyaliz2">Hemodiyaliz Alıyor<br><small>(Veri girişi gerekmemektedir)</small></label>
-          </div>
-          <div class="col">
+          <div class="col-6 col-lg-2">
             <select class="browser-default custom-select" id="gender2">
               <option selected>Cinsiyet</option>
               <option value="1">Erkek</option>
               <option value="2">Kadın</option>
             </select>
           </div>
-          <div class="col md-form input-group mb-3">
+          <div class="col-6 col-lg-1 md-form input-group mb-3">
             <input type="number" id="age2" class="form-control" placeholder="Yaş" aria-label="Yaş" aria-describedby="material-addon1" step='1' autocomplete="off" min="0">
           </div>
-          <div class="col md-form input-group mb-3">
+          <div class="col-6 col-lg-2 md-form input-group mb-3">
             <input type="number" id="srcr2" class="form-control" placeholder="Serum kreatinini" aria-label="Serum kreatinini" aria-describedby="material-addon1" step='0.01' autocomplete="off" min="0">
           </div>
-          <div class="col">
+          <div class="col-6 col-lg-1">
             <select class="browser-default custom-select"  id="crunit2">
               <option selected value="1">mg/dL</option>
               <option value="2">‎µmol/L</option>
             </select>
           </div>
-          <div class="col md-form input-group mb-3">
+          <div class="col-6 col-lg-1 md-form input-group mb-3">
             <input type="number" id="nitrog" class="form-control" placeholder="BUN" aria-label="BUN" aria-describedby="material-addon1" step='0.01' autocomplete="off" min="0">
           </div>
-          <div class="col md-form input-group mb-3">
+          <div class="col-6 col-lg-2 md-form input-group mb-3">
             <input type="number" id="albumin" class="form-control" placeholder="Albumin" aria-label="Albumin" aria-describedby="material-addon1" step='0.01' autocomplete="off" min="0">
           </div>
-          <div class="custom-control custom-checkbox">
+          <div class="col-6 col-lg-1 custom-control custom-checkbox mt-2">
             <input type="checkbox" class="custom-control-input" id="black">
             <label class="custom-control-label" for="black">Siyahi</label>
+          </div>
+          <div class="col-6 col-lg-2 custom-control custom-checkbox mt-2" id="diya2">
+            <input type="checkbox" class="custom-control-input" id="diyaliz2">
+            <label class="custom-control-label" id="dia2" for="diyaliz2">Hemodiyaliz Alıyor</label>
           </div>
         </div>
         <div class="row mt-3">
@@ -1294,6 +1294,63 @@
   $("#albumin").blur(() => {
     infoText.innerHTML = text2;
     $(infoDiv).fadeIn(1000);
+  });
+
+  // diya stuff
+
+  let diya1 = document.getElementById('dia1');
+
+  $("#dia1").click(() => {
+
+    let gender1 = document.getElementById("gender1");
+    let age1 = document.getElementById("age1");
+    let weight = document.getElementById("weight");
+    let srcr1 = document.getElementById("srcr1");
+    let crunit1 = document.getElementById("crunit1");
+
+    if ($("#diyaliz1").is(':checked')) {
+      infoText.innerHTML = text1;
+      age1.disabled = false;
+      gender1.disabled = false;
+      weight.disabled = false;
+      srcr1.disabled = false;
+      crunit1.disabled = false;
+    } else {
+      infoText.innerHTML = "Hastanın hemodiyaliz aldığı durumlarda veri girişine gerek yoktur.";
+      age1.disabled = true;
+      gender1.disabled = true;
+      weight.disabled = true;
+      srcr1.disabled = true;
+      crunit1.disabled = true;
+    }
+  });
+
+  $("#dia2").click(() => {
+
+    let gender2 = document.getElementById("gender2");
+    let age2 = document.getElementById("age2");
+    let srcr2 = document.getElementById("srcr2");
+    let crunit2 = document.getElementById("crunit2");
+    let nitrog = document.getElementById("nitrog");    
+    let albumin = document.getElementById("albumin");
+
+    if ($("#diyaliz2").is(':checked')) {
+      infoText.innerHTML = text2;
+      age2.disabled = false;
+      gender2.disabled = false;
+      srcr2.disabled = false;
+      crunit2.disabled = false;
+      nitrog.disabled = false;
+      albumin.disabled = false;
+    } else {
+      infoText.innerHTML = "Hastanın hemodiyaliz aldığı durumlarda veri girişine gerek yoktur.";
+      age2.disabled = true;
+      gender2.disabled = true;
+      srcr2.disabled = true;
+      crunit2.disabled = true;
+      nitrog.disabled = true;
+      albumin.disabled = true;
+    }
   });
 
   // weight stuff
