@@ -10,7 +10,7 @@ header,
   body,
   header,
   .view {
-    height: 100vh;
+    height: 110vh;
   }
 }
 
@@ -173,5 +173,14 @@ label.custom-control-label {
   .dropdown-menu > li > a {
     white-space: normal;
  }
+}
 
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#starty:hover, #starty:focus {
+  color: #210FD2;
 }

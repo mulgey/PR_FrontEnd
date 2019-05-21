@@ -76,26 +76,22 @@
     <!-- Full Page Intro -->
     <div class="view" style="background-image: url('img/main.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
       <!-- Mask & flexbox options-->
-      <div class="mask rgba-black-light align-items-center flex-center">
+      <div class="mask rgba-black-light align-items-center text-center flex-center justify-content-center">
         <!-- Content -->
         <div class="container">
           <!--Grid row-->
-          <div class="row">
+          <div class="row white-text mb-4 justify-content-center">
             <!--Grid column-->
-            <div class="col-md-12 mb-4 white-text text-center">
-              <h1 class="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown" data-wow-delay="0.3s"><strong>Prospecturk Renal</strong></h1>
-              <hr class="hr-light my-4 w-75 wow fadeInDown" data-wow-delay="0.4s">
-              <h5 class="text-uppercase mb-4 white-text wow fadeInDown" data-wow-delay="0.4s"><strong>Online Doz Hesaplama Aracı</strong></h5>
-              <a class="btn btn-outline-white w-25 wow fadeInDown slow" data-wow-delay="2s" href="#cards">Daha fazla bilgi</a>
-              <a class="btn btn-outline-white w-25 ml-5 font-weight-bold wow fadeInDown slower" data-wow-delay="2s" href='calculator.html'>Başla</a>
-            </div>
-            <!-- /Grid column-->
+            <h2 class="col-12 h2-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown" style="letter-spacing: 5px; font-size: 2.2rem;" data-wow-delay="0.3s"><strong>Prospecturk Renal</strong></h2>
+            <hr class="col-10 col-lg-12 hr-light my-4 w-75 wow fadeInDown" data-wow-delay="0.4s">
+            <h5 class="col-12 text-uppercase mb-4 white-text wow fadeInDown" data-wow-delay="0.4s"><strong>Online Doz Hesaplama Aracı</strong></h5>
+          </div>  
+          <div class="row white-text justify-content-center"> 
+            <a class="col-11 col-lg-5 mx-3 mb-3 btn btn-outline-white wow fadeInDown slow" data-wow-delay="2s" href="#cards">Daha fazla bilgi</a>
+            <a class="col-11 col-lg-5 mx-3 mb-3 btn btn-outline-white font-weight-bold wow fadeInDown slower" data-wow-delay="2s" href='calculator.html'>Başla</a>
           </div>
-          <!-- /Grid row-->
         </div>
-        <!-- /Content-->
       </div>
-      <!-- /Mask & flexbox options -->
     </div>
     <!-- /Full Page Intro -->
   </header>
@@ -106,21 +102,21 @@
       <img src="img/cards/card-01.jpg" class="card-img-top" alt="card-01">
       <div class="card-body">
         <h5 class="card-title">Etken Maddeyi Seçin</h5>
-        <p class="card-text">Veritabanındaki etken maddelerden, hesaplama yapacağınız etken maddeyi seçerek başlayabilirsiniz</p>
+        <p class="card-text" style="text-align: justify;">Veritabanındaki etken maddelerden, hesaplama yapacağınız etken maddeyi seçerek başlayabilirsiniz</p>
       </div>
     </div>
     <div class="card wow animated bounceIn slow delay-1s">
       <img src="img/cards/card-02.jpg" class="card-img-top" alt="card-02">
       <div class="card-body">
         <h5 class="card-title">Hastanın Klinik Verilerini Girin</h5>
-        <p class="card-text">Hastanın serum kreatinini hesaplamak için, Cockcroft-Gault denklemine veya eGFR testine dayanarak uygun hesaplamayı gerçekleştirebilirsiniz</p>
+        <p class="card-text" style="text-align: justify;">Hastanın serum kreatinini hesaplamak için, Cockcroft-Gault veya eGFR formüllerine dayanarak uygun hesaplamayı gerçekleştirebilirsiniz</p>
       </div>
     </div>
     <div class="card wow animated bounceIn slower delay-2s">
       <img src="img/cards/card-03.jpg" class="card-img-top" alt="card-03">
       <div class="card-body">
         <h5 class="card-title">Hastanız İçin Uygun Dozu Bulun</h5>
-        <p class="card-text">Seçtiğiniz etken madde ve laboratuvar değerlerine göre uygun doz bilgisine ulaşabilirsiniz</p>
+        <p class="card-text" style="text-align: justify;">Seçtiğiniz etken madde ve klinik verilere uygun olacak doz bilgisine ulaşabilirsiniz</p>
       </div>
     </div>
   </div>
@@ -128,7 +124,7 @@
 
   <!-- Start Button -->
   <div class="text-center mb-4">
-  <button type="button" class="btn blue-gradient btn-huge wow animated flipInX delay-2s slower" onclick="window.location.href = 'calculator.html';">Haydi Başlayalım!</button>
+  <button type="button" id="starty" class="btn rounded-pill btn-primary flipInX delay-2s slower" onclick="window.location.href = 'calculator.html';">Başlayalım! <i class="fas fa-caret-square-right pl-1"></i></button>
   </div>
   <!-- /Start Button -->
     

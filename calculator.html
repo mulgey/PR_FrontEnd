@@ -221,7 +221,7 @@
           </div>
         </div>
         <div class="row text-center align-items-center mt-3">
-          <div class="col" id="calculate">
+          <div class="col mb-3" id="calculate">
             <button type="button" class="btn btn-cyan btn-lg disabled" id="calcButton">Hesaplayalım</button>
           </div>
         </div>
@@ -232,7 +232,7 @@
   <!-- /Selecting The Active Substance -->
 
   <!-- Section for Imipenem - Cilastatin -->
-  <div class="view" id="imipenem-cilastatin" data-spy="imipenem-cilastatin" data-target="#imipenem-cilastatin" style="display:none; background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+  <div class="view" id="imipenem-cilastatin" data-spy="imipenem-cilastatin" data-target="#imipenem-cilastatin" style="display: none; background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
     <!-- Mask & flexbox options-->
     <div class="mask rgba-stylish-light flex-center text-center align-items-center">
       <!-- Content -->
@@ -243,15 +243,15 @@
           </div>
         </div>
         <div class="row mt-5">
-          <div class="col">
+          <div class="col-6 col-lg-3 mt-3">
             <label for="diyaForCila" style="color: white; font-weight: bold">Hemodiyaliz Durumu</label>
             <select class="browser-default custom-select" id="diyaForCila">
               <option value="1">Evet</option>
               <option selected value="2">Hayır</option>
             </select>
           </div>          
-          <div class="col">
-            <label for="normalForCila" style="color: white; font-weight: bold">Belirlenmiş Normal Günlük Doz</label>
+          <div class="col-6 col-lg-3 mt-3">
+            <label for="normalForCila" style="color: white; font-weight: bold">Normal Günlük Doz</label>
             <select class="browser-default custom-select" id="normalForCila">
               <option value="1">1,0 g / gün</option>
               <option value="2">1,5 g / gün</option>
@@ -260,12 +260,12 @@
               <option value="5">4,0 g / gün</option>
             </select>
           </div>  
-          <div class="col">
+          <div class="col-6 col-lg-3 mt-3">
             <label for="srcrForCila" style="color: white; font-weight: bold">Serum Kreatinin Değeri</label>
             <input type="number" id="srcrForCila" class="form-control" style="color: black" step='0.01' autocomplete="off" min="0">
           </div>
-          <div class="col">
-            <label for="weightForCila" style="color: white; font-weight: bold">Ağırlık</label>
+          <div class="col-6 col-lg-3 mt-3">
+            <label for="weightForCila" style="color: white; font-weight: bold">Ağırlık Değeri (kg)</label>
             <input type="text" id="weightForCila" class="form-control" style="color: black" autocomplete="off">
           </div>         
         </div>
@@ -279,7 +279,7 @@
   </div>
 
   <!-- Section for Daptomicina -->
-  <div class="view" id="daptomicina" data-spy="daptomicina" data-target="#daptomicina" style="display:none; background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+  <div class="view" id="daptomicina" data-spy="daptomicina" data-target="#daptomicina" style="display: none; background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
     <!-- Mask & flexbox options-->
     <div class="mask rgba-stylish-light flex-center text-center align-items-center">
       <div class="container">
@@ -289,26 +289,26 @@
           </div>
         </div>        
         <div class="row mt-5">
-          <div class="col">
+          <div class="col mt-3">
             <label for="diyaForDapto" style="color: white; font-weight: bold">Hemodiyaliz Durumu</label>
             <select class="browser-default custom-select" id="diyaForDapto">
               <option value="1">Evet</option>
               <option selected value="2">Hayır</option>
             </select>
           </div>            
-          <div class="col">
+          <div class="col mt-3">
             <label for="indicForDapto" style="color: white; font-weight: bold">Terapötik Endikasyon</label>
             <select class="browser-default custom-select" id="indicForDapto">
               <option value="1">Deri ve yumuşak doku enfeksiyonları</option>
               <option selected value="2">S. Aureus'un neden olduğu bakteriyemiler</option>
             </select>
           </div>
-          <div class="col">
+          <div class="col mt-3">
             <label for="srcrForDapto" style="color: white; font-weight: bold">Serum Kreatinin Değeri</label>
             <input type="number" id="srcrForDapto" class="form-control" style="color: black" step='0.01' autocomplete="off" min="0">
           </div>
-          <div class="col">
-            <label for="weightForDapto" style="color: white; font-weight: bold">Ağırlık</label>
+          <div class="col mt-3">
+            <label for="weightForDapto" style="color: white; font-weight: bold">Ağırlık Değeri (Kilogram)</label>
             <input type="text" id="weightForDapto" class="form-control" style="color: black" autocomplete="off">
           </div>                       
         </div>
@@ -322,7 +322,7 @@
   </div>
 
   <!-- Section for Levofloxacin -->
-  <div class="view" id="levofloxacin" data-spy="levofloxacin" data-target="#levofloxacin" style="display:none; background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+  <div class="view" id="levofloxacin" data-spy="levofloxacin" data-target="#levofloxacin" style="display: none; background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
     <!-- Mask & flexbox options-->
     <div class="mask rgba-stylish-light flex-center text-center align-items-center">
       <div class="container">
@@ -332,25 +332,25 @@
           </div>
         </div>        
         <div class="row mt-5">
-          <div class="col">
+          <div class="col-12 col-lg-4 mt-3">
+            <label for="normalForLevo" style="color: white; font-weight: bold">Normal Günlük Doz</label>
+            <select class="browser-default custom-select" id="normalForLevo">
+              <option value="1">250 mg / 24 saat</option>
+              <option value="2">500 mg / 24 saat</option>
+              <option selected value="3">500 mg / 12 saat</option>
+            </select>
+          </div>
+          <div class="col-6 col-lg-4 mt-3">
             <label for="diyaForLevo" style="color: white; font-weight: bold">Hemodiyaliz Durumu</label>
             <select class="browser-default custom-select" id="diyaForLevo">
               <option value="1">Evet</option>
               <option selected value="2">Hayır</option>
             </select>
           </div>            
-          <div class="col">
-            <label for="normalForLevo" style="color: white; font-weight: bold">Belirlenmiş Normal Günlük Doz</label>
-            <select class="browser-default custom-select" id="normalForLevo">
-              <option value="1">250 mg / 24 saat</option>
-              <option value="2">500 mg / 24 saat</option>
-              <option selected value="3">500 mg / 12 saat</option>
-            </select>
-          </div> 
-          <div class="col">
+          <div class="col-6 col-lg-4 mt-3">
             <label for="srcrForLevo" style="color: white; font-weight: bold">Serum Kreatinin Değeri</label>
             <input type="number" id="srcrForLevo" class="form-control" style="color: black" step='0.01' autocomplete="off" min="0">
-          </div>                      
+          </div>                   
         </div>
         <div class="row text-center align-items-center mt-4">
           <div class="col" id="calculateForDapto">
@@ -787,11 +787,7 @@
 
     let cilaText;
     
-    console.log(result);
-    console.log(weight);
-    console.log(cilaInfo.innerHTML);
-    
-    if (weight < 30 && result < 71) {
+    if (weight > 0 && weight < 30 && result < 71) {
       return cilaInfo.innerHTML = "<strong>İmipenem / Silastatin sodyum</strong> etken maddesi için yeterli veri bulunmadığından, böbrek fonksiyon bozukluğu olan 30 kg'ın altındaki pediyatrik hastalarda önerilmez.<a href='https://titck.gov.tr/storage/kubKtAttachments/jpU9UuQRQ39Ce.pdf' target='_blank'>*</a>";
     } 
     
