@@ -103,7 +103,7 @@
       <div class="container">
         <div class="row mt-3">
           <!--Dropdown primary-->
-          <div class="col mt-2">         
+          <div class="col-12 col-lg-6 mt-2">         
             <!--Dropdown primary-->            
             <div class="dropdown">          
               <!--Trigger-->
@@ -132,7 +132,7 @@
           </div>
           <!--/Dropdown primary-->
           <!--Dropdown primary-->
-          <div class="col mt-2">          
+          <div class="col-12 col-lg-6 mt-2">          
             <!--Dropdown primary-->            
             <div class="dropdown">          
               <!--Trigger-->
@@ -206,7 +206,7 @@
           <div class="col-6 col-lg-2 md-form input-group mb-3">
             <input type="number" id="albumin" class="form-control" placeholder="Albumin" aria-label="Albumin" aria-describedby="material-addon1" step='0.01' autocomplete="off" min="0">
           </div>
-          <div class="col-6 col-lg-1 custom-control custom-checkbox mt-2">
+          <div class="col-6 col-lg-1 custom-control custom-checkbox mt-2" id="bla">
             <input type="checkbox" class="custom-control-input" id="black">
             <label class="custom-control-label" for="black">Siyahi</label>
           </div>
@@ -232,7 +232,7 @@
   <!-- /Selecting The Active Substance -->
 
   <!-- Section for Imipenem - Cilastatin -->
-  <div class="view" id="imipenem-cilastatin" data-spy="imipenem-cilastatin" data-target="#imipenem-cilastatin" style="display: none; background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+  <div class="view" id="imipenem-cilastatin" data-spy="imipenem-cilastatin" data-target="#imipenem-cilastatin" style="background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
     <!-- Mask & flexbox options-->
     <div class="mask rgba-stylish-light flex-center text-center align-items-center">
       <!-- Content -->
@@ -243,15 +243,15 @@
           </div>
         </div>
         <div class="row mt-5">
-          <div class="col-6 col-lg-3 mt-3">
+          <div class="col-12 col-lg-3 mt-3">
             <label for="diyaForCila" style="color: white; font-weight: bold">Hemodiyaliz Durumu</label>
             <select class="browser-default custom-select" id="diyaForCila">
               <option value="1">Evet</option>
               <option selected value="2">Hayır</option>
             </select>
           </div>          
-          <div class="col-6 col-lg-3 mt-3">
-            <label for="normalForCila" style="color: white; font-weight: bold">Normal Günlük Doz</label>
+          <div class="col-12 col-lg-3 mt-3">
+            <label for="normalForCila" style="color: white; font-weight: bold">Belirlenmiş Normal Günlük Doz</label>
             <select class="browser-default custom-select" id="normalForCila">
               <option value="1">1,0 g / gün</option>
               <option value="2">1,5 g / gün</option>
@@ -260,12 +260,12 @@
               <option value="5">4,0 g / gün</option>
             </select>
           </div>  
-          <div class="col-6 col-lg-3 mt-3">
-            <label for="srcrForCila" style="color: white; font-weight: bold">Serum Kreatinin Değeri</label>
+          <div class="col-12 col-lg-3 mt-3">
+            <label for="srcrForCila" style="color: white; font-weight: bold">Serum Kreatinin Değeri (mg/dL)</label>
             <input type="number" id="srcrForCila" class="form-control" style="color: black" step='0.01' autocomplete="off" min="0">
           </div>
-          <div class="col-6 col-lg-3 mt-3">
-            <label for="weightForCila" style="color: white; font-weight: bold">Ağırlık Değeri (kg)</label>
+          <div class="col-12 col-lg-3 mt-3">
+            <label for="weightForCila" style="color: white; font-weight: bold">Ağırlık (Kilogram)</label>
             <input type="text" id="weightForCila" class="form-control" style="color: black" autocomplete="off">
           </div>         
         </div>
@@ -279,7 +279,7 @@
   </div>
 
   <!-- Section for Daptomicina -->
-  <div class="view" id="daptomicina" data-spy="daptomicina" data-target="#daptomicina" style="display: none; background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+  <div class="view" id="daptomicina" data-spy="daptomicina" data-target="#daptomicina" style="background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
     <!-- Mask & flexbox options-->
     <div class="mask rgba-stylish-light flex-center text-center align-items-center">
       <div class="container">
@@ -289,26 +289,26 @@
           </div>
         </div>        
         <div class="row mt-5">
-          <div class="col mt-3">
+          <div class="col-12 col-lg-3 mt-3">
             <label for="diyaForDapto" style="color: white; font-weight: bold">Hemodiyaliz Durumu</label>
             <select class="browser-default custom-select" id="diyaForDapto">
               <option value="1">Evet</option>
               <option selected value="2">Hayır</option>
             </select>
           </div>            
-          <div class="col mt-3">
+          <div class="col-12 col-lg-3 mt-3">
             <label for="indicForDapto" style="color: white; font-weight: bold">Terapötik Endikasyon</label>
             <select class="browser-default custom-select" id="indicForDapto">
               <option value="1">Deri ve yumuşak doku enfeksiyonları</option>
               <option selected value="2">S. Aureus'un neden olduğu bakteriyemiler</option>
             </select>
           </div>
-          <div class="col mt-3">
-            <label for="srcrForDapto" style="color: white; font-weight: bold">Serum Kreatinin Değeri</label>
+          <div class="col-12 col-lg-3 mt-3">
+            <label for="srcrForDapto" style="color: white; font-weight: bold">Serum Kreatinin Değeri (mg/dL)</label>
             <input type="number" id="srcrForDapto" class="form-control" style="color: black" step='0.01' autocomplete="off" min="0">
           </div>
-          <div class="col mt-3">
-            <label for="weightForDapto" style="color: white; font-weight: bold">Ağırlık Değeri (Kilogram)</label>
+          <div class="col-12 col-lg-3 mt-3">
+            <label for="weightForDapto" style="color: white; font-weight: bold">Ağırlık (Kilogram)</label>
             <input type="text" id="weightForDapto" class="form-control" style="color: black" autocomplete="off">
           </div>                       
         </div>
@@ -322,7 +322,7 @@
   </div>
 
   <!-- Section for Levofloxacin -->
-  <div class="view" id="levofloxacin" data-spy="levofloxacin" data-target="#levofloxacin" style="display: none; background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+  <div class="view" id="levofloxacin" data-spy="levofloxacin" data-target="#levofloxacin" style="background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
     <!-- Mask & flexbox options-->
     <div class="mask rgba-stylish-light flex-center text-center align-items-center">
       <div class="container">
@@ -340,15 +340,15 @@
               <option selected value="3">500 mg / 12 saat</option>
             </select>
           </div>
-          <div class="col-6 col-lg-4 mt-3">
+          <div class="col-12 col-lg-4 mt-3">
             <label for="diyaForLevo" style="color: white; font-weight: bold">Hemodiyaliz Durumu</label>
             <select class="browser-default custom-select" id="diyaForLevo">
               <option value="1">Evet</option>
               <option selected value="2">Hayır</option>
             </select>
           </div>            
-          <div class="col-6 col-lg-4 mt-3">
-            <label for="srcrForLevo" style="color: white; font-weight: bold">Serum Kreatinin Değeri</label>
+          <div class="col-12 col-lg-4 mt-3">
+            <label for="srcrForLevo" style="color: white; font-weight: bold">Serum Kreatinin Değeri (mg/dL)</label>
             <input type="number" id="srcrForLevo" class="form-control" style="color: black" step='0.01' autocomplete="off" min="0">
           </div>                   
         </div>
