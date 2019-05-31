@@ -131,7 +131,6 @@ table.dataTable thead .sorting_desc_disabled:before {
 
 .md-form label, .md-form, .form-control {
   color: #f8f9fa;
-  font-weight: bold;
 }
 
 label.active {
@@ -187,4 +186,8 @@ label.custom-control-label {
 
 #diya1, #diya2, #bla {
   color: #FBFBFB;
+}
+
+.print {
+  font-weight: normal;
 }

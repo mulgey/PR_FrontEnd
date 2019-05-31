@@ -154,17 +154,17 @@
         </div>
         <div class="row text-center align-items-center" id="cockgaulty">
           <div class="col-6 col-lg-2">
-            <select class="browser-default custom-select" id="gender1">
-              <option selected>Cinsiyet</option>
-              <option value="1">Erkek</option>
+            <select class="browser-default custom-select" id="gender1" autocomplete="off">
+              <option>Cinsiyet</option>
+              <option selected value="1">Erkek</option>
               <option value="2">Kadın</option>
             </select>
           </div>
           <div class="col-6 col-lg-2 md-form input-group mb-3">
-            <input type="number" id="age1" class="form-control" placeholder="Yaş" aria-label="Yaş" aria-describedby="material-addon1" step='1' autocomplete="off" min="0">
+            <input type="number" id="age1" class="form-control" placeholder="Yaş" aria-label="Yaş" aria-describedby="material-addon1" step='1' autocomplete="off" min="0" value="40">
           </div>
           <div class="col-6 col-lg-2 md-form input-group mb-3">
-            <input type="number" id="srcr1" class="form-control" placeholder="Serum kreatinini" aria-label="Serum kreatinini" aria-describedby="material-addon1" step='0.01' autocomplete="off" min="0">
+            <input type="number" id="srcr1" class="form-control" placeholder="Serum kreatinini" aria-label="Serum kreatinini" aria-describedby="material-addon1" step='0.01' autocomplete="off" min="0" value="2.5">
           </div>
           <div class="col-6 col-lg-2">
             <select class="browser-default custom-select" id="crunit1">
@@ -173,45 +173,45 @@
             </select>
           </div>
           <div class="col-6 col-lg-2 md-form input-group mb-3">
-            <input type="number" id="weight" class="form-control" placeholder="Ağırlık" aria-label="Ağırlık" aria-describedby="material-addon1" step='0.5' autocomplete="off" min="0">
+            <input type="number" id="weight" class="form-control" placeholder="Ağırlık" aria-label="Ağırlık" aria-describedby="material-addon1" step='0.5' autocomplete="off" min="0" value="80">
           </div>
           <div class="col-6 col-lg-2 custom-control custom-checkbox mt-3" id="diya1" style="padding-left: 2.5rem;">
-            <input type="checkbox" class="custom-control-input" id="diyaliz1">
+            <input type="checkbox" class="custom-control-input" id="diyaliz1" autocomplete="off">
             <label class="custom-control-label" id="dia1" for="diyaliz1">Hemodiyaliz Alıyor</label>
           </div>
         </div>
         <div class="row text-center align-items-center" style="display:none" id="egfry">
-          <div class="col-6 col-lg-2">
-            <select class="browser-default custom-select" id="gender2">
+          <div class="col-6 col-lg-3">
+            <select class="browser-default custom-select" id="gender2" autocomplete="off">
               <option selected>Cinsiyet</option>
               <option value="1">Erkek</option>
               <option value="2">Kadın</option>
             </select>
           </div>
-          <div class="col-6 col-lg-1 md-form input-group mb-3">
+          <div class="col-6 col-lg-3 md-form input-group mb-3">
             <input type="number" id="age2" class="form-control" placeholder="Yaş" aria-label="Yaş" aria-describedby="material-addon1" step='1' autocomplete="off" min="0">
           </div>
-          <div class="col-6 col-lg-2 md-form input-group mb-3">
+          <div class="col-6 col-lg-3 md-form input-group mb-3">
             <input type="number" id="srcr2" class="form-control" placeholder="Serum kreatinini" aria-label="Serum kreatinini" aria-describedby="material-addon1" step='0.01' autocomplete="off" min="0">
           </div>
-          <div class="col-6 col-lg-1">
+          <div class="col-6 col-lg-3">
             <select class="browser-default custom-select"  id="crunit2">
               <option selected value="1">mg/dL</option>
               <option value="2">‎µmol/L</option>
             </select>
           </div>
-          <div class="col-6 col-lg-1 md-form input-group mb-3">
+          <div class="col-6 col-lg-3 md-form input-group mb-3">
             <input type="number" id="nitrog" class="form-control" placeholder="BUN" aria-label="BUN" aria-describedby="material-addon1" step='0.01' autocomplete="off" min="0">
           </div>
-          <div class="col-6 col-lg-2 md-form input-group mb-3">
+          <div class="col-6 col-lg-3 md-form input-group mb-3">
             <input type="number" id="albumin" class="form-control" placeholder="Albumin" aria-label="Albumin" aria-describedby="material-addon1" step='0.01' autocomplete="off" min="0">
           </div>
-          <div class="col-6 col-lg-1 custom-control custom-checkbox mt-2" id="bla">
-            <input type="checkbox" class="custom-control-input" id="black">
+          <div class="col-6 col-lg-3 custom-control custom-checkbox mt-2" id="bla">
+            <input type="checkbox" class="custom-control-input" id="black" autocomplete="off">
             <label class="custom-control-label" for="black">Siyahi</label>
           </div>
-          <div class="col-6 col-lg-2 custom-control custom-checkbox mt-2" id="diya2">
-            <input type="checkbox" class="custom-control-input" id="diyaliz2">
+          <div class="col-6 col-lg-3 custom-control custom-checkbox mt-2" id="diya2">
+            <input type="checkbox" class="custom-control-input" id="diyaliz2" autocomplete="off">
             <label class="custom-control-label" id="dia2" for="diyaliz2">Hemodiyaliz Alıyor</label>
           </div>
         </div>
@@ -232,7 +232,7 @@
   <!-- /Selecting The Active Substance -->
 
   <!-- Section for Imipenem - Cilastatin -->
-  <div class="view" id="imipenem-cilastatin" data-spy="imipenem-cilastatin" data-target="#imipenem-cilastatin" style="background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+  <div class="view" id="imipenem-cilastatin" data-spy="imipenem-cilastatin" data-target="#imipenem-cilastatin" style="display: none; background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
     <!-- Mask & flexbox options-->
     <div class="mask rgba-stylish-light flex-center text-center align-items-center">
       <!-- Content -->
@@ -242,7 +242,7 @@
             <p class="note note-info wow fadeIn" id="leftNote1"><strong>Bu etken madde için doz hesaplaması, <u>hekimin endikasyon için belirlemiş olduğu</u> doz üzerinden yapılabilmektedir. Normal doz tablosuna <a href="img/tienam_kub.png" target="blank">buradan</a> ulaşabilirsiniz.</strong></p>
           </div>
         </div>
-        <div class="row mt-5">
+        <div class="row mt-3">
           <div class="col-12 col-lg-3 mt-3">
             <label for="diyaForCila" style="color: white; font-weight: bold">Hemodiyaliz Durumu</label>
             <select class="browser-default custom-select" id="diyaForCila">
@@ -261,7 +261,7 @@
             </select>
           </div>  
           <div class="col-12 col-lg-3 mt-3">
-            <label for="srcrForCila" style="color: white; font-weight: bold">Serum Kreatinin Değeri (mg/dL)</label>
+            <label for="srcrForCila" style="color: white; font-weight: bold">Kreatinin Klirensi (ml/dakika)</label>
             <input type="number" id="srcrForCila" class="form-control" style="color: black" step='0.01' autocomplete="off" min="0">
           </div>
           <div class="col-12 col-lg-3 mt-3">
@@ -279,7 +279,7 @@
   </div>
 
   <!-- Section for Daptomicina -->
-  <div class="view" id="daptomicina" data-spy="daptomicina" data-target="#daptomicina" style="background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+  <div class="view" id="daptomicina" data-spy="daptomicina" data-target="#daptomicina" style="display: none; background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
     <!-- Mask & flexbox options-->
     <div class="mask rgba-stylish-light flex-center text-center align-items-center">
       <div class="container">
@@ -288,7 +288,7 @@
             <p class="note note-info wow fadeIn" id="leftNote"><strong>Bu etken madde için doz hesaplaması endikasyona bağlı olarak değişiklik göstermektedir. Lütfen hastaya ait verilerin girişini gerçekleştiriniz.</p>
           </div>
         </div>        
-        <div class="row mt-5">
+        <div class="row mt-3">
           <div class="col-12 col-lg-3 mt-3">
             <label for="diyaForDapto" style="color: white; font-weight: bold">Hemodiyaliz Durumu</label>
             <select class="browser-default custom-select" id="diyaForDapto">
@@ -304,7 +304,7 @@
             </select>
           </div>
           <div class="col-12 col-lg-3 mt-3">
-            <label for="srcrForDapto" style="color: white; font-weight: bold">Serum Kreatinin Değeri (mg/dL)</label>
+            <label for="srcrForDapto" style="color: white; font-weight: bold">Kreatinin Klirensi (ml/dakika)</label>
             <input type="number" id="srcrForDapto" class="form-control" style="color: black" step='0.01' autocomplete="off" min="0">
           </div>
           <div class="col-12 col-lg-3 mt-3">
@@ -322,7 +322,7 @@
   </div>
 
   <!-- Section for Levofloxacin -->
-  <div class="view" id="levofloxacin" data-spy="levofloxacin" data-target="#levofloxacin" style="background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+  <div class="view" id="levofloxacin" data-spy="levofloxacin" data-target="#levofloxacin" style="display: none; background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
     <!-- Mask & flexbox options-->
     <div class="mask rgba-stylish-light flex-center text-center align-items-center">
       <div class="container">
@@ -331,7 +331,7 @@
             <p class="note note-info wow fadeIn" id="leftNote"><strong>Bu etken madde için doz hesaplaması, <u>hekimin endikasyon için belirlemiş olduğu</u> doz üzerinden yapılabilmektedir. Normal doz tablosuna <a href="img/tavanic_kub.png" target="blank">buradan</a> ulaşabilirsiniz.</strong></p>
           </div>
         </div>        
-        <div class="row mt-5">
+        <div class="row mt-3">
           <div class="col-12 col-lg-4 mt-3">
             <label for="normalForLevo" style="color: white; font-weight: bold">Normal Günlük Doz</label>
             <select class="browser-default custom-select" id="normalForLevo">
@@ -348,9 +348,9 @@
             </select>
           </div>            
           <div class="col-12 col-lg-4 mt-3">
-            <label for="srcrForLevo" style="color: white; font-weight: bold">Serum Kreatinin Değeri (mg/dL)</label>
+            <label for="srcrForLevo" style="color: white; font-weight: bold">Kreatinin Klirensi (ml/dakika)</label>
             <input type="number" id="srcrForLevo" class="form-control" style="color: black" step='0.01' autocomplete="off" min="0">
-          </div>                   
+          </div>
         </div>
         <div class="row text-center align-items-center mt-4">
           <div class="col" id="calculateForDapto">
@@ -369,12 +369,18 @@
       <div class="container">
         <div class="row">
           <div class="col">
-            <h1 class="mx-3 mt-3" id="resultText" style="color: white; font-weight: bold; letter-spacing: 2px; line-height: 70px">Hesaplamanın işleminin başlatılması bekleniyor. <a href="#activeSubstance">Veri girişi</a> bölüme geçelim</h1>
+            <h2 id="resultText" style="color: white; font-weight: bold; letter-spacing: 2px; line-height: 55px">Hesaplamanın işleminin başlatılması bekleniyor. <a href="#activeSubstance">Veri girişi</a> bölüme geçelim</h2>
           </div>
         </div>
-        <div class="row">
-          <div class="col">
-            <button class="btn btn-cyan rounded-pill mt-3" style="padding: 1rem 2rem; display: none;" id="reload">Yeni Hesaplama<i class="fas fa-redo pl-1"></i></button>
+        <div class="row justify-content-md-center">
+          <div class="col-12 col-lg-3">
+            <button class="btn btn-cyan rounded-pill mt-3" style="padding: 1rem 2rem; display: none;" id="reload">Yeni Hesaplama <i class="fas fa-redo pl-1"></i></button>
+          </div>
+          <div class="col-12 col-lg-3">
+            <button class="btn btn-cyan rounded-pill mt-3" style="padding: 1rem 2rem; display: none;" id="save" onclick="window.location.href = 'save.html'">Kaydet (PDF) <i class="fas fa-save pl-1"></i></button>
+          </div>
+          <div class="col-12 col-lg-3">
+            <button class="btn btn-cyan rounded-pill mt-3" style="padding: 1rem 2rem; display: none;" id="print" onclick="window.location.href = 'print.html'">Yazdır <i class="fas fa-print pl-1"></i></button>
           </div>
         </div>
       </div>
@@ -526,6 +532,7 @@
 
   <script>
   let result;
+  let resulty = document.getElementById('resultText');
 
   $('#calcButton').click(() => {
     let method =  $('#dropdownMenu2').text();
@@ -534,7 +541,6 @@
     let weight = parseFloat(document.getElementById("weight").value);
     let srcr1 = parseFloat(document.getElementById("srcr1").value);
     let crunit1 = document.getElementById("crunit1").value;
-    let resulty = document.getElementById('resultText');
     let actSubs = document.getElementById('dropdownMenu1').text;
 
     let doseText;
@@ -551,6 +557,8 @@
     let levofloxy = document.getElementById("levofloxacin");
 
     let reload = document.getElementById("reload");
+    let save = document.getElementById("save");
+    let print = document.getElementById("print");
     
     if (crunit1 === "2") {
       srcr1 = srcr1 / 88.4;
@@ -586,6 +594,8 @@
 
       window.location.href='#presentResults';
       reload.style.display = "inline-block";
+      print.style.display = "inline-block";
+      save.style.display = "inline-block";
 
     } else if (method === "Cockcroft-Gault Denklemi") {
         if (age1 && weight && srcr1 && gender1 != "Cinsiyet") {
@@ -637,6 +647,8 @@
         doseText = "Günde 500 mg<a href='https://www.msd.com.tr/static/pdf/INVANZ_1g_IM-IV_Enjeksiyon_Icin_Liyofilize_Toz_Iceren_Flakon_KUB.pdf' target='_blank'>*</a>";
       }
       reload.style.display = "inline-block";
+      print.style.display = "inline-block";
+      save.style.display = "inline-block";
       window.location.href='#presentResults';
     } else if (actSubs === "Flukonazol") {
         if (result > 50) {
@@ -645,6 +657,8 @@
           doseText = "Normal dozun %50'si uygulanır. (Standart doz: Endikasyona bağlı olarak günde 50 mg - 400 mg)<a href='https://titck.gov.tr/storage/kubKtAttachments/Xb2snaSjTfhFC.pdf' target='_blank'>*</a>"
         }
         reload.style.display = "inline-block";
+        print.style.display = "inline-block";
+        save.style.display = "inline-block";
         window.location.href='#presentResults';
       } else if (actSubs === "Meropenem trihidrat") {
           if (result >= 90) {
@@ -659,6 +673,8 @@
             doseText = "24 saatte bir 500 mg<a href='https://titck.gov.tr/storage/kubKtAttachments/w6Yt8152JtyzB.pdf' target='_blank'>*</a>";
           }
           reload.style.display = "inline-block";
+          print.style.display = "inline-block";
+          save.style.display = "inline-block";
           window.location.href='#presentResults';
       } else if (actSubs === "Piperasilin sodyum / Tazobaktam sodyum") {
           if (result > 80) {
@@ -669,6 +685,8 @@
             doseText = "12 saatte bir 4,5 g<a href='https://titck.gov.tr/storage/Archive/2019/kubKtAttachments/a9679f69-af3d-4d0b-bb20-49b8be5adf96.pdf' target='_blank'>*</a>";
           }
           reload.style.display = "inline-block";
+          print.style.display = "inline-block";
+          save.style.display = "inline-block";
           window.location.href='#presentResults';
       } else if (actSubs === "Kolistimetat sodyum") {
           if (result >= 70) {
@@ -679,6 +697,8 @@
             doseText = `12 saatte bir minimum ${minForColi} g, maksimum ${maxForColi} g<a href='http://kocakfarma.com/urun-aciklama.aspx?bolumSeo=kisabilgi&id=43&lang=tr' target='_blank'>*</a>`;           
           }
           reload.style.display = "inline-block";
+          print.style.display = "inline-block";
+          save.style.display = "inline-block";
           window.location.href='#presentResults';
       } else if (actSubs === "Vankomisin hidroklorür") {
           if (result < 90) {
@@ -686,6 +706,8 @@
             doseText = `15 mg / kg yükleme dozunu takiben 24 saatte ${vancoDose} mg<a href='https://titck.gov.tr/storage/kubKtAttachments/b2b033b065298.pdf' target='_blank'>*</a>`; 
           }
           reload.style.display = "inline-block";
+          print.style.display = "inline-block";
+          save.style.display = "inline-block";
           window.location.href='#presentResults';
       } else if (actSubs === "Sefoperazon sodyum / Sulbaktam sodyum") {
           if (result >= 30) {
@@ -696,6 +718,8 @@
             doseText = "12 saatte bir 1,5 g (2 etken madde için toplam doz)<a href='https://titck.gov.tr/storage/kubKtAttachments/24e1b21e40213.pdf' target='_blank'>*</a>";
           }
           reload.style.display = "inline-block";
+          print.style.display = "inline-block";
+          save.style.display = "inline-block";
           window.location.href='#presentResults';
       } else if (actSubs === "Siprofloksasin laktat") {
           if (result >= 60) {
@@ -706,6 +730,8 @@
             doseText = "Günde maksimum 400 mg olacak şekilde düzenlenir<a href='https://titck.gov.tr/storage/kubKtAttachments/0003cad130634.pdf' target='_blank'>*</a>";
           }
           reload.style.display = "inline-block";
+          print.style.display = "inline-block";
+          save.style.display = "inline-block";
           window.location.href='#presentResults';
       } else if (actSubs === "Teikoplanin") {
           if (result >= 60) {
@@ -716,6 +742,8 @@
             doseText = "Normal dozun 1/3'ünü uygulayın veya normal dozu 3 günde bir uygulayın. Tedavinin ilk 4 günü doz ayarlamasına gerek yoktur<a href='https://titck.gov.tr/storage/kubKtAttachments/affb19d273538.pdf' target='_blank'>*</a>";
           }
           reload.style.display = "inline-block";
+          print.style.display = "inline-block";
+          save.style.display = "inline-block";
           window.location.href='#presentResults';
       } else if (actSubs === "İmipenem / Silastatin sodyum") {
           document.getElementById('srcrForCila').value = result;
@@ -767,7 +795,7 @@
       }
     
     if (result) {
-      doseText += `<br> <h4> (<b>Etken madde:</b> ${actSubs} // <b>Kreatinin klirensi:</b> ${result} mL/min)</h4>`;
+      doseText += `<br> <h4 style="line-height: 40px"> (<b>Etken madde:</b> ${actSubs} // <b>Kreatinin klirensi:</b> ${result} mL/min)</h4>`;
     }
     
     resulty.innerHTML = doseText;
@@ -782,7 +810,6 @@
     let weight = document.getElementById('weightForCila').value;
     let normal = document.getElementById("normalForCila").value;
     let diyaList = document.getElementById("diyaForCila").value;
-    let resulty = document.getElementById('resultText');
     let cilaInfo = document.getElementById('leftNote1');
 
     let cilaText;
@@ -793,6 +820,8 @@
     
     if (result && weight) {
       reload.style.display = "inline-block";
+      print.style.display = "inline-block";
+      save.style.display = "inline-block";
       if (normal === "1") {
         if (weight >= 70) {
           if (diyaList === "1") {
@@ -1109,7 +1138,7 @@
     }
 
     if (result) {
-      cilaText += `<br> <h4> (<b>Etken madde:</b> İmipenem / Silastatin sodyum // <b>Kreatinin klirensi:</b> ${result} mL/min)</h4>`;
+      cilaText += `<br> <h4 style="line-height: 40px"> (<b>Etken madde:</b> İmipenem / Silastatin sodyum // <b>Kreatinin klirensi:</b> ${result} mL/min)</h4>`;
     }
 
     resulty.innerHTML = cilaText;
@@ -1122,7 +1151,6 @@
   <script>
   $('#calculateForDapto').click(() => {
     let normal = document.getElementById("indicForDapto").value;
-    let resulty = document.getElementById('resultText');
     let weight = document.getElementById('weightForDapto').value;
     let diyaDapt = document.getElementById('diyaForDapto').value;
 
@@ -1131,6 +1159,8 @@
 
     if (result && weight) {
       reload.style.display = "inline-block";
+      print.style.display = "inline-block";
+      save.style.display = "inline-block";
       if (result >= 30) {
         if (normal === "1") {
           mgValue = (4 * weight);
@@ -1157,7 +1187,7 @@
     }
 
     if (result) {
-      daptoText += `<br> <h4> (<b>Etken madde:</b> Daptomisin // <b>Kreatinin klirensi:</b> ${result} mL/min)</h4>`;
+      daptoText += `<br> <h4 style="line-height: 40px"> (<b>Etken madde:</b> Daptomisin // <b>Kreatinin klirensi:</b> ${result} mL/min)</h4>`;
     }
 
     resulty.innerHTML = daptoText;
@@ -1169,13 +1199,14 @@
   <script>
   $('#calculateForLevo').click(() => {
     let normal = document.getElementById("normalForLevo").value;
-    let resulty = document.getElementById('resultText');
     let diyaLevo = document.getElementById('diyaForLevo').value;
 
     let levoText;
 
     if (result) {
       reload.style.display = "inline-block";
+      print.style.display = "inline-block";
+      save.style.display = "inline-block";
       if (result > 50) {
         levoText = `Doz ayarlamasına gerek yoktur. Böbrek fonksiyonları normal olan hastalar için hazırlanmış <a href="img/tavanic_kub.png"> dozaj tablosu</a> kullanılabilir.<a href='https://titck.gov.tr/storage/Archive/2019/kubKtAttachments/ec6b333e-e68b-4a96-8ae4-5ea400798a1d.pdf' target='_blank'>*</a>`;
       } else if (result <= 50 && result > 19) {
@@ -1218,7 +1249,7 @@
       }
 
     if (result) {
-      levoText += `<br> <h4> (<b>Etken madde:</b> Levofloksasin // <b>Kreatinin klirensi:</b> ${result} mL/min)</h4>`;
+      levoText += `<br> <h4 style="line-height: 40px"> (<b>Etken madde:</b> Levofloksasin // <b>Kreatinin klirensi:</b> ${result} mL/min)</h4>`;
     }
 
     resulty.innerHTML = levoText;
@@ -1683,6 +1714,64 @@
     }
   }
 
+  $('#crunit1').click(() => {
+    if (crunit1.value === "1") {
+      if (srcr1.value > 10) {
+        infoText.innerHTML = "Hastanın serum kreatinin değeri (mg/dL) beklenen aralığının <strong>üstündedir</strong>, lütfen kontrol ediniz.";
+        $('#calculate').fadeTo('medium', 0);
+      } else if (srcr1.value < 0) {
+        infoText.innerHTML = "Hastanın serum kreatinin değeri (mg/dL) sıfırdan küçük olamaz, lütfen kontrol ediniz.";
+        $('#calculate').fadeTo('medium', 0);
+      } else {
+        infoText.innerHTML = "<strong>Serum kreatinini </strong>mg/dL veya µmol/L cinsinden giriniz. Normal değerler: < 1,5 mg/dL (<133 µmol/L)";
+        $('#calculate').fadeTo('medium', 100);
+      }
+    } else if (crunit1.value === "2") {
+      if (srcr1.value > 884) {
+        infoText.innerHTML = "Hastanın serum kreatinin değeri (µmol/L) beklenen aralığının <strong>üstündedir</strong>, lütfen kontrol ediniz.";
+        $('#calculate').fadeTo('medium', 0);
+      } else if (srcr1.value < 88) {
+        infoText.innerHTML = "Hastanın serum kreatinin değeri (µmol/L) beklenen aralığının <strong>altındadır</strong>, lütfen kontrol ediniz.";
+        $('#calculate').fadeTo('medium', 0);
+      } else if (srcr1.value < 0) {
+        infoText.innerHTML = "Hastanın serum kreatinin değeri (µmol/L) sıfırdan küçük olamaz, lütfen kontrol ediniz.";
+        $('#calculate').fadeTo('medium', 0);
+      } else {
+        infoText.innerHTML = "<strong>Serum kreatinini </strong>mg/dL veya µmol/L cinsinden giriniz. Normal değerler: < 1,5 mg/dL (<133 µmol/L)";
+        $('#calculate').fadeTo('medium', 100);
+      }
+    }
+  });
+
+  $('#crunit2').click(() => {
+    if (crunit2.value === "1") {
+      if (srcr2.value > 10) {
+        infoText.innerHTML = "Hastanın serum kreatinin değeri (mg/dL) beklenen aralığının <strong>üstündedir</strong>, lütfen kontrol ediniz.";
+        $('#calculate').fadeTo('medium', 0);
+      } else if (srcr2.value < 0) {
+        infoText.innerHTML = "Hastanın serum kreatinin değeri (mg/dL) sıfırdan küçük olamaz, lütfen kontrol ediniz.";
+        $('#calculate').fadeTo('medium', 0);
+      } else {
+        infoText.innerHTML = "<strong>Serum kreatinini </strong>mg/dL veya µmol/L cinsinden giriniz. Normal değerler: < 1,5 mg/dL (<133 µmol/L)";
+        $('#calculate').fadeTo('medium', 100);
+      }
+    } else if (crunit2.value === "2") {
+      if (srcr2.value > 884) {
+        infoText.innerHTML = "Hastanın serum kreatinin değeri (µmol/L) beklenen aralığının <strong>üstündedir</strong>, lütfen kontrol ediniz.";
+        $('#calculate').fadeTo('medium', 0);
+      } else if (srcr2.value < 88 && srcr2.value > 0) {
+        infoText.innerHTML = "Hastanın serum kreatinin değeri (µmol/L) beklenen aralığının <strong>altındadır</strong>, lütfen kontrol ediniz.";
+        $('#calculate').fadeTo('medium', 0);
+      } else if (srcr2.value < 0) {
+        infoText.innerHTML = "Hastanın serum kreatinin değeri (µmol/L) sıfırdan küçük olamaz, lütfen kontrol ediniz.";
+        $('#calculate').fadeTo('medium', 0);
+      } else {
+        infoText.innerHTML = "<strong>Serum kreatinini </strong>mg/dL veya µmol/L cinsinden giriniz. Normal değerler: < 1,5 mg/dL (<133 µmol/L)";
+        $('#calculate').fadeTo('medium', 100);
+      }
+    }
+  });
+
   // BUN stuff
 
   $('#nitrog').keydown(() => {
@@ -1745,6 +1834,61 @@
   });
   */
 
+  </script>
+  
+  <script>
+  function createCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+  }
+
+  function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+      var c = ca[i];
+      while (c.charAt(0)==' ') c = c.substring(1,c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+  }
+
+  $('#print').click(() => {
+    let whole = resulty.textContent;
+    let position = whole.indexOf('*');
+    let suggesty = whole.substring(0, (position));
+
+    createCookie('crCl', result, 1);
+    if ($("#diyaliz1").is(':checked') || $("#diyaliz2").is(':checked')) {
+      createCookie('dia', 'Hemodiyaliz alıyor', 1);
+    } else {
+      createCookie('dia', 'Hemodiyaliz almıyor', 1);
+    }
+    createCookie('actSubs', actSubs.text, 1);
+    createCookie('suggestion', suggesty, 1);
+  });
+
+  $('#save').click(() => {
+    let whole = resulty.textContent;
+    let position = whole.indexOf('*');
+    let suggesty = whole.substring(0, (position));
+
+    createCookie('crCl', result, 1);
+    if ($("#diyaliz1").is(':checked') || $("#diyaliz2").is(':checked')) {
+      createCookie('dia', 'Hemodiyaliz alıyor', 1);
+      console.log('Diyaliz alıyor');
+    } else {
+      createCookie('dia', 'Hemodiyaliz almıyor', 1);
+      console.log('Diyaliz almıyor');
+    }
+    createCookie('actSubs', actSubs.text, 1);
+    createCookie('suggestion', suggesty, 1);
+  });
   </script>
 
 </body>
