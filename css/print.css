@@ -5,3 +5,13 @@ body {
 .print {
     visibility:visible;
 }
+
+@media print {
+    @page {
+        size: A4;
+        margin: 0;
+    }
+    .print {
+        margin: 0;
+    }
+}

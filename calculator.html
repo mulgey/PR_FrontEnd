@@ -222,7 +222,7 @@
         </div>
         <div class="row text-center align-items-center mt-3">
           <div class="col mb-3" id="calculate">
-            <button type="button" class="btn btn-cyan btn-lg disabled" id="calcButton">Hesaplayalım</button>
+            <button type="button" class="btn btn-cyan rounded-pill btn-lg disabled" id="calcButton">Hesaplayalım</button>
           </div>
         </div>
       <!-- /Content -->
@@ -377,10 +377,7 @@
             <button class="btn btn-cyan rounded-pill mt-3" style="padding: 1rem 2rem; display: none;" id="reload">Yeni Hesaplama <i class="fas fa-redo pl-1"></i></button>
           </div>
           <div class="col-12 col-lg-3">
-            <button class="btn btn-cyan rounded-pill mt-3" style="padding: 1rem 2rem; display: none;" id="save" onclick="window.location.href = 'save.html'">Kaydet (PDF) <i class="fas fa-save pl-1"></i></button>
-          </div>
-          <div class="col-12 col-lg-3">
-            <button class="btn btn-cyan rounded-pill mt-3" style="padding: 1rem 2rem; display: none;" id="print" onclick="window.location.href = 'print.html'">Yazdır <i class="fas fa-print pl-1"></i></button>
+            <button class="btn btn-cyan rounded-pill mt-3" style="padding: 1rem 2rem; display: none;" id="print" onclick="window.open('print.html','_blank');">Kaydet / Yazdır <i class="far fa-file-alt pl-1"></i></button>
           </div>
         </div>
       </div>
@@ -492,7 +489,7 @@
       disably.className = "dropdown-item2";
       disably2.className = "dropdown-item2";
       calculatey.style.display = "block";
-      buttony.className = "btn btn-cyan btn-lg";
+      buttony.className = "btn btn-cyan btn-lg rounded-pill";
       infoDiv.style.display = "inline-block";
 
     } else {
@@ -503,7 +500,7 @@
       disably.className = "dropdown-item2";
       disably2.className = "dropdown-item2";
       calculatey.style.display = "block";
-      buttony.className = "btn btn-cyan btn-lg";
+      buttony.className = "btn btn-cyan btn-lg rounded-pill";
       diya1.style.display = "block";
       diya2.style.display = "block";
       infoDiv.style.display = "inline-block";
@@ -557,7 +554,6 @@
     let levofloxy = document.getElementById("levofloxacin");
 
     let reload = document.getElementById("reload");
-    let save = document.getElementById("save");
     let print = document.getElementById("print");
     
     if (crunit1 === "2") {
@@ -595,7 +591,6 @@
       window.location.href='#presentResults';
       reload.style.display = "inline-block";
       print.style.display = "inline-block";
-      save.style.display = "inline-block";
 
     } else if (method === "Cockcroft-Gault Denklemi") {
         if (age1 && weight && srcr1 && gender1 != "Cinsiyet") {
@@ -648,7 +643,6 @@
       }
       reload.style.display = "inline-block";
       print.style.display = "inline-block";
-      save.style.display = "inline-block";
       window.location.href='#presentResults';
     } else if (actSubs === "Flukonazol") {
         if (result > 50) {
@@ -658,7 +652,6 @@
         }
         reload.style.display = "inline-block";
         print.style.display = "inline-block";
-        save.style.display = "inline-block";
         window.location.href='#presentResults';
       } else if (actSubs === "Meropenem trihidrat") {
           if (result >= 90) {
@@ -674,7 +667,6 @@
           }
           reload.style.display = "inline-block";
           print.style.display = "inline-block";
-          save.style.display = "inline-block";
           window.location.href='#presentResults';
       } else if (actSubs === "Piperasilin sodyum / Tazobaktam sodyum") {
           if (result > 80) {
@@ -686,7 +678,6 @@
           }
           reload.style.display = "inline-block";
           print.style.display = "inline-block";
-          save.style.display = "inline-block";
           window.location.href='#presentResults';
       } else if (actSubs === "Kolistimetat sodyum") {
           if (result >= 70) {
@@ -697,8 +688,7 @@
             doseText = `12 saatte bir minimum ${minForColi} g, maksimum ${maxForColi} g<a href='http://kocakfarma.com/urun-aciklama.aspx?bolumSeo=kisabilgi&id=43&lang=tr' target='_blank'>*</a>`;           
           }
           reload.style.display = "inline-block";
-          print.style.display = "inline-block";
-          save.style.display = "inline-block";
+          print.style.display = "inline-block";          
           window.location.href='#presentResults';
       } else if (actSubs === "Vankomisin hidroklorür") {
           if (result < 90) {
@@ -707,7 +697,7 @@
           }
           reload.style.display = "inline-block";
           print.style.display = "inline-block";
-          save.style.display = "inline-block";
+          
           window.location.href='#presentResults';
       } else if (actSubs === "Sefoperazon sodyum / Sulbaktam sodyum") {
           if (result >= 30) {
@@ -718,8 +708,7 @@
             doseText = "12 saatte bir 1,5 g (2 etken madde için toplam doz)<a href='https://titck.gov.tr/storage/kubKtAttachments/24e1b21e40213.pdf' target='_blank'>*</a>";
           }
           reload.style.display = "inline-block";
-          print.style.display = "inline-block";
-          save.style.display = "inline-block";
+          print.style.display = "inline-block";          
           window.location.href='#presentResults';
       } else if (actSubs === "Siprofloksasin laktat") {
           if (result >= 60) {
@@ -730,8 +719,7 @@
             doseText = "Günde maksimum 400 mg olacak şekilde düzenlenir<a href='https://titck.gov.tr/storage/kubKtAttachments/0003cad130634.pdf' target='_blank'>*</a>";
           }
           reload.style.display = "inline-block";
-          print.style.display = "inline-block";
-          save.style.display = "inline-block";
+          print.style.display = "inline-block";          
           window.location.href='#presentResults';
       } else if (actSubs === "Teikoplanin") {
           if (result >= 60) {
@@ -742,8 +730,7 @@
             doseText = "Normal dozun 1/3'ünü uygulayın veya normal dozu 3 günde bir uygulayın. Tedavinin ilk 4 günü doz ayarlamasına gerek yoktur<a href='https://titck.gov.tr/storage/kubKtAttachments/affb19d273538.pdf' target='_blank'>*</a>";
           }
           reload.style.display = "inline-block";
-          print.style.display = "inline-block";
-          save.style.display = "inline-block";
+          print.style.display = "inline-block";          
           window.location.href='#presentResults';
       } else if (actSubs === "İmipenem / Silastatin sodyum") {
           document.getElementById('srcrForCila').value = result;
@@ -821,7 +808,7 @@
     if (result && weight) {
       reload.style.display = "inline-block";
       print.style.display = "inline-block";
-      save.style.display = "inline-block";
+      
       if (normal === "1") {
         if (weight >= 70) {
           if (diyaList === "1") {
@@ -1160,7 +1147,7 @@
     if (result && weight) {
       reload.style.display = "inline-block";
       print.style.display = "inline-block";
-      save.style.display = "inline-block";
+      
       if (result >= 30) {
         if (normal === "1") {
           mgValue = (4 * weight);
@@ -1206,7 +1193,7 @@
     if (result) {
       reload.style.display = "inline-block";
       print.style.display = "inline-block";
-      save.style.display = "inline-block";
+      
       if (result > 50) {
         levoText = `Doz ayarlamasına gerek yoktur. Böbrek fonksiyonları normal olan hastalar için hazırlanmış <a href="img/tavanic_kub.png"> dozaj tablosu</a> kullanılabilir.<a href='https://titck.gov.tr/storage/Archive/2019/kubKtAttachments/ec6b333e-e68b-4a96-8ae4-5ea400798a1d.pdf' target='_blank'>*</a>`;
       } else if (result <= 50 && result > 19) {
@@ -1869,23 +1856,11 @@
     } else {
       createCookie('dia', 'Hemodiyaliz almıyor', 1);
     }
-    createCookie('actSubs', actSubs.text, 1);
-    createCookie('suggestion', suggesty, 1);
-  });
 
-  $('#save').click(() => {
-    let whole = resulty.textContent;
-    let position = whole.indexOf('*');
-    let suggesty = whole.substring(0, (position));
+    let preTime = new Date();
+    time = preTime.toLocaleString();
+    createCookie('time', time, 1);
 
-    createCookie('crCl', result, 1);
-    if ($("#diyaliz1").is(':checked') || $("#diyaliz2").is(':checked')) {
-      createCookie('dia', 'Hemodiyaliz alıyor', 1);
-      console.log('Diyaliz alıyor');
-    } else {
-      createCookie('dia', 'Hemodiyaliz almıyor', 1);
-      console.log('Diyaliz almıyor');
-    }
     createCookie('actSubs', actSubs.text, 1);
     createCookie('suggestion', suggesty, 1);
   });

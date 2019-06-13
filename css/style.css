@@ -152,6 +152,7 @@ label.custom-control-label {
 
 .form-control {
   color: #1F618D;
+  font-weight: bold;
 }
 
 .form-control:focus {
