@@ -6,17 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>ProspecTurk Renal</title>
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-  <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
   <link href="css/mdb.min.css" rel="stylesheet">
-  <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
-  <!-- MDBootstrap Datatables  -->
   <link href="css/addons/datatables.min.css" rel="stylesheet"> 
-  <!-- faviconit.favicons -->
   <link rel="shortcut icon" href="img/favicons/favicon.ico">
   <link rel="icon" sizes="16x16 32x32 64x64" href="img/favicons/favicon.ico">
   <link rel="icon" type="image/png" sizes="196x196" href="img/favicons/favicon-192.png">
@@ -37,13 +31,10 @@
   <meta name="msapplication-TileColor" content="#FFFFFF">
   <meta name="msapplication-TileImage" content="img/favicons/favicon-144.png">	
   <meta name="msapplication-config" content="img/favicons/browserconfig.xml">
-  <!-- faviconit.favicons -->
 </head>
 
 <body>
-  <!-- Start your project here-->
   <header>
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark default-color fixed-top scrolling-navbar">
       <div class="container">
         <a class="navbar-brand" href="index.html"><strong>PR</strong></a>
@@ -68,48 +59,29 @@
         </div>
       </div>
     </nav>
-    <!-- /Navbar -->
-    <!-- Full Page Intro -->
     <div class="view" style="background-image: url('img/calculate_01.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-      <!-- Mask & flexbox options-->
       <div class="mask rgba-black-light align-items-center flex-center">
-        <!-- Content -->
         <div class="container">
-          <!--Grid row-->
           <div class="row">
-            <!--Grid column-->
             <div class="col-md-12 mb-4 white-text text-center">
               <h1 class="h1-reponsive white-text mb-0 pt-md-5 pt-5 wow flipInX slow"><strong>İnteraktif Doz Hesaplayıcı</strong></h1>
               <hr class="hr-light my-4 w-75 wow fadeInDown slow">
               <h5 class="mb-4 white-text wow fadeInDown slow"><strong>Hasta için belirli klinik verilere sahipseniz, seçtiğiniz etken madde için doz hesaplamasına başlayabiliriz</strong></h5>
               <a class="btn btn-outline-white wow pulse smooth-scroll" data-wow-delay="2s" href="#activeSubstance">Hazırım, başlayalım</a>
             </div>
-            <!-- /Grid column -->
           </div>
-          <!-- /Grid row -->
         </div>
-        <!-- /Content -->
       </div>
-      <!-- /Mask & flexbox options-->
     </div>
-    <!-- /Full Page Intro -->
   </header>
     
-  <!-- Selecting The Active Substance -->
   <div class="view" id="activeSubstance" data-spy="activeSubstance" data-target="#activeSubstance" style="background-image: url('img/calculate_02.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-    <!-- Mask & flexbox options-->
     <div class="mask rgba-stylish-light align-items-center flex-center">
-      <!-- Content -->
       <div class="container">
         <div class="row mt-3">
-          <!--Dropdown primary-->
-          <div class="col-12 col-lg-6 mt-2">         
-            <!--Dropdown primary-->            
+          <div class="col-12 col-lg-6 mt-2">                   
             <div class="dropdown">          
-              <!--Trigger-->
-              <a class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false" style="display: block">Etken Madde Seçimi</a>     
-              <!--Menu-->
+              <a class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: block">Etken Madde Seçimi</a>     
               <div class="dropdown-menu dropdown-primary" id="substanceList">
                 <a class="dropdown-item">Daptomisin - <small>Cubicin</small></a>
                 <a class="dropdown-item">Ertapenem sodyum - <small>İnvanz</small></a>
@@ -130,22 +102,15 @@
               </div>
             </div>              
           </div>
-          <!--/Dropdown primary-->
-          <!--Dropdown primary-->
-          <div class="col-12 col-lg-6 mt-2">          
-            <!--Dropdown primary-->            
+          <div class="col-12 col-lg-6 mt-2">                    
             <div class="dropdown">          
-              <!--Trigger-->
-              <a class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false" style="display: block">Cockcroft-Gault Denklemi</a>     
-              <!--Menu-->
+              <a class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: block">Cockcroft-Gault Denklemi</a>     
               <div class="dropdown-menu dropdown-info" id="methodlist">
                 <a class="dropdown-item2" id="willDisable">Cockcroft-Gault Denklemi</a>
                 <a class="dropdown-item2" id="willDisable2">e-GFR Hesaplayıcısı</a>
               </div>
             </div>              
           </div>
-          <!--/Dropdown primary-->
         </div>
         <div class="row mt-3">
           <div class="col" style="display:none" id="notNeeded">
@@ -225,17 +190,12 @@
             <button type="button" class="btn btn-cyan rounded-pill btn-lg disabled" id="calcButton">Hesaplayalım</button>
           </div>
         </div>
-      <!-- /Content -->
       </div>
     </div>
-  </div>  
-  <!-- /Selecting The Active Substance -->
+  </div>
 
-  <!-- Section for Imipenem - Cilastatin -->
   <div class="view" id="imipenem-cilastatin" data-spy="imipenem-cilastatin" data-target="#imipenem-cilastatin" style="display: none; background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-    <!-- Mask & flexbox options-->
     <div class="mask rgba-stylish-light flex-center text-center align-items-center">
-      <!-- Content -->
       <div class="container">
         <div class="row">
           <div class="col">
@@ -278,9 +238,7 @@
     </div>
   </div>
 
-  <!-- Section for Daptomicina -->
   <div class="view" id="daptomicina" data-spy="daptomicina" data-target="#daptomicina" style="display: none; background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-    <!-- Mask & flexbox options-->
     <div class="mask rgba-stylish-light flex-center text-center align-items-center">
       <div class="container">
         <div class="row">
@@ -321,9 +279,7 @@
     </div>
   </div>
 
-  <!-- Section for Levofloxacin -->
   <div class="view" id="levofloxacin" data-spy="levofloxacin" data-target="#levofloxacin" style="display: none; background-image: url('img/imi-cila.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-    <!-- Mask & flexbox options-->
     <div class="mask rgba-stylish-light flex-center text-center align-items-center">
       <div class="container">
         <div class="row">
@@ -361,11 +317,8 @@
     </div>
   </div>  
 
-  <!-- Presenting The Results -->
   <div class="view" id="presentResults" data-spy="presentResults" data-target="#presentResults" style="background-image: url('img/calculate_03.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-    <!-- Mask & flexbox options--> 
     <div class="mask rgba-stylish-light flex-center align-items-center text-center">
-      <!-- Content -->
       <div class="container">
         <div class="row">
           <div class="col">
@@ -381,18 +334,9 @@
           </div>
         </div>
       </div>
-      
-      <!--
-      <h1 class="mx-3 mt-3" id="resultText" style="color: white; font-weight: bold; letter-spacing: 2px; line-height: 70px">Hesaplamanın işleminin başlatılması bekleniyor. <a href="#activeSubstance">Veri girişi</a> bölüme geçelim</h1><br><button class=" btn-floating btn-cyan btn-lg"><i class="fas fa-redo"></i></button></br>
-      -->
-      <!-- Content -->
     </div>
   </div>
-  <!-- /Presenting The Results -->
 
-  <!-- /Start your project here-->
-
-  <!-- SCRIPTS -->
   <!-- JQuery -->
   <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
   <!-- Bootstrap tooltips -->
@@ -432,16 +376,6 @@
     let diya1 = document.getElementById("diya1");
     let diya2 = document.getElementById("diya2");
     let notNeedy = document.getElementById("nonDiyaText");
-
-    /*
-    if (textResult === "Tigesiklin" || textResult === "Moksifloksasin hidroklorür" || textResult === "Linezolit" || textResult === "Metronidazol") {
-      needy.style.display = "block";
-      egfry.style.display = "none";
-      cockgaulty.style.display = "none";
-      disably.className = "dropdown-item2 disabled";
-      disably2.className = "dropdown-item2 disabled";
-      calculatey.style.display = "none";
-    */
 
     if (textResult === "Tigesiklin") {
       notNeedy.innerHTML = "Bu etken madde için böbrek yetmezliği durumunda doz ayarlaması gerekmemektedir.<a href='https://titck.gov.tr/storage/kubKtAttachments/ccPKR9mKrPaa4.pdf' target='_blank'>*</a>";
@@ -1806,21 +1740,6 @@
       }
     }
   }
-
-  /*
-  $('#weight').hover(() => {
-    if (weight.value > 150) {
-      infoText.innerHTML = "Hastanın kilo değeri beklenen değer aralığının <strong>üstündedir</strong>, lütfen kontrol ediniz.";
-    } else if (weight.value === "") {
-      infoText.innerHTML = "<strong>Kilo </strong>değerini kg cinsinden giriniz.";
-    } else if (weight.value < 40) {
-      infoText.innerHTML = "Hastanın kilo değeri beklenen değer aralığının <strong>altındadır</strong>, lütfen kontrol ediniz.";
-    }
-  }, () => {
-    infoText.innerHTML = "<strong>Kilo </strong>değerini kg cinsinden giriniz.";
-  });
-  */
-
   </script>
   
   <script>
