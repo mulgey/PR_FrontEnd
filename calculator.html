@@ -231,7 +231,7 @@
         </div>
         <div class="row text-center align-items-center mt-4">
           <div class="col" id="calculateForCila">
-            <button type="button" class="btn btn-cyan btn-lg" id="calcForCila">Hesaplayalım</button>
+            <button type="button" class="btn rounded-pill btn-cyan btn-lg" id="calcForCila">Hesaplayalım</button>
           </div>
         </div>
       </div>
@@ -272,7 +272,7 @@
         </div>
         <div class="row text-center align-items-center mt-4">
           <div class="col" id="calculateForDapto">
-            <button type="button" class="btn btn-cyan btn-lg" id="calculateForDapto">Hesaplayalım</button>
+            <button type="button" class="btn rounded-pill btn-cyan btn-lg" id="calculateForDapto">Hesaplayalım</button>
           </div>
         </div>        
       </div>
@@ -310,7 +310,7 @@
         </div>
         <div class="row text-center align-items-center mt-4">
           <div class="col" id="calculateForDapto">
-            <button type="button" class="btn btn-cyan btn-lg" id="calculateForLevo">Hesaplayalım</button>
+            <button type="button" class="btn rounded-pill btn-cyan btn-lg" id="calculateForLevo">Hesaplayalım</button>
           </div>
         </div>        
       </div>
@@ -464,6 +464,7 @@
   <script>
   let result;
   let resulty = document.getElementById('resultText');
+  let print = document.getElementById("print");
 
   $('#calcButton').click(() => {
     let method =  $('#dropdownMenu2').text();
@@ -488,7 +489,6 @@
     let levofloxy = document.getElementById("levofloxacin");
 
     let reload = document.getElementById("reload");
-    let print = document.getElementById("print");
     
     if (crunit1 === "2") {
       srcr1 = srcr1 / 88.4;
